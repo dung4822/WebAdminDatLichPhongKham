@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/WebAdminDatLichPhongKham/Areas/Identity/Pages/Account/Register.cshtml
+/WebAdminDatLichPhongKham/Areas/Identity/Pages/Account/Register.cshtml

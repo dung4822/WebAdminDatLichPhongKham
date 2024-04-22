@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
@@ -11,7 +12,8 @@ namespace WebAdminDatLichPhongKham.Areas.Identity.Data;
 public class AppUser : IdentityUser
 {
 
-    public string MaNhanVien { get; set; }
+    public int idNhanVien { get; set; }
+    [ForeignKey("idNhanVien")]
     public NhanVien nhanVien { get; set; }
 }
 
