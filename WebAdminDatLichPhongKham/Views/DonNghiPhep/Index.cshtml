@@ -1,0 +1,25 @@
+﻿@model List<WebAdminDatLichPhongKham.Models.ViewModels.DonNghiPhepViewModel>
+
+<h2>Danh sách đơn nghỉ phép</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ngày nghỉ</th>
+            <th>Lý do</th>
+            <th>Nhân viên</th>
+            <th>Ca Nghỉ</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var donNghiPhep in Model)
+        {
+            <tr>
+                <td>@donNghiPhep.NgayNghi.ToShortDateString()</td>
+                <td>@donNghiPhep.LyDo</td>
+                <td>@donNghiPhep.TenNhanVien</td>
+                <td>@donNghiPhep.TenCa</td>
+            </tr>
+        }
+    </tbody>
+</table>

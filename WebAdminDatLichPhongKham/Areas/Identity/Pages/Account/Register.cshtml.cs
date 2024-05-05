@@ -104,6 +104,8 @@ namespace WebAdminDatLichPhongKham.Areas.Identity.Pages.Account
             [Display(Name = "Tên tài khoản")]
             [Required(ErrorMessage = "Phải nhập {0}")]
             public string Username { get; set; }
+            [Display(Name = "ID Nhân viên")]
+            public int IdNhanVien { get; set; }
         }
 
 
@@ -123,6 +125,7 @@ namespace WebAdminDatLichPhongKham.Areas.Identity.Pages.Account
 
                 await _userStore.SetUserNameAsync(user, Input.Username, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+                user.idNhanVien = Input.IdNhanVien;
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
