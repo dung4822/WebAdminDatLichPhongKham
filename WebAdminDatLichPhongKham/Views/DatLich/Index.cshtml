@@ -1,0 +1,129 @@
+﻿@model WebAdminDatLichPhongKham.Models.ViewModels.BenhNhanDatLichViewModels
+
+@{
+    ViewData["Title"] = "Đặt Lịch";
+}
+
+<h1>Tạo phiếu đặt lịch</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" id="appointmentForm" asp-action="DatLich" asp-controller="DatLich">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Thông tin bệnh nhân -->
+            <h4>Thông tin bệnh nhân</h4>
+            <div class="form-group">
+                <label asp-for="BenhNhan.Name" class="control-label"></label>
+                <input asp-for="BenhNhan.Name" class="form-control" />
+                <span asp-validation-for="BenhNhan.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BenhNhan.CMND" class="control-label"></label>
+                <input asp-for="BenhNhan.CMND" class="form-control" />
+                <span asp-validation-for="BenhNhan.CMND" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BenhNhan.Gender" class="control-label"></label>
+                <select asp-for="BenhNhan.Gender" class="form-control">
+                    <option value="Male">Nam</option>
+                    <option value="Female">Nữ</option>
+                    <option value="Other">Khác</option>
+                </select>
+                <span asp-validation-for="BenhNhan.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BenhNhan.Email" class="control-label"></label>
+                <input asp-for="BenhNhan.Email" class="form-control" />
+                <span asp-validation-for="BenhNhan.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BenhNhan.PhoneNumber" class="control-label"></label>
+                <input asp-for="BenhNhan.PhoneNumber" class="form-control" />
+                <span asp-validation-for="BenhNhan.PhoneNumber" class="text-danger"></span>
+            </div>
+            <!-- Chọn khoa -->
+            <div class="form-group">
+                <label asp-for="KhoaId" class="control-label"></label>
+                <select id="khoaId" asp-for="KhoaId" class="form-control" asp-items="ViewBag.KhoaList"></select>
+            </div>
+
+            <!-- Chọn ngày khám -->
+            <div class="form-group">
+                <label asp-for="NgayKham" class="control-label"></label>
+                <input type="date" id="ngayKham" asp-for="NgayKham" class="form-control" />
+            </div>
+
+            <!-- Chọn ca khám -->
+            <div class="form-group">
+                <label asp-for="CaKhamId" class="control-label"></label>
+                <select id="caKhamId" asp-for="CaKhamId" class="form-control" asp-items="ViewBag.CaKhamList"></select>
+            </div>
+
+            <!-- Hiển thị danh sách nhân viên -->
+            <div id="doctorList" class="form-group">
+                <label asp-for="BacSiId" class="control-label"></label>
+                <select id="bacSiId" asp-for="BacSiId" class="form-control"></select>
+            </div>
+
+            <!-- Nút Submit -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Đặt Lịch</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            // Sự kiện khi giá trị của dropdown khoa thay đổi
+            $("#khoaId").change(function () {
+                getDoctorList();
+            });
+
+            // Sự kiện khi giá trị của dropdown ngày khám thay đổi
+            $("#ngayKham").change(function () {
+                getDoctorList();
+            });
+
+            // Sự kiện khi giá trị của dropdown ca khám thay đổi
+            $("#caKhamId").change(function () {
+                getDoctorList();
+            });
+
+            // Hàm gửi yêu cầu AJAX để lấy danh sách bác sĩ
+            function getDoctorList() {
+                // Lấy dữ liệu từ các dropdown
+                var khoaId = $("#khoaId").val();
+                var ngayKham = $("#ngayKham").val();
+                var caKhamId = $("#caKhamId").val();
+
+                // Gửi request AJAX để lấy danh sách nhân viên
+                $.ajax({
+                    url: '@Url.Action("GetDoctors", "DatLich")',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ KhoaId: khoaId, NgayKham: ngayKham, CaKhamId: caKhamId }),
+                    success: function (data) {
+                        $('#bacSiId').empty();
+
+                        // Thêm các option mới vào dropdown
+                        $.each(data, function (index, item) {
+                            $('#bacSiId').append($('<option>', {
+                                value: item.idNhanVien,
+                                text: item.hoTen
+                            }));
+                        });
+                    },
+                    error: function () {
+                        // Xử lý khi có lỗi xảy ra
+                    }
+                });
+            }
+        });
+
+
+    </script>
+
+}

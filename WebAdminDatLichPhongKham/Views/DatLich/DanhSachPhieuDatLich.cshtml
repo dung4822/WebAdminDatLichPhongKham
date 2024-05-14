@@ -1,0 +1,29 @@
+﻿@model List<WebAdminDatLichPhongKham.Models.PhieuDatLich>
+
+<h1>Danh sách phiếu đặt lịch</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên bệnh nhân</th>
+            <th>Ngày đặt</th>
+            <th>Ngày khám</th>
+            <th>Bác sĩ</th>
+            <th>Ca khám</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var phieuDatLich in Model)
+        {
+            <tr>
+                <td>@phieuDatLich.Id</td>
+                <td>@phieuDatLich.BenhNhan.Name</td>
+                <td>@phieuDatLich.NgayDat.ToString("dd/MM/yyyy")</td>
+                <td>@phieuDatLich.NgayKham.ToString("dd/MM/yyyy")</td>
+                <td>@phieuDatLich.NhanVien.HoTen</td>
+                <td>@phieuDatLich.CaKham.TenCa</td>
+            </tr>
+        }
+    </tbody>
+</table>

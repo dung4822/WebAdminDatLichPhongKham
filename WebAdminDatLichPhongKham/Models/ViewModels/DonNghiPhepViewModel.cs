@@ -6,5 +6,6 @@
         public string LyDo { get; set; }
         public string TenNhanVien { get; set; }
         public string TenCa {  get; set; }
+
     }
 }
