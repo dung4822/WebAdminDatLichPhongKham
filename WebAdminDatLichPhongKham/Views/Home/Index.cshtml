@@ -1,8 +1,1500 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+	.khamphavideo ._3video h4 {
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		font-size: 17px;
+		color: #fff;
+		width: 100%;
+		text-align: center;
+		margin-bottom: 20px;
+		z-index: 2;
+	}
+
+	:root {
+		--mauchudao: #1d93e3;
+	}
+
+	/* KHÃM PHÃ VIDEO */
+	.khamphavideo {
+		background-color: #F0F9FF;
+	}
+
+		.khamphavideo ._3video .video--trai img {
+			border-radius: 10px;
+			width: 100%;
+			height: 100%;
+		}
+
+		.khamphavideo ._3video .video--trai {
+			width: 470px;
+			height: 260px;
+			position: relative;
+		}
+
+		.khamphavideo .video--trai::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #0000005e;
+			z-index: 1;
+			border-radius: 10px;
+		}
+
+		.khamphavideo .video--MEDLATEC img.img-fluid {
+			border-top-right-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+
+		.khamphavideo .video--MEDLATEC .nutxemvideo, .khamphavideo .video--trai .nutxemvideo {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			z-index: 2;
+		}
+
+		.khamphavideo .video--MEDLATEC a.btn, .khamphavideo ._3video .nutxemvideo a.btn {
+			background-color: var(--mauchudao);
+			color: #fff;
+			padding: 8px 25px;
+			transition: 0.3s;
+		}
+
+			.khamphavideo .video--MEDLATEC a.btn:hover, .khamphavideo ._3video .nutxemvideo a.btn:hover {
+				background-color: #54aae4;
+			}
+
+		.khamphavideo .video--MEDLATEC {
+			position: relative;
+			border-top-right-radius: 10px !important;
+			border-bottom-right-radius: 10px;
+		}
+
+		.khamphavideo h2.pt-5 strong {
+			color: var(--mauchudao);
+		}
+
+		.khamphavideo .col-12 h2 {
+			text-transform: uppercase;
+		}
+
+		.khamphavideo .col-5 p {
+			padding-top: 20px;
+			font-weight: 600;
+		}
+
+		.khamphavideo .col-5 h3 {
+			font-size: 25px;
+			padding-right: 25px;
+			line-height: 35px;
+		}
+
+		.khamphavideo .col-5 {
+			background-color: var(--mauchudao);
+			padding-left: 30px;
+			padding-top: 40px;
+			color: #fff;
+			border-top-left-radius: 10px;
+			border-bottom-left-radius: 10px;
+		}
+	/* CÆ  Sá»ž Váº¬T CHáº¤T  */
+	.cosovatchat .col-5 p.des {
+		color: #534E56;
+	}
+
+	.cosovatchat .row .duoi {
+		padding-top: 13px;
+	}
+
+	.cosovatchat .col-3 img.img-fluid {
+		height: 181px;
+		width: 276px;
+		border-radius: 10px;
+	}
+
+	.cosovatchat .col-3 {
+		width: 242px;
+		padding-left: 15px;
+		padding-right: 0px;
+	}
+
+	.cosovatchat .col-5 h2 {
+		text-transform: uppercase;
+		padding-bottom: 30px;
+	}
+
+	.cosovatchat .row {
+		padding: 0px 10px;
+	}
+
+	.cosovatchat .col-3 .row {
+	}
+
+	.cosovatchat .row .col-5 {
+		padding-left: 0px;
+		padding-right: 20px;
+		width: 657px;
+	}
+
+	.cosovatchat .container-fluid {
+		padding: 0px 40px;
+	}
+
+	.cosovatchat .tieude h4 {
+		font-size: 20px;
+	}
+
+	.cosovatchat .tieude {
+		position: absolute;
+		bottom: 15px;
+		left: 20px;
+		color: #fff;
+	}
+
+	.cosovatchat .col-4 img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 10px;
+	}
+
+	.cosovatchat .col-4 {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 497px;
+		height: 375px;
+	}
+	/* CHỨNG CHỈ */
+	.chungchi .row .col-7 {
+		width: 700px;
+		height: 325px;
+	}
+
+	.chungchi .col-7 .carousel-inner .carousel-item {
+		width: 700px;
+		height: 325px;
+	}
+
+	.chungchi .col-7 img {
+		width: 700px;
+		height: 325px;
+	}
+
+	.chungchi .col-5 {
+		width: 620px;
+		height: 325px;
+		padding-left: 20px;
+	}
+
+		.chungchi .col-5 h2 {
+			text-transform: uppercase;
+			padding-bottom: 20px;
+		}
+
+		.chungchi .col-5 .carousel-inner .carousel-item {
+			width: 596px;
+			height: 325px;
+		}
+	/* KHOE */
+	.khoe .row {
+		width: 1473px;
+	}
+
+	.khoe .item h2 {
+		font-size: 25px;
+		color: white;
+	}
+
+	.item .ychinh h1 {
+		font-size: 50px;
+		margin-left: 30px;
+		font-weight: 800;
+	}
+
+	.item .ychinh i {
+		margin-left: 10px;
+		font-size: 26px;
+	}
+
+	.khoe .item .ychinh {
+		display: flex;
+		justify-content: center;
+		color: #ffdf32;
+	}
+
+	.khoe .col-3 {
+		text-align: center;
+		background-color: var(--mauchudao);
+		width: 336px;
+		height: 220px;
+		border-radius: 15px;
+	}
+
+		.khoe .col-3 .item {
+			display: flex;
+			flex-direction: column;
+			height: 220px;
+			justify-content: center;
+		}
+
+	.khoe .row.uytin {
+		justify-content: space-evenly;
+		position: relative;
+		top: 100px;
+	}
+	/* DÃƒÂ¡Ã‚Â»Ã¢â‚¬Â¹ch vÃƒÂ¡Ã‚Â»Ã‚Â¥ y tÃƒÂ¡Ã‚ÂºÃ‚Â¿ */
+	.dichvuyte {
+		background-color: #F0F9FF;
+	}
+
+	.dichvuyte, .chuyenkhoayte {
+		padding: 0px 25px;
+	}
+
+		.dichvuyte .col-12 h2, .chuyenkhoayte .col-12 h2 {
+			text-transform: uppercase;
+		}
+
+		.dichvuyte h2 strong, .chuyenkhoayte h2 strong {
+			color: var(--mauchudao);
+		}
+
+		.dichvuyte .holder img {
+			width: 100%;
+			height: 100%;
+			transition: 0.3s;
+		}
+
+		.dichvuyte .holder:hover img {
+			transform: scale(1.2);
+		}
+
+		.dichvuyte .holder {
+			width: 468px;
+			height: 304px;
+			overflow: hidden;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+		}
+
+		.dichvuyte .block__tieudechinh p {
+			color: #534E56;
+		}
+
+		.dichvuyte .block__tieudechinh {
+			padding: 0px 20px;
+			background-color: #fff;
+			width: 468px;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+			height: 181px;
+		}
+
+		.dichvuyte .block__datlich a.btn {
+			font-weight: 500;
+			padding: 6px 22px;
+			transition: 0.3s;
+		}
+
+			.dichvuyte .block__datlich a.btn:hover {
+				background-color: var(--mauchudao);
+				color: white;
+				font-weight: 500;
+				padding: 6px 22px;
+			}
+
+		.dichvuyte .block__datlich i {
+			margin-left: 10px;
+		}
+
+		.dichvuyte a.xemchitiet {
+			float: right;
+			color: #534E56;
+			line-height: 37px;
+			transition: 0.3s;
+			padding-right: 10px;
+		}
+
+			.dichvuyte a.xemchitiet:hover {
+				color: var(--mauchudao);
+			}
+
+		.dichvuyte .col-4 {
+			height: 485px;
+		}
+	/* ChuyÃƒÆ’Ã‚Âªn khoa y tÃƒÂ¡Ã‚ÂºÃ‚Â¿ */
+	.chuyenkhoayte {
+		background: url(image/CKYT_nenanh.png);
+	}
+
+		.chuyenkhoayte .col-2 h5 {
+			padding-left: 20px;
+			font-size: 22px !important;
+		}
+
+		.chuyenkhoayte .col-2 img {
+			padding: 17px 0px 25px 15px;
+		}
+
+		.chuyenkhoayte .col-2:hover img.goc {
+			opacity: 0;
+		}
+
+		.chuyenkhoayte .col-2:hover img.hieuung {
+			opacity: 1;
+		}
+
+		.chuyenkhoayte .col-2 img.hieuung {
+			opacity: 0;
+		}
+
+		.chuyenkhoayte .col-2:hover img {
+			opacity: 0;
+		}
+
+		.chuyenkhoayte img.hieuung {
+			position: absolute;
+			top: 15px;
+			left: 12px;
+			height: 110px;
+			width: 83px;
+		}
+
+		.chuyenkhoayte .col-2 {
+			width: 230px;
+			height: 213px;
+			border: 1px solid var(--mauchudao);
+			padding-top: 15px;
+			background-color: #F2F8FF;
+			position: relative;
+		}
+
+			.chuyenkhoayte .col-2:hover {
+				background-color: var(--mauchudao);
+				color: white;
+			}
+
+
+	.doinguchuyengia--yte button.carousel-control-next {
+		width: 175px;
+		color: black;
+		font-size: 40px;
+	}
+
+	.doinguchuyengia--yte button.carousel-control-prev {
+		width: 175px;
+		color: black;
+		font-size: 40px;
+	}
+
+	.doinguchuyengia .des {
+		color: #534E56;
+		padding: 0px 90px;
+	}
+
+	.doinguchuyengia {
+		background: url(https://medlatec.vn/med/images/style/team-bg.png) no-repeat;
+	}
+
+		.doinguchuyengia .chuyenkhoa {
+			font-size: 17px;
+			font-weight: 600;
+			color: #1d93e3;
+		}
+
+		.doinguchuyengia h3 {
+			padding-top: 40px;
+		}
+
+		.doinguchuyengia img {
+			width: 400px;
+			height: 455px;
+		}
+
+		.tintucykhoa .nutxemthem, .doinguchuyengia .nutxemthem, .cosovatchat .nutdatlich {
+			border: 1px solid #1d93e3;
+			color: #1d93e3;
+			padding: 5px 40px;
+			font-size: 19px;
+			transition: 0.4s;
+			margin-top: 15px;
+			z-index: 3 !important;
+		}
+
+			.tintucykhoa .nutxemthem:hover, .doinguchuyengia .nutxemthem:hover, .cosovatchat .nutdatlich:hover {
+				background: #1d93e3;
+				color: white;
+			}
+
+	.tintucykhoa .col-3 {
+		padding: 0px 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.tintucykhoa img {
+		transition: 0.4s;
+		border-radius: 10px;
+		height: 100%;
+	}
+
+	.tintucykhoa .holder:hover img {
+		transform: scale(1.2);
+	}
+
+	.tintucykhoa .holder {
+		overflow: hidden;
+		cursor: pointer;
+		border-radius: 10px;
+		height: 303px;
+	}
+	/* Tin tÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â»ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©c y khoa */
+	.tintucykhoa span {
+		text-decoration: none !important;
+	}
+
+	.tintucykhoa a.icon-link {
+		text-decoration: none;
+		color: #1d93e3;
+		font-size: 18px;
+	}
+
+	.tintucykhoa p {
+		padding-top: 5px;
+	}
+
+	.tintucykhoa h3 {
+		padding-top: 20px;
+		font-size: 25px;
+		cursor: pointer;
+	}
+
+	.tintucykhoa h2 {
+		text-transform: uppercase;
+	}
+
+	.tintucykhoa .col-12 h2 {
+		padding-left: 5px;
+	}
+
+	a.btn:focus {
+		box-shadow: none;
+		outline: none;
+		border: 1px solid var(--mauchudao);
+	}
+
+	a.icon-link span {
+		text-decoration: underline;
+	}
+
+	a.icon-link:hover i {
+		transform: translateX(7px);
+		transition: 0.3s;
+	}
+
+	a.icon-link i {
+		margin-left: 5px;
+	}
+
+	.convenience__block .icon-link {
+		text-decoration: none;
+		color: #1d93e3;
+	}
+
+	.convenience__slide {
+		width: 100%;
+		height: 100%;
+	}
+
+	.convenience__block {
+		width: 348px;
+		height: 252px;
+		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+		padding: 20px;
+		margin-right: 12px;
+		margin-bottom: 12px;
+		border-radius: 10px;
+	}
+
+	._4item {
+		width: 720px;
+		flex-wrap: wrap !important;
+	}
+
+	._1item--slide {
+		width: 650px;
+		height: 511px;
+		top: 10px;
+		right: 0;
+	}
+
+	.convenience__block:hover i, .convenience__block:hover a {
+		color: #fff;
+	}
+
+
+	.convenience__h5--blue {
+		color: #1d93e3;
+	}
+
+	.convenience__block .TICKH--tieude {
+		padding: 20px 0px;
+		margin-bottom: 0px;
+	}
+
+	.convenience__hover--blue:hover {
+		background-color: #1d93e3;
+	}
+
+	.convenience__hover--green:hover {
+		background-color: #57a892;
+	}
+
+	.convenience__hover--brown:hover {
+		background-color: #ef9169;
+	}
+
+	.convenience__hover--organe:hover {
+		background-color: #f2b868;
+	}
+
+	.convenience__hover--blue:hover, .convenience__hover--blue:hover .convenience__h5--blue, .convenience__hover--green:hover, .convenience__hover--brown:hover, .convenience__hover--organe:hover {
+		color: #fff;
+	}
+
+	.convenience__logo--blue {
+		color: #1d93e3;
+	}
+
+	.convenience__block:hover .convenience__logo--blue {
+		color: white;
+	}
+
+	.convenience__logo--green {
+		color: #57a892;
+		background: none;
+		padding: 0px;
+		margin-left: 4px;
+		margin-top: 1px;
+	}
+
+	.convenience__logo--brown {
+		color: #ef9169;
+	}
+
+	.convenience__logo--organe {
+		color: #f2b868;
+	}
+</style>
+
+<!-- Carousel -->
+<div id="carouselExampleIndicators" class="carousel slide">
+	<div class="carousel-indicators">
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
+	</div>
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img src="~/images/Main/Index/Slider/Slide1.png" class="d-block w-100">
+		</div>
+		<div class="carousel-item">
+			<img src="~/images/Main/Index/Slider/Slide2.png" class="d-block w-100">
+		</div>
+		<div class="carousel-item">
+			<img src="~/images/Main/Index/Slider/Slide3.png" class="d-block w-100">
+		</div>
+		<div class="carousel-item">
+			<img src="~/images/Main/Index/Slider/Slide4.png" class="d-block w-100">
+		</div>
+		<div class="carousel-item">
+			<img src="~/images/Main/Index/Slider/Slide5.png" class="d-block w-100">
+		</div>
+		<div class="carousel-item">
+			<img src="~/images/Main/Index/Slider/Slide6.png" class="d-block w-100">
+		</div>
+		<div class="carousel-item">
+			<img src="~/images/Main/Index/Slider/Slide7.png" class="d-block w-100">
+		</div>
+		<div class="carousel-item">
+			<img src="~/images/Main/Index/Slider/Slide8.png" class="d-block w-100">
+		</div>
+		<div class="carousel-item">
+			<img src="~/images/Main/Index/Slider/Slide9.png" class="d-block w-100">
+		</div>
+		<div class="carousel-item">
+			<img src="~/images/Main/Index/Slider/Slide10.png" class="d-block w-100">
+		</div>
+	</div>
+	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Previous</span>
+	</button>
+	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Next</span>
+	</button>
 </div>
+
+<!-- TIỆN ÍCH CHO KHÁCH HÀNG -->
+<div class="container-fluid">
+	<!-- Tiêu đề -->
+	<div>
+		<h2 class="py-5 ps-4">TIỆN ÍCH CHO KHÁCH HÀNG</h2>
+	</div>
+
+	<!-- Calendar -->
+	<div class="_2col d-flex justify-content-around">
+		<div class="_4item d-flex">
+
+			<!-- Đặt lịch khám, lấy mẫu tại nhà -->
+			<div class="convenience__block convenience__hover--blue">
+				<div class="convenience__icon">
+					<i class="fa-regular fa-calendar fs-2 convenience__logo--blue"></i>
+				</div>
+				<h5 class="convenience__h5--blue TICKH--tieude">Đặt lịch khám, lấy mẫu tại nhà</h5>
+				<p>Quý khách hàng sử dụng tiện ích này để đặt lịch lấy mẫu tại nhà hoặc đặt lịch khám chữa bệnh tại các cơ sở của MEDLATEC</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Đặt lịch</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+
+			<!-- Tra cứu kết quả -->
+			<div class="convenience__block convenience__hover--green">
+				<div class="convenience__icon">
+					<i class="fa-solid fa-magnifying-glass fs-2 convenience__logo--green"></i>
+				</div>
+				<h5 class="TICKH--tieude">Tra cứu kết quả</h5>
+				<p>Quý khách hàng sử dụng tiện ích này để tra cứu kết quả sau khi sử dụng dịch vụ y tế tại Hệ thống Y tế MEDLATEC</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Tra cứu</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+
+			<!-- Bảng giá dịch vụ -->
+			<div class="convenience__block convenience__hover--brown">
+				<div class="convenience__icon">
+					<i class="fa-solid fa-magnifying-glass-dollar fs-2 convenience__logo--brown"></i>
+				</div>
+				<h5 class="TICKH--tieude">Bảng giá dịch vụ</h5>
+				<p>Quý khách hàng sử dụng tiện ích này để tra cứu giá dịch vụ y tế tại Hệ thống Y tế MEDLATEC</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Xem bảng giá</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+
+			<!-- Hỏi đáp chuyên gia -->
+			<div class="convenience__block convenience__hover--organe">
+				<div class="convenience__icon">
+					<i class="fa-solid fa-circle-question fs-2 convenience__logo--organe"></i>
+				</div>
+				<h5 class="TICKH--tieude">Hỏi đáp chuyên gia</h5>
+				<p>Quý khách hàng sử dụng tiện ích này để đặt câu hỏi và nhận hướng dẫn, giải đáp thắc mắc từ chuyên gia y tế của MEDLATEC</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Đặt câu hỏi</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+
+		</div>
+		<div class="_1item--slide position-relative">
+			<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+				<div class="carousel-inner convenience__slide">
+					<div class="carousel-item active">
+						<img src="~/images/Main/Index/Slider/Slide11.png" class="d-block w-100">
+					</div>
+					<div class="carousel-item">
+						<img src="~/images/Main/Index/Slider/Slide12.png" class="d-block w-100">
+					</div>
+					<div class="carousel-item">
+						<img src="~/images/Main/Index/Slider/Slide13.png" class="d-block w-100">
+					</div>
+					<div class="carousel-item">
+						<img src="~/images/Main/Index/Slider/Slide14.png" class="d-block w-100">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- TIN TỨC Y KHOA	 -->
+<div class="tintucykhoa">
+	<div class="container-fluid px-4">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="py-5 ps-4">tin tức y khoa</h2>
+			</div>
+		</div>
+		<div class="row">
+			<!-- Từ nay đến hết 30/5/2024, Bệnh viện Đa khoa... -->
+			<div class="col-3">
+				<div class="holder">
+					<img src="~/images/Main/Index/TinTucYKhoa/hinh1.jpg" class="img-fluid">
+				</div>
+				<h3>Từ nay đến hết 30/5/2024, Bệnh viện Đa khoa...</h3>
+				<p>Nhằm giúp người dân có cơ hội điều trị khối u tuyến giáp bằng phương pháp hiện đại, công nghệ cao với chi phí tối ưu nhất, từ n...</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Xem chi tiết</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+
+			<!-- Sau 8 tháng điều trị viêm xương khớp, người phụ nữ... -->
+			<div class="col-3">
+				<div class="holder">
+					<img src="~/images/Main/Index/TinTucYKhoa/hinh2.jpg" class="img-fluid">
+				</div>
+				<h3>Sau 8 tháng điều trị viêm xương khớp, người phụ nữ...</h3>
+				<p>Lo lắng với những cơn đau âm ỉ vùng xương đùi trái không có dấu hiệu thuyên giảm sau 8 tháng điều trị tại bệnh viện gần nhà, người...</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Xem chi tiết</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+
+			<!-- Trường hợp hy hữu tại MEDLATEC: tưởng nốt ruồi,... -->
+			<div class="col-3">
+				<div class="holder">
+					<img src="~/images/Main/Index/TinTucYKhoa/hinh3.png" class="img-fluid">
+				</div>
+				<h3>Trường hợp hy hữu tại MEDLATEC: tưởng nốt ruồi,...</h3>
+				<p>Xuất hiện nốt sẩn đen dưới lòng bàn chân trái 10 năm nay nhưng chị C.T.H.N và gia đình không mấy bận tâm, chỉ nghĩ là nốt...</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Xem chi tiết</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+
+			<!-- Hội thảo trực tuyến số 10: Giải pháp phòng ngừa nhiễm... -->
+			<div class="col-3">
+				<div class="holder">
+					<img src="~/images/Main/Index/TinTucYKhoa/hinh4.jpg" class="img-fluid">
+				</div>
+				<h3>Hội thảo trực tuyến số 10: Giải pháp phòng ngừa nhiễm...</h3>
+				<p>Liên cầu khuẩn nhóm B là một trong những nguyên nhân hàng đầu gây nhiễm khuẩn và tử vong ở trẻ sơ sinh. Tại Hội thảo trực...</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Xem chi tiết</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+		</div>
+		<div class="row text-center my-5">
+			<div class="col-12">
+				<a href="" class="btn nutxemthem" target="_blank">Xem thêm</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- ĐỘI NGŨ CHUYÊN GIA Y TẾ -->
+<div>
+	<div class="container-fluid px-4">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="py-5 ps-4">ĐỘI NGŨ CHUYÊN GIA Y TẾ</h2>
+			</div>
+		</div>
+	</div>
+	<div class="doinguchuyengia--yte">
+		<div id="carouselExample" class="carousel slide">
+			<div class="carousel-inner pb-5">
+				<div class="carousel-item active">
+					<div class="doinguchuyengia">
+						<div class="container-fluid px-4">
+							<div class="row">
+								<!-- TTND.PGS.TS Đoàn Hữu Nghị -->
+								<div class="col-4 text-center">
+									<img src="~/images/Main/Index/DoiNguChuyenGiaYTe/DoanHuuNghi.png" alt="" class="img-fluid">
+									<h3>TTND.PGS.TS Đoàn Hữu Nghị</h3>
+									<p class="chuyenkhoa">Chuyên khoa - Ung bưới</p>
+									<a href="" class="btn nutxemthem" target="_blank">Đặt lịch</a>
+								</div>
+
+								<!-- PGS.TS.BS Nguyễn Quốc Dũng -->
+								<div class="col-4 text-center">
+									<img src="~/images/Main/Index/DoiNguChuyenGiaYTe/NguyenQuocDung.png" alt="" class="img-fluid">
+									<h3>PGS.TS.BS Nguyễn Quốc Dũng</h3>
+									<p class="chuyenkhoa">Chuyên khoa - Chẩn đoán hình ảnh</p>
+									<p class="des">Phó Chủ tịch hội Điện quang và Y học hạt nhân Việt Nam, Phó Chủ tịch Hội đồng Khoa học công nghệ và đào tạo MEDLATEC GROUP, Giám đốc Chuyên môn Trung tâm Chẩn đoán hình ảnh MEDLATEC</p>
+									<a href="" class="btn nutxemthem" target="_blank">Đặt lịch</a>
+								</div>
+
+								<!-- PGS.TS Trịnh Thị Ngọc -->
+								<div class="col-4 text-center">
+									<img src="~/images/Main/Index/DoiNguChuyenGiaYTe/TrinhThiNgoc.png" alt="" class="img-fluid">
+									<h3>PGS.TS Trịnh Thị Ngọc</h3>
+									<p class="chuyenkhoa">Chuyên khoa - Truyền nhiễm</p>
+									<p class="des">Nguyên Trưởng khoa Truyền nhiễm, Bệnh viện Bạch Mai</p>
+									<a href="" class="btn nutxemthem" target="_blank">Đặt lịch</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="doinguchuyengia">
+						<div class="container-fluid px-4">
+							<div class="row">
+								<!-- PGS.TS Lê Chính Đại -->
+								<div class="col-4 text-center">
+									<img src="~/images/Main/Index/DoiNguChuyenGiaYTe/LeChinhDai.png" alt="" class="img-fluid">
+									<h3>PGS.TS Lê Chính Đại</h3>
+									<p class="chuyenkhoa">Chuyên khoa - Ung bướu</p>
+									<p class="des">Nguyên Phó giám đốc Trung tâm Y học hạt nhân và ung bướu, Bệnh viện Bạch Mai; Nguyên Trưởng khoa Xạ, Bệnh viện K Trung ương</p>
+									<a href="" class="btn nutxemthem" target="_blank">Đặt lịch</a>
+								</div>
+								<!-- PGS.TS Nguyễn Thị Vân Hồng -->
+								<div class="col-4 text-center">
+									<img src="~/images/Main/Index/DoiNguChuyenGiaYTe/NguyenThiVanHong.png" class="img-fluid">
+									<h3>PGS.TS Nguyễn Thị Vân Hồng</h3>
+									<p class="chuyenkhoa">Chuyên khoa - Tiêu hoá</p>
+									<p class="des">Nguyên Phó trưởng khoa Tiêu hóa, Bệnh viện Bạch Mai; Giảng viên bộ môn Tiêu hóa, Trường Đại học Y Hà Nội</p>
+									<a href="" class="btn nutxemthem" target="_blank">Đặt lịch</a>
+								</div>
+								<!-- PGS.TS Vũ Quang Huy -->
+								<div class="col-4 text-center">
+									<img src="~/images/Main/Index/DoiNguChuyenGiaYTe/VuQuangHuy.png" alt="" class="img-fluid">
+									<h3>PGS.TS Vũ Quang Huy</h3>
+									<p class="chuyenkhoa">Chuyên khoa - Xét nghiệm</p>
+									<p class="des">Giám đốc Trung tâm kiểm chuẩn chất lượng xét nghiệm y học - Bộ Y tế, thuộc Đại học Y dược Thành phố Hồ Chí Minh (Quản lý Chất lượng Xét nghiệm các Cơ sở Y tế Phía Nam từ Đà Nẵng trở vào); Trưởng Bộ môn Xét nghiệm, Khoa điều dưỡng Kỹ thuật Y học, Đại học Y dược Thành phố Hồ Chí Minh, Bộ Y tế; Trưởng khoa Xét nghiệm Hóa sinh, Bệnh viện Thống nhất; Trưởng khoa Xét nghiệm Bệnh viện Đại học Y dược Thành phố Hồ Chí Minh cơ sở II</p>
+									<a href="" class="btn nutxemthem" target="_blank">Đặt lịch</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="doinguchuyengia">
+						<div class="container-fluid px-4">
+							<div class="row">
+								<!-- TS.BSCKII Đặng Vĩnh Hiệp -->
+								<div class="col-4 text-center">
+									<img src="~/images/Main/Index/DoiNguChuyenGiaYTe/DangVinhHiep.png" alt="" class="img-fluid">
+									<h3>TS.BSCKII Đặng Vĩnh Hiệp</h3>
+									<p class="chuyenkhoa">Chuyên khoa - Chẩn đoán hình ảnh</p>
+									<p class="des">Phó trưởng bộ môn Kỹ thuật hình ảnh, Trường Đại học Y khoa Phạm Ngọc Thạch</p>
+									<a href="" class="btn nutxemthem" target="_blank">Đặt lịch</a>
+								</div>
+
+								<!-- PGS.TS Đặng Thị Minh Nguyệt -->
+								<div class="col-4 text-center">
+									<img src="~/images/Main/Index/DoiNguChuyenGiaYTe/DangThiMinhNguyet.png" alt="" class="img-fluid">
+									<h3>PGS.TS Đặng Thị Minh Nguyệt</h3>
+									<p class="chuyenkhoa">Chuyên khoa - Sản khoa</p>
+									<a href="" class="btn nutxemthem" target="_blank">Đặt lịch</a>
+								</div>
+
+								<!-- PGS.TS Nguyễn Mai Hồng -->
+								<div class="col-4 text-center">
+									<img src="~/images/Main/Index/DoiNguChuyenGiaYTe/NguyenMaiHong.png" alt="" class="img-fluid">
+									<h3>PGS.TS Nguyễn Mai Hồng</h3>
+									<p class="chuyenkhoa">Chuyên khoa - Cơ xương khớp</p>
+									<p class="des">Phó chủ tịch hội loãng xương Hà nội; Ủy viên  Thường vụ Hội khớp học Việt nam (VRA); Nguyên Trưởng khoa Khớp, Bệnh viện Bạch Mai</p>
+									<a href="" class="btn nutxemthem" target="_blank">Đặt lịch</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+				<i class="fa-solid fa-angle-left carousel-control-prev-icon" aria-hidden="true"></i>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+				<i class="fa-solid fa-angle-right carousel-control-next-icon" aria-hidden="true"></i>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	</div>
+</div>
+
+<!-- DỊCH VỤ Y TẾ -->
+<div class="dichvuyte pb-5">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="py-5 ps-4">
+					Các dịch vụ y tế <strong>MEDLATEC</strong> cung cấp
+				</h2>
+			</div>
+		</div>
+		<div class="row">
+			<!-- Khám sức khoẻ cho doanh nghiệp -->
+			<div class="col-4">
+				<div class="holder">
+					<img src="~/images/Main/Index/DichVuYTe/hinh1.jpg">
+				</div>
+				<div class="block__tieudechinh pb-4">
+					<h5 class="pt-4">Khám sức khoẻ cho doanh nghiệp</h5>
+					<p>MEDLATEC hân hạnh là đối tác khám sức khỏe cho các doanh nghiệp trong và ngoài nước</p>
+					<a href="" class="xemchitiet">Xem chi tiết</a>
+					<div class="block__datlich">
+						<a href="" class="btn">
+							Đặt lịch
+							<i class="fa-solid fa-calendar-days"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Lấy mẫu xét nghiệm tận nơi -->
+			<div class="col-4">
+				<div class="holder">
+					<img src="~/images/Main/Index/DichVuYTe/hinh2.jpg">
+				</div>
+				<div class="block__tieudechinh pb-4">
+					<h5 class="pt-4">Lấy mẫu xét nghiệm tận nơi</h5>
+					<p>Tiết kiệm thời gian, chi phí, không cần xếp hạng chờ đợi. Theo dõi kết quả qua app My Medlatec</p>
+					<a href="" class="xemchitiet">Xem chi tiết</a>
+					<div class="block__datlich">
+						<a href="" class="btn">
+							Đặt lịch
+							<i class="fa-solid fa-calendar-days"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Bảo hiểm y tế -->
+			<div class="col-4">
+				<div class="holder">
+					<img src="~/images/Main/Index/DichVuYTe/hinh3.jpg">
+				</div>
+				<div class="block__tieudechinh pb-4">
+					<h5 class="pt-4">Bảo hiểm y tế</h5>
+					<p>MEDLATEC áp dụng Bảo hiểm y tế, bảo lãnh viện phí giúp giảm gánh nặng chi phí khi khám chữa bệnh</p>
+					<a href="" class="xemchitiet">Xem chi tiết</a>
+					<div class="block__datlich">
+						<a href="" class="btn">
+							Đặt lịch
+							<i class="fa-solid fa-calendar-days"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-5">
+			<!-- Tiêm chủng, Vắc xin -->
+			<div class="col-4">
+				<div class="holder">
+					<img src="~/images/Main/Index/DichVuYTe/hinh4.jpg">
+				</div>
+				<div class="block__tieudechinh pb-4">
+					<h5 class="pt-4">Tiêm chủng, Vắc xin</h5>
+					<p class="mb-4 pb-3">Cung cấp dịch vụ tiêm chủng</p>
+					<a href="" class="xemchitiet">Xem chi tiết</a>
+					<div class="block__datlich">
+						<a href="" class="btn">
+							Đặt lịch
+							<i class="fa-solid fa-calendar-days"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Khám chữa bệnh chủ động -->
+			<div class="col-4">
+				<div class="holder">
+					<img src="~/images/Main/Index/DichVuYTe/hinh5.jpg">
+				</div>
+				<div class="block__tieudechinh pb-4">
+					<h5 class="pt-4">Khám chữa bệnh chủ động</h5>
+					<p>Khám chữa bệnh đầy đủ chuyên khoa, khám sức khỏe tổng quát định kỳ cho người dân</p>
+					<a href="" class="xemchitiet">Xem chi tiết</a>
+					<div class="block__datlich">
+						<a href="" class="btn">
+							Đặt lịch
+							<i class="fa-solid fa-calendar-days"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Hội chẩn chuyên gia -->
+			<div class="col-4">
+				<div class="holder">
+					<img src="~/images/Main/Index/DichVuYTe/hinh6.jpg">
+				</div>
+				<div class="block__tieudechinh pb-4">
+					<h5 class="pt-4">Hội chẩn chuyên gia</h5>
+					<p>MEDLATEC hợp tác với nhiều chuyên gia đầu ngành cung cấp dịch vụ hội chẩn trực tuyến chất lượng cao</p>
+					<a href="" class="xemchitiet">Xem chi tiết</a>
+					<div class="block__datlich">
+						<a href="" class="btn">
+							Đặt lịch
+							<i class="fa-solid fa-calendar-days"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- CHUYÊN KHOA Y TẾ -->
+<div class="chuyenkhoayte">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="pt-5 pb-4">
+					Các chuyên khoa y tế tại <strong>MEDLATEC</strong>
+				</h2>
+			</div>
+		</div>
+		<div class="row px-3">
+			<!-- Chẩn đoán hình ảnh -->
+			<div class="col-2 border-1">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/chandoanhinhanh_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/chandoanhinhanh_trang.png" class="hieuung">
+				<h5>Chẩn đoán hình ảnh</h5>
+			</div>
+
+			<!-- Chuyên khoa nội -->
+			<div class="col-2 border-1 border-end-0 border-start-0">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/chuyenkhoanoi_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/chuyenkhoanoi_trang.png" class="hieuung">
+				<h5>Chuyên khoa nội</h5>
+			</div>
+
+			<!-- Xét nghiệm -->
+			<div class="col-2 border-1">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/xetnghiem_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/xetnghiem_trang.png" class="hieuung">
+				<h5>Xét nghiệm</h5>
+			</div>
+
+			<!-- Ưng bướu -->
+			<div class="col-2 border-1 border-end-0 border-start-0">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/ungbuou_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/ungbuou_trang.png" class="hieuung">
+				<h5>Ưng bướu</h5>
+			</div>
+
+			<!-- Sản khoa -->
+			<div class="col-2 border-1 border-end-0">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/sankhoa_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/sankhoa_trang.png" class="hieuung">
+				<h5>Sản khoa</h5>
+			</div>
+
+			<!-- Khoa ngoại -->
+			<div class="col-2 border-1">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/khoangoai_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/khoangoai_trang.png" class="hieuung">
+				<h5>Khoa ngoại</h5>
+			</div>
+		</div>
+		<div class="row px-3">
+			<!-- Tiêu hoá -->
+			<div class="col-2 border-1 border-top-0">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/tieuhoa_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/tieuhoa_trang.png" class="hieuung">
+				<h5>Tiêu hoá</h5>
+			</div>
+
+			<!-- Nội tiết -->
+			<div class="col-2 border-1 border-top-0 border-end-0 border-start-0">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/noitiet_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/noitiet_trang.png" class="hieuung">
+				<h5>Nội tiết</h5>
+			</div>
+
+			<!-- Tim mạch -->
+			<div class="col-2 border-1 border-top-0">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/timmanh_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/timmanh_trang.png" class="hieuung">
+				<h5>Tim mạch</h5>
+			</div>
+
+			<!-- Nam khoa -->
+			<div class="col-2 border-1 border-top-0 border-end-0 border-start-0">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/namkhoa_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/namkhoa_trang.png" class="hieuung">
+				<h5>Nam khoa</h5>
+			</div>
+
+			<!-- Cơ xương khớp -->
+			<div class="col-2 border-1 border-top-0 border-end-0">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/coxuongkhop_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/coxuongkhop_trang.png" class="hieuung">
+				<h5>Cơ xương khớp</h5>
+			</div>
+
+			<!-- Truyền nhiễm -->
+			<div class="col-2 border-1 border-top-0">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/truyennhiem_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/truyennhiem_trang.png" class="hieuung">
+				<h5>Truyền nhiễm</h5>
+			</div>
+		</div>
+		<div class="row px-3">
+			<!-- Thần kinh -->
+			<div class="col-2 border-1 border-top-0">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/thankinh_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/thankinh_trang.png" class="hieuung">
+				<h5>Thần kinh</h5>
+			</div>
+
+			<!-- Nhi khoa -->
+			<div class="col-2 border-1 border-top-0 border-end-0 border-start-0">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/nhikhoa_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/nhikhoa_trang.png" class="hieuung">
+				<h5>Nhi khoa</h5>
+			</div>
+
+			<!-- Mắt -->
+			<div class="col-2 border-1 border-top-0">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/mat_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/mat_trang.png" class="hieuung">
+				<h5>Mắt</h5>
+			</div>
+
+			<!-- Tai mũi họng -->
+			<div class="col-2 border-1 border-top-0 border-end-0 border-start-0">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/taimuihong_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/taimuihong_trang.png" class="hieuung">
+				<h5>Tai mũi họng</h5>
+			</div>
+
+			<!-- Da liễu -->
+			<div class="col-2 border-1 border-top-0 border-end-0">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/dalieu_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/dalieu_trang.png" class="hieuung">
+				<h5>Da liễu</h5>
+			</div>
+
+			<!-- Răng hàm mặt -->
+			<div class="col-2 border-1 border-top-0">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/ranghammat_xanh.png" class="goc">
+				<img src="~/images/Main/Index/ChuyenKhoaYTe/ranghammat_trang.png" class="hieuung">
+				<h5>Răng hàm mặt</h5>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- KHOE -->
+<div class="khoe mb-5">
+	<div class="container-fluid px-0">
+		<div class="row uytin mx-0">
+			<!-- Khách hàng mỗi năm -->
+			<div class="col-3">
+				<div class="item">
+					<div class="ychinh">
+						<h1>4 triệu</h1>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+					<h2>Khách hàng mỗi năm</h2>
+				</div>
+			</div>
+
+			<!-- Cơ sở khám, chữa bệnh -->
+			<div class="col-3">
+				<div class="item">
+					<div class="ychinh">
+						<h1>13</h1>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+					<h2>Cơ sở khám, chữa bệnh</h2>
+				</div>
+			</div>
+
+			<!-- Đội ngũ chuyên gia, bác sĩ -->
+			<div class="col-3">
+				<div class="item">
+					<div class="ychinh">
+						<h1>200</h1>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+					<h2>Đội ngũ chuyên gia, bác sĩ</h2>
+				</div>
+			</div>
+
+			<!-- Văn phòng lấy mẫu -->
+			<div class="col-3">
+				<div class="item">
+					<div class="ychinh">
+						<h1>200</h1>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+					<h2>Văn phòng lấy mẫu</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 px-0">
+				<img src="~/images/Main/Index/Banner/banner.png" class="img-fluid">
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- CHỨNG CHỈ -->
+<div class="chungchi py-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-7">
+				<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="~/images/Main/Index/ChungChi/chungchi1.png" class="img-fluid">
+						</div>
+						<div class="carousel-item">
+							<img src="~/images/Main/Index/ChungChi/chungchi1.png" class="img-fluid">
+						</div>
+						<div class="carousel-item">
+							<img src="~/images/Main/Index/ChungChi/chungchi2.png" class="img-fluid">
+						</div>
+						<div class="carousel-item">
+							<img src="~/images/Main/Index/ChungChi/chungchi3.png" class="img-fluid">
+						</div>
+						<div class="carousel-item">
+							<img src="~/images/Main/Index/ChungChi/chungchi4.png" class="img-fluid">
+						</div>
+						<div class="carousel-item">
+							<img src="~/images/Main/Index/ChungChi/chungchi5.png" class="img-fluid">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-5">
+				<h2>Chứng chỉ</h2>
+				<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<p>ISO 15189:2012 (tương đương Tiêu chuẩn quốc gia TCVN 15189:2014) là tiêu chuẩn quy định các yêu cầu về năng lực và chất lượng đối với các phòng xét nghiệm y tế. Tiêu chuẩn này được xây dựng dựa trên các yêu cầu của tiêu chuẩn ISO/IEC 17025 và ISO 9001, ngoài ra bổ sung thêm các yêu cầu riêng về đảm bảo chất lượng trong lĩnh vực thử nghiệm y tế. </p>
+						</div>
+						<div class="carousel-item">
+							<p>Sau hơn 2 năm không ngừng phấn đấu và phát triển, đến đầu năm 2022, Trung tâm Xét nghiệm MEDLATEC đã thực sự vươn tầm thế giới và được đánh dấu bởi cột mốc đó là MEDLATEC trở thành đơn vị y tế đầu tiên tại Việt Nam đạt được chứng nhận công nhận chất lượng phòng xét nghiệm theo tiêu chuẩn của CAP của Hiệp hội Bệnh học Hoa Kỳ (College of American Pathologists) và tự hào trở thành 1 thành viên trong hơn 8.000 phòng xét nghiệm trên thế giới đạt được công nhận này</p>
+						</div>
+						<div class="carousel-item">
+							<p>MEDLATEC tự hào đón nhận "Huân chương Lao động hạng Ba” vào ngày 06/03/2017 và vinh dự được Bộ Y Tế biểu dương, đánh giá cao mô hình xét nghiệm, nhất là dịch vụ xét nghiệm, chăm sóc sức khỏe tại nhà và trả kết quả xét nghiệm qua mạng, cho kết quả nhanh, chính xác mà Bệnh viện Medlatec đang triển khai. </p>
+						</div>
+						<div class="carousel-item">
+							<p>Sao Khuê là giải thưởng danh giá, uy tín và chuyên nghiệp trao tặng cho cho các sản	phẩm dịch vụ và phần mềm công nghệ thông tin Việt Nam. Năm 2023, Ứng dụng My Medlatec do Công ty Cổ phần và Dịch vụ Y tế số MED-ON (Thuộc tập đoàn MED-Group) nghiên cứu và phát triển đã được vinh danh là giải pháp xuất sắc duy nhất thuộc lĩnh vực Y tế, Chăm sóc sức khỏe.</p>
+						</div>
+						<div class="carousel-item">
+							<p>Giải thưởng ASOCIO là giải thưởng công nghệ thông tin uy tín hàng đầu khu vực dành cho các cá nhân, tổ chức và doanh nghiệp xuất sắc tại 24 nền kinh tế thành viên ASOCIO. Năm 2021, Việt Nam có hai đơn vị được nhận giải thưởng này. Trong đó, MEDLATEC nhận giải thưởng ASOCIO dành cho lĩnh vực Công nghệ chăm sóc sức khoẻ.</p>
+						</div>
+						<div class="carousel-item">
+							<p>MEDLATEC tự hào đón nhận "Huân chương Lao động hạng Ba” vào ngày 06/03/2017 và vinh dự được Bộ Y Tế biểu dương, đánh giá cao mô hình xét nghiệm, nhất là dịch vụ xét nghiệm, chăm sóc sức khỏe tại nhà và trả kết quả xét nghiệm qua mạng, cho kết quả nhanh, chính xác mà Bệnh viện Medlatec đang triển khai. </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- CƠ SỞ VẬT CHẤT -->
+<div class="cosovatchat py-5">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-5">
+				<h2>Cơ sở vật chất</h2>
+				<p class="fw-bold">Hệ thống Y tế MEDLATEC (viết tắt là MEDLATEC GROUP) gồm 01 Bệnh viện đa khoa, 12 Phòng khám đa khoa, 30 Phòng khám CK xét nghiệm và hơn 200 văn phòng lấy mẫu trên toàn quốc. 01 Trung tâm xét nghiệm tại Campuchia</p>
+				<p class="des">Mỗi cơ sở khám chữa bệnh có năng lực đáp ứng hơn 1.000 lượt khám mỗi ngày với cơ sở vật chất khang trang, trang thiết bị hiện đại, đồng bộ cho kết quả khám, chẩn đoán và điều trị chính xác, hiệu quả. Hệ thống Y tế MEDLATEC, trong đó có Bệnh viện/ Phòng khám Đa khoa có điều kiện tốt nhất đáp ứng nhu cầu kiểm tra sức khỏe, khám chữa bệnh của hàng nghìn khách hàng mỗi ngày.</p>
+				<!-- Bấm nút này trỏ đến mục "Cơ sở vật chất & trang thiết bị" -->
+				<a href="" class="btn nutdatlich mt-4">Xem chi tiết</a>
+			</div>
+			<div class="col-4">
+				<img src="~/images/Main/Index/CoSoVatChat/hinhto.png">
+				<div class="tieude">
+					<h4>Máy chụp CT hiện đại</h4>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="row">
+					<div class="col-12 px-0 tren">
+						<img src="~/images/Main/Index/CoSoVatChat/hinhnho1.png" class="img-fluid">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 px-0 duoi">
+						<img src="~/images/Main/Index/CoSoVatChat/hinhnho2.png" class="img-fluid">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- THÔNG TIN HOẠT ĐỘNG NỘI BỘ	 -->
+<div class="tintucykhoa">
+	<div class="container-fluid px-4">
+		<!-- Tiêu đề -->
+		<div class="row">
+			<div class="col-12">
+				<h2 class="my-5">Thông tin hoạt động nội bộ</h2>
+			</div>
+		</div>
+
+		<!-- Các thông tin hoạt động nội bộ -->
+		<div class="row">
+			<!-- Hệ thống Y tế MEDLATEC - MEDLATEC Việt Nam đồng... -->
+			<div class="col-3">
+				<div class="holder">
+					<img src="~/images/Main/Index/ThongTinHoatDongNoiBo/hinh1.jpg" class="img-fluid">
+				</div>
+				<h3>Hệ thống Y tế MEDLATEC - MEDLATEC Việt Nam đồng...</h3>
+				<p>Với mong muốn góp sức vào hoạt động thiện nguyện ý nghĩa hỗ trợ các em học sinh vùng cao, MEDLATEC Việt Nam - thành viê...</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Xem chi tiết</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+
+			<!-- MEDLATEC - VNPAY: “Cuộc gặp gỡ” giữa y tế và công... -->
+			<div class="col-3">
+				<div class="holder">
+					<img src="~/images/Main/Index/ThongTinHoatDongNoiBo/hinh2.jpg" class="img-fluid">
+				</div>
+				<h3>MEDLATEC - VNPAY: “Cuộc gặp gỡ” giữa y tế và công...</h3>
+				<p>Lo lắng với những cơn đau âm ỉ vùng xương đùi trái không có dấu hiệu thuyên giảm sau 8 tháng điều trị tại bệnh viện gần nhà, người...</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Xem chi tiết</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+
+			<!-- Tự hào MED-GROUP tuổi 29: Mốc son trên hành trình bả... -->
+			<div class="col-3">
+				<div class="holder">
+					<img src="~/images/Main/Index/ThongTinHoatDongNoiBo/hinh3.jpg" class="img-fluid">
+				</div>
+				<h3>Tự hào MED-GROUP tuổi 29: Mốc son trên hành trình bả...</h3>
+				<p>Hành trình thực hiện sứ mệnh thiêng liêng vì sức khỏe cộng đồng và kiến tạo những giá trị tốt đẹp cho xã hội của MED-GROUP đã...</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Xem chi tiết</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+
+			<!-- Ngàn lời tri ân dành tặng những "chiến sĩ áo trắng"... -->
+			<div class="col-3">
+				<div class="holder">
+					<img src="~/images/Main/Index/ThongTinHoatDongNoiBo/hinh4.jpg" class="img-fluid">
+				</div>
+				<h3>Ngàn lời tri ân dành tặng những "chiến sĩ áo trắng"...</h3>
+				<p>Tại ngôi nhà chung MEDLATEC, trở thành truyền thống đẹp và không thể thiếu mỗi dịp 27/2 hằng năm, Lễ kỷ niệm Ngày Thầy...</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Xem chi tiết</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+		</div>
+
+		<!-- Bấm nút này trỏ đến mục "Tin tức hoạt động nội bộ" -->
+		<div class="row text-center my-5">
+			<div class="col-12">
+				<a href="" class="btn nutxemthem" target="_blank">Xem thêm</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- KHÁM PHÁ VIDEO -->
+<div class="khamphavideo py-5">
+	<div class="container-fluid px-4">
+		<!-- Tiêu đề -->
+		<div class="row">
+			<div class="col-12">
+				<h2 class="pt-5 pb-4 ps-2">
+					Khám phá các video của <strong>MEDLATEC</strong>
+				</h2>
+			</div>
+		</div>
+
+		<!-- Banner -->
+		<div class="row px-3">
+			<div class="col-5">
+				<a href="https://www.youtube.com/watch?v=Krqs03DVRCo&t=1s" class="text-decoration-none text-light" target="_blank">
+					<h3>5 Bước Khám Sức Khỏe Tổng Quát tại MEDLATEC</h3>
+				</a>
+				<p>5 Bước Khám Sức Khỏe Tổng Quát tại MEDLATEC</p>
+			</div>
+			<div class="col-7 px-0">
+				<div class="video--MEDLATEC">
+					<img src="~/images/Main/Index/Video/hinh1.png" class="img-fluid">
+					<div class="nutxemvideo">
+						<a href="https://www.youtube.com/watch?v=Krqs03DVRCo" class="btn" target="_blank">
+							<i class="fa-solid fa-play"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 3 video -->
+		<div class="row _3video py-4">
+			<!-- Xét nghiệm NIPT và những lưu ý khi chỉ định xét ng... -->
+			<div class="col-4">
+				<div class="video--trai">
+					<img src="~/images/Main/Index/Video/hinh2.png" class="img-fluid">
+					<div class="nutxemvideo">
+						<a href="https://www.youtube.com/watch?v=H8_lvXHEQDs" class="btn" target="_blank">
+							<i class="fa-solid fa-play"></i>
+						</a>
+					</div>
+					<h4>Xét nghiệm NIPT và những lưu ý khi chỉ định xét ng...</h4>
+				</div>
+			</div>
+
+			<!-- Khám phá hành trình xét nghiệm tại MEDLATEC -->
+			<div class="col-4">
+				<div class="video--trai">
+					<img src="~/images/Main/Index/Video/hinh3.png" class="img-fluid">
+					<div class="nutxemvideo">
+						<a href="https://www.youtube.com/watch?v=Vcab-RzdGXk" class="btn" target="_blank">
+							<i class="fa-solid fa-play"></i>
+						</a>
+					</div>
+					<h4>Khám phá hành trình xét nghiệm tại MEDLATEC</h4>
+				</div>
+			</div>
+
+			<!-- Trung tâm xét nghiệm MEDLATEC - Công nghệ cao,... -->
+			<div class="col-4">
+				<div class="video--trai">
+					<img src="~/images/Main/Index/Video/hinh4.png" class="img-fluid">
+					<div class="nutxemvideo">
+						<a href="https://www.youtube.com/watch?v=GaU4FTUHgQY" class="btn" target="_blank">
+							<i class="fa-solid fa-play"></i>
+						</a>
+					</div>
+					<h4>Trung tâm xét nghiệm MEDLATEC - Công nghệ cao,...</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+ 
