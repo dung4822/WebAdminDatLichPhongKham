@@ -1,0 +1,961 @@
+﻿@{
+    ViewData["Title"] = "CỞ SỞ VẬT CHẤT VÀ TRANG THIẾT BỊ";
+}
+<style>
+    /* Ảnh tiêu đề */
+    .anhtieude {
+        position: relative;
+        top: 0;
+        left: 0;
+        background: url(https://medlatec.vn/med/images/breadcrumb4.jpg) no-repeat;
+        height: 400px;
+        background-size: cover;
+    }
+
+        .anhtieude .nenxanh {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 400px;
+            width: 100%;
+            background-color: #029ff77a;
+        }
+
+        .anhtieude .col-8 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-top: 180px;
+            padding-left: 50px;
+            color: white;
+        }
+
+    /* === NỘI DUNG === */
+    .noidung .tieudechinh {
+        padding-top: 120px;
+    }
+
+        .noidung .tieudechinh h1 {
+            color: rgb(57, 132, 198);
+            font-weight: 400;
+        }
+
+    .noidung .mucI h4 {
+        color: #1D93E3;
+    }
+
+    .noidung .tieudechinh p {
+        color: #534E56;
+        font-weight: 700;
+        font-size: 17px;
+        margin-top: 1rem;
+    }
+
+    .mucI p {
+        font-size: 15px;
+    }
+
+    .mucI .hethong__benhvien p {
+        padding: 0px 50px;
+    }
+
+    .mucI .hethong__benhvien img {
+        border-radius: 20px;
+    }
+
+    .mucI .hethong__benhvien .col-4 {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+        .mucI .hethong__benhvien .col-4::after {
+            content: "";
+            position: absolute;
+            top: 14px;
+            left: 25px;
+            width: 230px;
+            height: 233px;
+            background-color: #029ffbb0;
+            border-radius: 13px;
+            z-index: 2;
+            opacity: 0;
+            transition: all 0.4s;
+        }
+
+        .mucI .hethong__benhvien .col-4:hover::after {
+            transform: scale(0.9);
+            opacity: 1;
+        }
+
+    /* Viết hiệu ứng riêng cho hình lớn */
+
+    .mucI .hethong__benhvien ._1hinhlon {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+        .mucI .hethong__benhvien ._1hinhlon .hieuung__diachi--map {
+            position: absolute;
+            top: 36px;
+            left: 54px;
+            width: 740px;
+            height: 220px;
+            z-index: 3;
+            opacity: 0;
+            transition: all 0.4s;
+        }
+
+            .mucI .hethong__benhvien ._1hinhlon .hieuung__diachi--map:hover {
+                opacity: 1;
+            }
+
+        .mucI .hethong__benhvien ._1hinhlon::after {
+            content: "";
+            position: absolute;
+            top: 27px;
+            left: 0px;
+            width: 840px;
+            height: 250px;
+            background-color: #029ffbb0;
+            border-radius: 13px;
+            z-index: 2;
+            opacity: 0;
+            transition: all 0.4s;
+        }
+
+        .mucI .hethong__benhvien ._1hinhlon:hover::after {
+            transform: scale(0.9);
+            opacity: 1;
+        }
+
+    ._1hinhlon img {
+        width: 814px;
+    }
+
+    /* ===== */
+
+    .hieuung__diachi--map:hover {
+        opacity: 1;
+    }
+
+    .hieuung__diachi--map {
+        position: absolute;
+        top: 22px;
+        left: 40px;
+        width: 200px;
+        height: 220px;
+        z-index: 3;
+        opacity: 0;
+        transition: all 0.4s;
+    }
+
+        .hieuung__diachi--map .fa-location-dot {
+            padding: 14px;
+            background: white;
+            font-size: 30px;
+            border-radius: 12px;
+            position: relative;
+            top: 3px;
+            right: -4px;
+        }
+
+        .hieuung__diachi--map .diachi {
+            padding-left: 9px;
+            position: absolute;
+            bottom: 11px;
+            left: 0;
+        }
+
+            .hieuung__diachi--map .diachi p {
+                font-size: 14px;
+                color: white;
+                margin-bottom: 7px;
+            }
+
+            .hieuung__diachi--map .diachi .des {
+                font-size: 12px;
+                color: white;
+            }
+    /* CSS cho nút đặt lịch */
+    .nutdatlich a {
+        text-decoration: none;
+        background: #1d93e3;
+        border-radius: 10px;
+        line-height: 43px;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+    /* CSS cho nút xem thêm */
+    .nutxemthem a {
+        text-decoration: none;
+        background: #1d93e3;
+        padding: 11px 30px;
+        border-radius: 10px;
+        line-height: 43px;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+        .nutxemthem a:hover, .nutdatlich a:hover {
+            opacity: 0.7;
+        }
+
+    /* CSS cho lựa chọn dịch vụ */
+    .luachon__dichvu .col-7 {
+        background-color: #1d93e3;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        padding: 25px 38px;
+    }
+
+    .luachon__dichvu .col-5 img {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .luachon__dichvu .block__dichvu {
+        background-color: white;
+        padding: 22px 15px;
+        height: 215px;
+        border-radius: 15px;
+    }
+
+        .luachon__dichvu .block__dichvu img {
+            border-radius: 10px;
+        }
+
+    /* CSS cho banner */
+    .hinhanh__datlichkham {
+        background: url(https://medlatec.vn/med/images/contactsidebar.png) no-repeat;
+        width: 430px;
+        height: 356px;
+        background-size: cover;
+        margin-top: 120px;
+        border-radius: 20px;
+    }
+
+        .hinhanh__datlichkham i {
+            font-size: 65px;
+        }
+
+        .hinhanh__datlichkham .tieude {
+            font-size: 25px;
+            font-weight: 700;
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .hinhanh__datlichkham .des {
+            margin-top: 15px;
+            margin-bottom: 2rem;
+        }
+
+    /* CSS cho tiêu đề chính tin tức nổi bật - cột phải */
+    .tintuc__noibat {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+        .tintuc__noibat .col-12 {
+            padding: 20px 30px;
+        }
+
+            .tintuc__noibat .col-12 a {
+                font-size: 18px;
+            }
+
+            .tintuc__noibat .col-12 h5, .tintuc__noibat .col-12 a {
+                line-height: 30px;
+            }
+    /* CSS cho hình ảnh hover tin tức nổi bật - cột phải */
+    .block__item--tintucnoibat {
+        height: 390px;
+    }
+
+        .block__item--tintucnoibat .row {
+            margin: 20px 0px 0px 0px;
+            height: 109px;
+        }
+
+        .block__item--tintucnoibat .holder {
+            height: auto;
+            width: 125px;
+            overflow: hidden;
+        }
+
+        .block__item--tintucnoibat .col-3 {
+            width: 145px;
+            padding: 0px 0px 0px 20px;
+        }
+
+            .block__item--tintucnoibat .col-3 img {
+                transition: 0.3s ease-in-out;
+                height: 109px;
+            }
+
+                .block__item--tintucnoibat .col-3 img:hover {
+                    transform: scale(1.2);
+                }
+
+        .block__item--tintucnoibat .col-9 {
+            width: 295px;
+            height: 100%;
+        }
+    /* CSS cho banner hình ảnh - cột phải */
+    .block__banner {
+        width: 430px;
+        margin-left: 13px;
+    }
+
+        .block__banner img {
+            width: 100%;
+            border-radius: 20px;
+        }
+</style>
+
+@* Ảnh tiêu đề *@
+<div class="anhtieude">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="nenxanh"></div>
+            <div class="col-8">
+                <h2>@ViewData["Title"]</h2>
+                <ul class="d-flex ps-0">
+                    <li class="list-unstyled">
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
+                    </li>
+                    <li class="ps-3 mx-5">Giới thiệu</li>
+                    <li class="fw-bold ps-3">Cơ sở vật chất & trang thiết bị</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Nội dung *@
+<div class="noidung px-3">
+    <div class="container-fluid">
+        <div class="row">
+
+            @* Cột trái *@
+            <div class="col-8">
+
+                @* Tiêu đề chính *@
+                <div class="tieudechinh">
+                    <h1>CƠ SỞ VẬT CHẤT & TRANG THIẾT BỊ</h1>
+                    <p>Hệ thống Y tế MEDLATEC có mạng lưới gồm 1 Bệnh viện, 13 Phòng khám Đa khoa, 29 Trung tâm Xét nghiệm chi nhánh, hơn 200 điểm thu gom mẫu xét nghiệm tận nơi trên toàn quốc và mở rộng ra quốc tế với 1 Trung tâm Xét nghiệm tại Campuchia. Riêng với các cơ sở khám chữa bệnh là Bệnh viện/ Phòng khám, mỗi ngày có thể đáp ứng hơn 1.000 lượt khám nhờ sở hữu cơ sở vật chất khang trang, trang thiết bị hiện đại hàng đầu, đồng bộ hoàn toàn, đảm bảo kết quả chẩn đoán chính xác và điều trị bệnh hiệu quả.</p>
+                </div>
+
+                @* I. CƠ SỞ VẬT CHẤT *@
+                <div class="mucI">
+                    <h2>I. CƠ SỞ VẬT CHẤT</h2>
+
+                    @* 1.1. Bệnh viện Đa khoa MEDLATEC *@
+                    <div>
+                        <h4 class="text-dark">1.1. Bệnh viện Đa khoa MEDLATEC</h4>
+                        <p>Là cơ sở khám chữa bệnh đầu tiên của MEDLATEC có trụ sở tại 42 Nghĩa Dũng, Ba Đình, Hà Nội. Ra đời và phát triển từ năm 1996 đến nay, bệnh viện không ngừng được đông đảo người dân tin tưởng và hài lòng sử dụng dịch vụ.</p>
+                        <p>Quy tụ được đội ngũ chuyên gia, bác sĩ đầu ngành giàu kinh nghiệm, cùng sở hữu hệ thống máy xét nghiệm hiện đại bậc nhất Việt Nam, đầu tư đồng bộ hệ thống máy móc các chuyên khoa như máy nội soi tiêu hóa ống mềm, CT 128 dãy, siêu âm 4D,... Vì vậy, bệnh viện có điều kiện phục vụ tốt nhất nhu cầu khám chữa bệnh của người dân.</p>
+                        <p>Bệnh viện phục vụ khám chữa bệnh tất cả các ngày trong tuần, kể cả ngày Lễ/Tết, từ 7h00 (mùa đông 7h30) đến 17h. Trực 24/24h với các dịch vụ Cấp cứu điều trị, Xét nghiệm, Chẩn đoán hình ảnh (Siêu âm, chụp X-quang).</p>
+                        <img src="https://medlatec.vn//ImagePath/images/20230614/20230614__benh-vien-da-khoa-medlatec.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                    </div>
+
+                    @* 1.2. Phòng khám Đa khoa MEDLATEC Tây Hồ *@
+                    <div class="mt-3">
+                        <h4 class="text-dark">1.2. Phòng khám Đa khoa MEDLATEC Tây Hồ</h4>
+                        <p>Là cơ sở 2 của Hệ thống Y tế MEDLATEC, tọa lạc tại 99 Trích Sài, Tây Hồ, Hà Nội. Được đưa vào hoạt động từ tháng 4/2016, đến nay, MEDLATEC Tây Hồ là cơ sở khám chữa bệnh được nhiều người dân Thủ đô và các tỉnh thành trong cả nước biết đến.</p>
+                        <p>Năm 2016, phòng khám đi vào hoạt động với tổng diện tích trên 3.000m2. Năm 2018, đưa vào hoạt động tòa nhà 99B với tổng diện tích xấp xỉ 2.000m2, nâng tổng diện tích lên 5.000m2, với 9 tầng phục vụ cho hoạt động khám chữa bệnh.</p>
+                        <p>Ở vị trí vô cùng thuận lợi, cùng cơ sở vật chất hiện đại, tiện nghi theo tiêu chuẩn quốc tế, đến khám tại MEDLATEC Tây Hồ khách hàng được trải nghiệm trong không gian đẳng cấp, những dịch vụ y tế tốt nhất, đảm bảo kết quả chính xác và quy trình khép kín, khoa học.</p>
+                        <img src="https://medlatec.vn//ckfinder/userfiles/images/bn-cho-kham-trich-sai.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                        <span class="text-center d-block fst-italic mt-1 mb-3">Sảnh chờ lấy số khám tại Phòng khám Đa khoa MEDLATEC Tây Hồ</span>
+                        <p>Phòng khám cung cấp đa dạng các dịch vụ:</p>
+                        <ul>
+                            <li>Khám và điều trị đa chuyên khoa: Nội, Ngoại, Phụ sản - kế hoạch hóa gia đình, Nhi, Mắt, Răng hàm mặt, Tai mũi họng, Da liễu, Chẩn đoán hình ảnh, Xét nghiệm.</li>
+                            <li>Dịch vụ tiêm chủng.</li>
+                            <li>Khám bảo hiểm y tế, bảo lãnh viện phí.</li>
+                            <li>Khám sức khỏe cơ quan, doanh nghiệp, trường học.</li>
+                        </ul>
+                    </div>
+
+                    @* 1.3 Phòng khám Đa khoa MEDLATEC Thanh Xuân *@
+                    <div class="mt-3">
+                        <h4 class="text-dark">1.3 Phòng khám Đa khoa MEDLATEC Thanh Xuân</h4>
+                        <p>Tháng 8/2019, Phòng khám Đa khoa MEDLATEC Thanh Xuân trực thuộc Hệ thống Y tế MEDLATEC chính thức đi vào hoạt động tại địa chỉ số 03 Khuất Duy Tiến, Thanh Xuân, Hà Nội.</p>
+                        <p>Để có điều kiện tốt nhất phục vụ hoạt động chuyên môn, phòng khám được đầu tư đồng bộ hệ thống cơ sở vật chất hiện đại, sang trọng, sạch đẹp là toà nhà 9 tầng với tổng diện tích 3.600m2.</p>
+                        <p>Với đội ngũ chuyên gia giàu kinh nghiệm, y đức từng công tác tại các bệnh viện hàng đầu như Bệnh viện K, Bệnh viện Bạch Mai, Bệnh viện Tim mạch Trung ương, Việt Đức, Bệnh viện 103,... cùng cơ sở vật chất, trang thiết bị hiện đại, MEDLATEC Thanh Xuân có điều kiện đáp ứng tốt nhất phục vụ người dân về:</p>
+                        <ul>
+                            <li>Khám và điều trị các chuyên khoa: Nội khoa, Ngoại khoa, Sản khoa, Nhi khoa, Mắt, Răng hàm mặt, Tai mũi họng, Chẩn đoán hình ảnh - Thăm dò chức năng, Xét nghiệm… </li>
+                            <li>Dịch vụ tiêm chủng.</li>
+                            <li>Khám bảo hiểm y tế, bảo lãnh viện phí.</li>
+                            <li>Khám sức khỏe cơ quan, doanh nghiệp, trường học.</li>
+                        </ul>
+                        <img src="https://medlatec.vn//ckfinder/userfiles/images/CSVS-thanh%20xuan.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                        <span class="text-center d-block fst-italic mt-1 mb-3">Cơ sở vật chất tại PKĐK MEDLATEC Thanh Xuân, số 3 Khuất Duy Tiến, Thanh Xuân, Hà Nội.</span>
+                    </div>
+
+                    @* 1.4. Phòng khám Đa khoa MEDLATEC Vĩnh Phúc *@
+                    <div class="mt-3">
+                        <h4 class="text-dark">1.4. Phòng khám Đa khoa MEDLATEC Vĩnh Phúc</h4>
+                        <p>Phòng khám Đa khoa MEDLATEC Vĩnh Phúc tọa lạc tại 119 Nguyễn Tất Thành, phường Khai Quang, Tp. Vĩnh Yên, tỉnh Vĩnh Phúc,là cơ sở khám chữa bệnh thứ 4 của Hệ thống Y tế MEDLATEC. Sự phát triển của phòng khám chứng minh sự lớn mạnh của MEDLATEC trên hành trình chăm sóc sức khỏe toàn diện, chất lượng cao và dịch vụ tốt.</p>
+                        <p>Theo đó, Phòng khám đã quy tụ được đội ngũ nhân sự là các y bác sĩ chuyên khoa, xây dựng hệ thống cơ sở vật chất, trang thiết bị hiện đại, toàn diện. </p>
+                        <img src="https://medlatec.vn/media/21596/file/bv%20pk/PKDK+Vinh+Phuc.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                        <span class="text-center d-block fst-italic mt-1 mb-3">Mặt tiền Phòng khám Đa khoa MEDLATEC Vĩnh Phúc</span>
+                        <p>Phòng khám có chức năng khám và điều trị các chuyên khoa: Nội khoa, Ngoại khoa, Sản khoa, Nhi khoa, Mắt, Răng hàm mặt, Tai mũi họng, Xét nghiệm… cùng dịch vụ lấy mẫu sức khỏe tận nơi chăm sóc sức khỏe toàn diện cho người dân tỉnh Vĩnh Phúc.</p>
+                    </div>
+
+                    @* 1.5. Phòng khám Đa khoa MEDLATEC Thanh Hóa *@
+                    <div class="mt-3">
+                        <h4 class="text-dark">1.5. Phòng khám Đa khoa MEDLATEC Thanh Hóa</h4>
+                        <p>Đầu năm 2017, MEDLATEC chính thức đặt chân đến mảnh đất Thanh Hóa với mô hình Phòng khám Chuyên khoa Xét nghiệm. Sau hơn 4 năm đi vào hoạt động, đơn vị chính thức chuyển mình phát triển thành Phòng khám Đa khoa vào tháng 11/2021.</p>
+                        <img src="https://medlatec.vn/media/21599/file/bv%20pk/PKDK+Thanh+Hoa.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                        <span class="text-center d-block fst-italic mt-1 mb-3">Mặt tiền khang trang của Phòng khám Đa khoa MEDLATEC Thanh Hóa</span>
+                        <p>Phòng khám quy tụ đội ngũ chuyên gia, bác sĩ đầu ngành và sở hữu hệ thống trang thiết bị hiện đại về Xét nghiệm, Chẩn đoán hình ảnh… Vì vậy, Phòng khám có đầy đủ năng lực cung cấp đa dạng các dịch vụ:</p>
+                        <ul>
+                            <li>Khám chữa bệnh các chuyên khoa: Nội khoa, Sản phụ khoa, Tai mũi họng, Xét nghiệm, Chẩn đoán hình ảnh.</li>
+                            <li>Khám sức khỏe định kỳ cho các tổ chức: doanh nghiệp, cơ quan, trường học, ngân hàng…</li>
+                            <li>Khám bảo hiểm thương mại cho các cá nhân và tổ chức.</li>
+                            <li>Dịch vụ lấy mẫu xét nghiệm tận nơi.</li>
+                        </ul>
+                    </div>
+
+                    @* 1.6. Phòng khám Đa khoa MEDLATEC Mê Linh *@
+                    <div class="mt-3">
+                        <h4 class="text-dark">1.6. Phòng khám Đa khoa MEDLATEC Mê Linh</h4>
+                        <p>Tiếp tục ghi tên vào bản đồ chữ S, Phòng khám Đa khoa MEDLATEC Mê Linh chính thức đi vào hoạt động vào tháng 12/2022 tại địa chỉ Khu đô thị Hà Phong, Tiền Phong, Mê Linh, Hà Nội.</p>
+                        <img src="https://medlatec.vn//ImagePath/images/20230614/20230614__phong-kham-da-khoa-me-linh.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                        <span class="text-center d-block fst-italic mt-1 mb-3">Phòng khám nằm ở vị trí mặt tiền đắc địa, rộng rãi</span>
+                        <p>Phòng khám được xây dựng khang trang, rộng rãi với 4 tầng có tổng diện tích 2.700 m2, đáp ứng nhu cầu thăm khám, chẩn đoán, điều trị đa dạng bệnh lý từ cơ bản đến chuyên sâu nhiều chuyên khoa: Nội khoa, Sản phụ khoa, Nhi khoa, Mắt, Răng hàm mặt, Tai mũi họng, Xét nghiệm, Chẩn đoán hình ảnh… </p>
+                        <p>Ngoài ra, Phòng khám cung cấp thêm các dịch vụ:</p>
+                        <ul>
+                            <li>Khám sức khỏe định kỳ cho các tổ chức: doanh nghiệp, cơ quan, trường học, ngân hàng…</li>
+                            <li>Khám bảo hiểm thương mại cho các cá nhân và tổ chức.</li>
+                            <li>Dịch vụ lấy mẫu xét nghiệm tận nơi.</li>
+                        </ul>
+                    </div>
+
+                    @* 1.7. Phòng khám Đa khoa MEDLATEC Cần Thơ *@
+                    <div class="mt-3">
+                        <h4 class="text-dark">1.7. Phòng khám Đa khoa MEDLATEC Cần Thơ</h4>
+                        <p>Cần Thơ là “điểm hẹn” đầu tiên trong kế hoạch mở rộng chi nhánh tại khu vực Nam Bộ của MEDLATEC. Đầu tháng 12/2022, Phòng khám Đa khoa MEDLATEC Cần Thơ chính thức khai trương sau thời gian hoạt động dưới mô hình Phòng khám Chuyên khoa Xét nghiệm. Đơn vị có địa chỉ tại số 598 đường 30/4, phường Hưng Lợi, quận Ninh Kiều, Tp. Cần Thơ.</p>
+                        <img src="https://medlatec.vn/media/21592/file/bv%20pk/PKDK+Can+tho.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                        <span class="text-center d-block fst-italic mt-1 mb-3">Mặt tiền của phòng khám</span>
+                        <p>Phòng khám cung cấp đầy đủ các dịch vụ khám chữa bệnh ở các chuyên khoa: Nội khoa, Ngoại khoa, Sản khoa, Nhi khoa, Tai mũi họng, Răng hàm mặt, Da liễu, Mắt, Xét nghiệm, Chẩn đoán hình ảnh (Siêu âm, chụp X-quang, chụp CT, thăm dò chức năng).</p>
+                        <p>Phòng khám đáp ứng dịch vụ lấy mẫu xét nghiệm tận nơi nhanh chóng, tiện lợi cho người dân trên địa bàn tỉnh và khu vực lân cận.</p>
+                    </div>
+
+                    @* 1.8. Phòng khám Đa khoa MEDLATEC Bắc Ninh *@
+                    <div class="mt-3">
+                        <h4 class="text-dark">1.8. Phòng khám Đa khoa MEDLATEC Bắc Ninh</h4>
+                        <p>Sau 8 năm hoạt động với mô hình Phòng khám Chuyên khoa Xét nghiệm, đầu năm 2023, đơn vị chính thức “khoác chiếc áo mới” - Phòng khám Đa khoa MEDLATEC Bắc Ninh tại địa chỉ 233 Nguyễn Văn Cừ, Võ Cường, Tp. Bắc Ninh, tỉnh Bắc Ninh.</p>
+                        <img src="https://medlatec.vn/media/21594/file/bv%20pk/PKDK+Bac+Ninh.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                        <span class="text-center d-block fst-italic mt-1 mb-3">Mặt tiền của Phòng khám Đa khoa MEDLATEC Bắc Ninh</span>
+                        <p>MEDLATEC Bắc Ninh nhận được sự tin tưởng của người dân với những dịch vụ chuyên nghiệp sau:</p>
+                        <ul>
+                            <li>Khám chữa bệnh đầy đủ các chuyên khoa: Nội khoa, Ngoại khoa, Sản khoa, Nhi khoa, Tai mũi họng, Răng hàm mặt, Da liễu, Y học cổ truyền, Xét nghiệm.</li>
+                            <li>Dịch vụ khám sức khỏe cho cá nhân, cơ quan, doanh nghiệp, trường học…</li>
+                            <li>Dịch vụ lấy mẫu xét nghiệm tận nơi.</li>
+                        </ul>
+                    </div>
+
+                    @* 1.9. Phòng khám Đa khoa MEDLATEC (Cầu Giấy, Hà Nội) *@
+                    <div class="mt-3">
+                        <h4 class="text-dark">1.9. Phòng khám Đa khoa MEDLATEC (Cầu Giấy, Hà Nội)</h4>
+                        <p>Tháng 2/2023, MEDLATEC tiếp tục mở rộng thêm mô hình Phòng khám Đa khoa tại địa chỉ số 2/82 Duy Tân, Cầu Giấy, Hà Nội.</p>
+                        <p>Kế thừa và phát huy thế mạnh của thương hiệu y tế MEDLATEC có gần 30 năm tuổi, Phòng khám quy tụ đội ngũ nhân sự chất lượng cao là các chuyên gia, bác sĩ giàu kinh nghiệm trực tiếp khám, tư vấn và điều trị bệnh. Đồng thời, đơn vị được trang bị đồng bộ hệ thống máy chẩn đoán hình ảnh - thăm dò chức năng kỹ thuật cao (máy siêu âm 4D, chụp X-quang kỹ thuật số, hệ thống nội soi CV-1500 hiện đại nhất của Olympus...). Đặc biệt, nơi đây còn là trụ sở chính của Trung tâm Xét nghiệm hiện đại, công nghệ cao hàng đầu Việt Nam, được quản lý chất lượng song song theo hai tiêu chuẩn quốc tế ISO 15189:2012 và CAP.</p>
+                        <img src="https://medlatec.vn/media/21595/file/bv%20pk/PK+MEDLATEC+VN.png" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                        <span class="text-center d-block fst-italic mt-1 mb-3">Phòng khám có mặt tiền khang trang, diện tích rộng rãi phục vụ tối đa nhu cầu khám chữa bệnh của người dân</span>
+                        <p>Nhờ những yếu tố đó, Phòng khám có đầy đủ năng lực cung cấp các dịch vụ y tế chuyên nghiệp, chất lượng cao sau:</p>
+                        <ul>
+                            <li>Khám chữa bệnh các chuyên khoa: Nội khoa, Tiêu hóa, Sản phụ khoa, Tai mũi họng, Xét nghiệm, Chẩn đoán hình ảnh.</li>
+                            <li>Khám bảo hiểm thương mại cho các cá nhân và tổ chức.</li>
+                        </ul>
+                    </div>
+
+                    @* 1.10. Phòng khám Đa khoa MEDLATEC Đắk Lắk *@
+                    <div class="mt-3">
+                        <h4 class="text-dark">1.10. Phòng khám Đa khoa MEDLATEC Đắk Lắk</h4>
+                        <p>Tháng 2/2023, Phòng khám Chuyên khoa Xét nghiệm chính thức được nâng lên trở thành Phòng khám Đa khoa MEDLATEC Đắk Lắk tại địa chỉ số 27 Lạc Long Quân, phường Ea Tam, Tp. Buôn Ma Thuột, tỉnh Đắk Lắk, phục vụ chăm sóc sức khỏe cho người dân toàn tỉnh và khu vực Tây Nguyên qua các dịch vụ sau:</p>
+                        <ul>
+                            <li>Khám chữa bệnh các chuyên khoa: Nội khoa, Tiêu hóa, Sản phụ khoa, Tai mũi họng, Xét nghiệm, Chẩn đoán hình ảnh.</li>
+                            <li>Khám bảo hiểm thương mại cho các cá nhân và tổ chức.</li>
+                        </ul>
+                        <img src="https://medlatec.vn/media/7720/content/20220110_photo_2022-01-10_13-44-11.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                        <span class="text-center d-block fst-italic mt-1 mb-3">Mặt tiền Phòng khám Đa khoa MEDLATEC Đắk Lắk</span>
+                    </div>
+
+                    @* 1.11. Phòng khám Đa khoa MEDLATEC Gò Vấp (Tp. Hồ Chí Minh) *@
+                    <div class="mt-3">
+                        <h4 class="text-dark">1.11. Phòng khám Đa khoa MEDLATEC Gò Vấp (Tp. Hồ Chí Minh)</h4>
+                        <p>Năm 2008, Phòng khám MEDLATEC Tp. Hồ Chí Minh được thành lập. Sau gần 15 năm đi vào hoạt động, đơn vị tạo được tiếng vang và trở thành địa chỉ xét nghiệm y khoa uy tín của người dân thành phố cũng như các tỉnh thành lân cận.</p>
+                        <p>Nhận thấy nhu cầu chăm sóc sức khỏe chất lượng cao của người dân khu vực phía Nam ngày càng tăng cao, đặc biệt là ở đô thị lớn nhất cả nước như Tp. Hồ Chí Minh, tháng 4/2023, Hệ thống Y tế MEDLATEC tiếp tục đầu tư, ra mắt thêm mô hình mới với tên gọi Phòng khám Đa khoa MEDLATEC Gò Vấp tại địa chỉ 999 - 1003 Phan Văn Trị, phường 7, quận Gò Vấp, Tp. Hồ Chí Minh.</p>
+                        <img src="https://medlatec.vn//ImagePath/images/20230614/20230614__phong-kham-da-khoa-go-vap.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                        <span class="text-center d-block fst-italic mt-1 mb-3">Mặt tiền Phòng khám Đa khoa MEDLATEC Gò Vấp (Tp. Hồ Chí Minh)</span>
+                        <p>Với việc quy tụ đội ngũ chuyên gia đầu ngành và đón đầu trang thiết bị hiện đại, Phòng khám đáp ứng nhu cầu chăm sóc sức khỏe của người dân qua các dịch vụ y tế sau:</p>
+                        <ul>
+                            <li>Thăm khám, chẩn đoán, điều trị các bệnh lý ở các chuyên khoa: Nội khoa, Ngoại khoa, Sản phụ khoa, Mắt, Răng hàm mặt, Tai mũi họng, Xét nghiệm, Chẩn đoán hình ảnh.</li>
+                            <li>Khám sức khỏe cho cá nhân, cơ quan, doanh nghiệp.</li>
+                            <li>Dịch vụ lấy mẫu xét nghiệm tận nơi với các văn phòng lấy mẫu tại Quận 7, Thủ Đức, Hóc Môn, Bình Tân.</li>
+                        </ul>
+                    </div>
+
+                    @* 1.12. Phòng khám Đa khoa MEDLATEC Nghệ An *@
+                    <div class="mt-3">
+                        <h4 class="text-dark">1.12. Phòng khám Đa khoa MEDLATEC Nghệ An</h4>
+                        <p>Sau hơn 4 năm hoạt động tại Nghệ An với mô hình Phòng khám Chuyên khoa Xét nghiệm, tháng 4/2023, MEDLATEC Nghệ An chính thức phục vụ người dân địa phương khám chữa bệnh đa chuyên khoa tại địa chỉ lô 53 khu liền Vinaconex 9, Đại Lộ Lê Nin, Nghi Phú, Tp. Vinh, Nghệ An.</p>
+                        <img src="https://medlatec.vn/media/21597/file/bv%20pk/PKDK+Nghe+an.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                        <span class="text-center d-block fst-italic mt-1 mb-3">Mặt tiền Phòng khám Đa khoa MEDLATEC Nghệ An</span>
+                        <p>Phòng khám Đa khoa MEDLATEC Nghệ An nằm ở vị trí đắc địa của thành phố Vinh, có cơ sở khang trang, phục vụ người dân chăm sóc sức khỏe với các dịch vụ gồm:</p>
+                        <ul>
+                            <li>Khám chữa bệnh các chuyên khoa: Nội khoa, Nội tiết, Phụ sản, Huyết học - truyền máu, Xét nghiệm, Chẩn đoán hình ảnh (siêu âm, chụp X-quang).</li>
+                            <li>Dịch vụ lấy mẫu xét nghiệm tận nơi tiện lợi.</li>
+                        </ul>
+                    </div>
+
+                    @* 1.13. Phòng khám Đa khoa MEDLATEC Quảng Bình *@
+                    <div class="mt-3">
+                        <h4 class="text-dark">1.13. Phòng khám Đa khoa MEDLATEC Quảng Bình</h4>
+                        <p>Tháng 4/2023, Phòng khám Đa khoa MEDLATEC Quảng Bình chính thức đi vào hoạt động sau thời gian phục vụ người dân với mô hình Phòng khám Chuyên khoa Xét nghiệm.</p>
+                        <img src="https://medlatec.vn//ImagePath/images/20230614/20230614__phong-kham-da-khoa-medlatec-quang-binh.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                        <span class="text-center d-block fst-italic mt-1 mb-3">Mặt tiền Phòng khám Đa khoa MEDLATEC Quảng Bình</span>
+                        <p>Phòng khám tọa lạc tại số 28 Hà Văn Quan, Nam Lý, Tp. Đồng Hới, tỉnh Quảng Bình, được xây dựng khang trang, rộng rãi, với 4 tầng có tổng diện tích 852m2, đáp ứng nhu cầu thăm khám, chẩn đoán và điều trị đa dạng bệnh lý từ cơ bản đến chuyên sâu ở các chuyên khoa: Nội khoa, Sản khoa, Xét nghiệm, Chẩn đoán hình ảnh.</p>
+                        <p>Ngoài ra, đơn vị hỗ trợ người dân chăm sóc sức khỏe nhanh chóng, tiện lợi với dịch vụ lấy mẫu xét nghiệm tận nơi phục vụ trên toàn tỉnh Quảng Bình.</p>
+                    </div>
+
+                </div>
+
+                <div class="mucII">
+                    <h2>I. TRANG THIẾT BỊ</h2>
+                    <p>Để có được kết quả khám nhanh chóng, chính xác, bệnh viện đầu tư những máy móc, thiết bị hiện đại bậc nhất từ các nước nổi tiếng hàng đầu thế giới như Mỹ, Đức, Nhật Bản nhằm phục vụ tốt nhất nhu cầu khám chữa bệnh ngày càng tăng của người dân.</p>
+
+                    @* 2.1 Hệ thống máy xét nghiệm đạt chuẩn quốc tế ISO 15189:2012 *@
+                    <div>
+                        <h4 class="text-dark">2.1 Hệ thống máy xét nghiệm đạt chuẩn quốc tế ISO 15189:2012</h4>
+
+                        @* 2.1.1 Hệ thống máy huyết học *@
+                        <div>
+                            <h5 class="">2.1.1 Hệ thống máy huyết học</h5>
+                            <p>- Xét nghiệm tế bào máu ngoại vi bằng máy laser Sysmex XN-1000/Nhật Bản</p>
+                            <p>- Máy nhóm máu tự động Orthor vision</p>
+                            <p>- Máy đông máu tự động STA R MAX / Pháp</p>
+                            <img src="https://medlatec.vn//ckfinder/userfiles/images/TTxn-may-moc.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                            <span class="text-center d-block fst-italic mt-1 mb-3">Hệ thống xét nghiệm tự động hiện đại, nhập khẩu.</span>
+                        </div>
+
+                        @* 2.1.2 Hệ thống máy Hóa sinh - miễn dịch *@
+                        <div>
+                            <h5 class="">2.1.2 Hệ thống máy Hóa sinh - miễn dịch</h5>
+                            <ul>
+                                <li>Máy miễn dịch tự động Lumipulse G1200/ Nhật Bản.</li>
+                                <li>Hệ thống tự động hoàn toàn Cobas 8100/ Thụy Sĩ.</li>
+                            </ul>
+                            <img src="https://medlatec.vn//ImagePath/images/20230614/20230614__trung-tam-xet-nghiem-2-1copy.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                            <ul>
+                                <li>Hệ thống tự động hoàn toàn Atellica CH 930/ Đức.</li>
+                                <li>Máy miễn dịch tự động Cobas e801/ Thụy Sĩ.</li>
+                                <li>Máy sinh hóa tự động Cobas c702/ c502/ Thụy Sĩ.</li>
+                                <li>Hệ thống tự động hoàn toàn Abbott A3600/ Mỹ.</li>
+                            </ul>
+                            <img src="https://medlatec.vn//ImagePath/images/20230614/20230614__trung-tam-xet-nghiem-1-1copy.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                            <ul>
+                                <li>Máy miễn dịch tự động Architect i2000SR/ Mỹ.</li>
+                                <li>Máy sinh hóa tự động Architect c16/ Mỹ.</li>
+                                <li>Máy xét nghiệm HbA1C HLC-723G11,Tosoh G11/ Nhật Bản.</li>
+                                <li>Máy xét nghiệm HbA1C Premier Hb 9210, Trinity Biotech/ USA.</li>
+                                <li>Hệ thống tích hợp xét nghiệm nước tiểu/ cặn tự động LabUMat 2/ Urised/ Hungary.</li>
+                                <li>Máy xét nghiệm miễn dịch tự động LIAISON XL/ Mỹ.</li>
+                            </ul>
+                        </div>
+
+                        @* 2.1.3 Hệ thống máy Vi sinh *@
+                        <div>
+                            <h5 class="">2.1.3 Hệ thống máy Vi sinh</h5>
+                            <ul>
+                                <li>Hệ thống sinh học phân tử tự động Cobas 6800/ Thụy Sĩ.</li>
+                                <li>Máy nuôi cấy Lao Bactec MGIT 960 Becton/ Mỹ.</li>
+                            </ul>
+                            <img src="https://medlatec.vn//ImagePath/images/20230614/20230614__trung-tam-xet-nghiem-5-1copy.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                            <span class="text-center d-block fst-italic mt-1 mb-3">Máy nuôi cấy Lao Bactec MGIT 960 Becton/ Mỹ</span>
+                            <ul>
+                                <li>Hệ thống sinh học phân tử tự động Abbott Alinity/ Mỹ.</li>
+                            </ul>
+                        </div>
+
+                        @* 2.1.4 Hệ thống máy Giải phẫu bệnh *@
+                        <div>
+                            <h5 class="">2.1.4 Hệ thống máy Giải phẫu bệnh</h5>
+                            <ul>
+                                <li>Máy nhuộm tiêu bản tự động Compass Stain/ Mỹ.</li>
+                                <li>Máy đúc bệnh phẩm SLEE/ Đức.</li>
+                                <li>Máy cắt tiêu bản Thermo HM 325/ Anh Quốc.</li>
+                                <li>Máy xử lý mẫu tế bào cổ tử cung Thinprep T5000/ Mỹ.</li>
+                            </ul>
+                            <img src="https://medlatec.vn//ImagePath/images/20230614/20230614__trung-tam-xet-nghiem-6-1copy.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                            <span class="text-center d-block fst-italic mt-1 mb-3">Máy Thinprep T5000/ Mỹ xử lý mẫu tế bào cổ tử cung Thinprep</span>
+                        </div>
+
+                        @* 2.1.5 Hệ thống máy Di truyền *@
+                        <div>
+                            <h5 class="">2.1.5 Hệ thống máy Di truyền</h5>
+                            <ul>
+                                <li>Máy giải trình tự MGISEQ-200.</li>
+                                <li>Máy chuẩn bị thư viện tự động MGISP-100 sàng lọc trước sinh không xâm lấn (NIPT).</li>
+                                <li>Máy điện di mao quản ABI3500/ Mỹ.</li>
+                            </ul>
+                            <p class="fw-bold">Cùng các hệ thống máy xét nghiệm hiện đại khác.</p>
+                        </div>
+
+                    </div>
+
+                    @* 2.2 Hệ thống máy Chẩn đoán hình ảnh - Thăm dò chức năng *@
+                    <div>
+
+                        <h4 class="text-dark">2.2 Hệ thống máy Chẩn đoán hình ảnh - Thăm dò chức năng</h4>
+
+                        @* Các máy chẩn đoán hình ảnh *@
+                        <div class="row">
+                            <div class="col-4">
+                                <ul class="my-3">
+                                    <li class="mb-2">Máy siêu âm màu 3D, 4D;</li>
+                                    <li class="mb-2">Máy X-quang kỹ thuật số;</li>
+                                    <li class="mb-2">Máy đo Fibroscan;</li>
+                                    <li class="mb-2">Máy X-quang tuyến vú (Mamography);</li>
+                                    <li class="mb-2">Máy đo loãng xương 3 vị trí;</li>
+                                    <li>Máy đốt sóng cao tần;</li>
+                                </ul>
+                            </div>
+                            <div class="col-8">
+                                <ul class="my-3">
+                                    <li class="mb-2">Máy sinh thiết vú hút chân không;</li>
+                                    <li class="mb-2">Máy siêu âm đàn hồi mô;</li>
+                                    <li>Máy chụp cộng hưởng từ (MRI) hiện đại bậc nhất Việt Nam - bước tiến vượt bậc trong ngành chẩn đoán hình ảnh giúp phát hiện sớm các bệnh lý, đặc biệt là phát hiện sớm khối u có kích thước nhỏ mà kỹ thuật thông thường khó phát hiện, từ đó nâng cao hiệu quả chẩn đoán và theo dõi bệnh sau điều trị.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <img src="https://medlatec.vn//ckfinder/userfiles/images/may-mri-11.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                        <span class="text-center d-block fst-italic mt-1 mb-3">Máy chụp cộng hưởng từ</span>
+
+                        <ul>
+                            <li>Máy chụp cắt lớp vi tính 128 dãy (CT Scanner) - “chìa khóa vàng” trong chẩn đoán và điều trị bệnh, đặc biệt là các bệnh lý khó chẩn đoán như: Ung thư phổi, bệnh lý ở phổi, bệnh lý mạch máu, bệnh lý đường tiêu hóa, bệnh lý về xương,…</li>
+                            <li>Máy nội soi tiêu hóa ống mềm CV 170 Olympus (Nhật Bản) giúp chẩn đoán nhanh chóng, chính xác, an toàn các bệnh lý Tiêu hóa.</li>
+                        </ul>
+
+                        <img src="https://medlatec.vn//ckfinder/userfiles/images/chup-ct-128-day-04(2).jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                        <span class="text-center d-block fst-italic mt-1 mb-3">Máy chụp cắt lớp vi tính 128 dãy </span>
+
+                    </div>
+
+                    @* 2.2 Hệ thống máy Chẩn đoán hình ảnh - Thăm dò chức năng *@
+                    <div>
+
+                        <h4 class="text-dark">2.3 Hệ thống máy móc đầy đủ các chuyên khoa Mắt, Tai mũi họng, Răng hàm mặt, Sản phụ khoa,...</h4>
+
+                        @* Phòng khám Răng - Hàm - Mặt tại MEDLATEC *@
+                        <div>
+                            <img src="https://medlatec.vn//ImagePath/images/20230614/20230614__medlatec-ho-chi-minh-5.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                            <span class="text-center d-block fst-italic mt-1 mb-3">Phòng khám Răng - Hàm - Mặt tại MEDLATEC</span>
+                        </div>
+
+                        @* Phòng khám Tai - Mũi - Họng tại MEDLATEC *@
+                        <div>
+                            <img src="https://medlatec.vn//ckfinder/userfiles/images/kham-tai-mui-hong.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                            <span class="text-center d-block fst-italic mt-1 mb-3">Phòng khám Tai - Mũi - Họng tại MEDLATEC</span>
+                        </div>
+
+                        @* Máy chụp X - quang *@
+                        <div>
+                            <img src="https://medlatec.vn//ckfinder/userfiles/images/may-chup-x-quang.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                            <span class="text-center d-block fst-italic mt-1 mb-3">Máy chụp X - quang</span>
+                        </div>
+
+                        @* Máy khám mắt tại MEDLATEC Thanh Xuân *@
+                        <div>
+                            <img src="https://medlatec.vn//ckfinder/userfiles/images/may-do-mat.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                            <span class="text-center d-block fst-italic mt-1 mb-3">Máy khám mắt tại MEDLATEC Thanh Xuân</span>
+                        </div>
+
+                        @* Phòng khám sản khoa *@
+                        <div>
+                            <img src="https://medlatec.vn//ckfinder/userfiles/images/kh%c3%a1m-phu-khoa.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                            <span class="text-center d-block fst-italic mt-1 mb-3">Phòng khám sản khoa </span>
+                        </div>
+
+                        @* Bác sĩ thực hiện khám tai mũi họng bằng máy nội soi ống mềm chính xác, không gây khó chịu cho khách hàng *@
+                        <div>
+                            <img src="https://medlatec.vn//ckfinder/userfiles/images/noi-soi-ong-mem.jpg" class="img-fluid" alt="Bệnh viện đa khoa MEDLATEC" />
+                            <span class="text-center d-block fst-italic mt-1 mb-3">Bác sĩ thực hiện khám tai mũi họng bằng máy nội soi ống mềm chính xác, không gây khó chịu cho khách hàng</span>
+                        </div>
+
+                        <p>Hiện tại, Hệ thống Y tế MEDLATEC có điều kiện tốt nhất đáp ứng nhu cầu chăm sóc sức khỏe của người dân. <strong>Trong năm 2022, MEDLATEC phục vụ hơn 4 triệu khách hàng khám chữa bệnh trên toàn quốc.</strong></p>
+
+                        <p>Song song với việc quy tụ đội ngũ chuyên gia, bác sĩ giàu kinh nghiệm; đầu tư hệ thống máy móc hiện đại hàng đầu, MEDLATEC còn là đơn vị y tế tư nhân tích cực đón đầu ứng công nghệ 4.0 như: phần mềm quản lý bệnh viện (HIS), phần mềm quản lý xét nghiệm (LIS), ứng dụng y tế thông minh My Medlatec... nên các khâu đăng ký khám, lấy mẫu và trả kết quả đều được rút ngắn tối đa thời gian. </p>
+
+                        <p>Hệ thống Bệnh viện/ Phòng khám Đa khoa MEDLATEC tự hào là địa chỉ đông đảo người dân trên toàn quốc trao gửi niềm tin chăm sóc sức khỏe trong <strong>gần 30 năm qua.</strong></p>
+
+                        <p>Mọi thông tin thắc mắc cần giải đáp, vui lòng liên hệ tổng đài <strong>1900 56 56 56 để được hỗ trợ.</strong></p>
+
+                        <p><em>Thông tin bài viết cập nhật đến hết ngày 30/6/2023.</em></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            @* Cột phải *@
+            <div class="col-4">
+
+                @* Banner đặt lịch khám *@
+                <div class="hinhanh__datlichkham p-5 text-light justify-content-center mx-auto">
+
+                    @* Tiêu đề *@
+                    <div class="d-flex">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <p class="tieude">Đặt lịch nhanh chóng</p>
+                    </div>
+
+                    @* Mô tả *@
+                    <p class="des">Bạn muốn tìm kiếm dịch vụ y tế chất lượng cao với giá cả hợp lý? Hãy đến với MEDLATEC - nơi cung cấp dịch vụ khám chữa bệnh uy tín hàng đầu Việt Nam.</p>
+
+                    @* Nút đặt lịch *@
+                    <div class="nutdatlich fw-bold text-center">
+                        <a class="text-light d-block" asp-area="" asp-controller="Home" asp-action="" target="_blank">Đặt Lịch</a>
+                    </div>
+
+                </div>
+
+                @* Banner quảng cáo hình nhỏ *@
+                <div class="block__banner my-5">
+                    <img src="https://medlatec.vn/media/27714/catalog/ADN-435x292.jpg?size=2048" class="img-fluid" />
+                </div>
+
+                @* Banner quảng cáo hình lớn *@
+                <div class="block__banner my-5">
+                    <img src="https://medlatec.vn/media/29997/catalog/435_480.png?size=2048" class="img-fluid" />
+                </div>
+
+                @* Tin tức nổi bật *@
+                <div class="tintuc__noibat my-5 mx-2">
+
+                    @* Tiêu đề và nút xem thêm *@
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-between">
+                            <h5 class="mb-0">Tin tức nổi bật</h5>
+                            <a class="text-decoration-none fw-bold" asp-area="" asp-controller="Home" asp-action="" target="_blank">Xem thêm</a>
+                        </div>
+                    </div>
+
+                    @* Các tin tức *@
+                    <div class="block__item--tintucnoibat">
+
+                        @* Tin tức 1 *@
+                        <div class="row">
+
+                            @* Hình ảnh *@
+                            <div class="col-3">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41633/content/benh-tri-mo-tai-medlatec.jpg?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-9">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Năm, 25 tháng 4, 2024</span>
+                                    <h5 class="my-2">Điều trị trĩ không lo chi phí...</h5>
+                                    <p class="text-secondary">Nhằm giúp người dân có cơ hội điều trị...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        @* Tin tức 2 *@
+                        <div class="row">
+
+                            @* Hình ảnh *@
+                            <div class="col-3">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41624/content/thong-bao-lich-lam-viec.jpg?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-9">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Năm, 25 tháng 4, 2024</span>
+                                    <h5 class="my-2">Hệ thống Y tế MEDLATEC...</h5>
+                                    <p class="text-secondary">Nhằm đảm bảo công tác phục vụ chăm sóc sức khỏe...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        @* Tin tức 3 *@
+                        <div class="row">
+
+                            @* Hình ảnh *@
+                            <div class="col-3">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41614/content/1+photo_2024-04-24_15-14-31+(2).jpg?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-9">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Tư, 24 tháng 4, 2024</span>
+                                    <h5 class="my-2">Báo cáo viên MEDLATEC...</h5>
+                                    <p class="text-secondary">Nối dài hành trình chia sẻ kiến thức y...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                @* Tin tức y tế *@
+                <div class="tintuc__noibat my-5 mx-2">
+
+                    @* Tiêu đề và nút xem thêm *@
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-between">
+                            <h5 class="mb-0">Tin tức y tế</h5>
+                            <a class="text-decoration-none fw-bold" asp-area="" asp-controller="Home" asp-action="" target="_blank">Xem thêm</a>
+                        </div>
+                    </div>
+
+                    @* Các tin tức *@
+                    <div class="block__item--tintucnoibat">
+
+                        @* Tin tức 1 *@
+                        <div class="row">
+
+                            @* Hình ảnh *@
+                            <div class="col-3">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41710/content/ketoconazol-1.jpg?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-9">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Năm, 9 tháng 5, 2024</span>
+                                    <h5 class="my-2">Công dụng của Thuốc Ket...</h5>
+                                    <p class="text-secondary">Ketoconazol được sử dụng để điều...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        @* Tin tức 2 *@
+                        <div class="row">
+
+                            @* Hình ảnh *@
+                            <div class="col-3">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41703/content/oflovid-1.jpg?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-9">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Năm, 9 tháng 5, 2024</span>
+                                    <h5 class="my-2">Hướng dẫn cách dùng thu...</h5>
+                                    <p class="text-secondary">Oflovid là thuốc chuyên sử dụng...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        @* Tin tức 3 *@
+                        <div class="row">
+
+                            @* Hình ảnh *@
+                            <div class="col-3">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41698/content/cay-sam-bien-4.jpg?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-9">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Tư, 9 tháng 5, 2024</span>
+                                    <h5 class="my-2">Cây sâm biển và những...</h5>
+                                    <p class="text-secondary">Cây sa sâm hay sâm biển được biết...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Lựa chọn dịch vụ *@
+<div class="luachon__dichvu my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <h4 class="text-light">Lựa chọn dịch vụ</h4>
+                <p class="text-light">Quý khách hàng vui lòng lựa chọn dịch vụ y tế theo nhu cầu!</p>
+
+                @* Lấy mẫu xét nghiệm tại nhà *@
+                <div class="row block__dichvu mt-4">
+                    <div class="col-3">
+                        <img src="https://medlatec.vn/med/images/service-selection.png" title="Bệnh viện đa khoa MEDLATEC" class="img-fluid" />
+                    </div>
+                    <div class="col-9">
+                        <h4>Lấy mẫu xét nghiệm tại nhà</h4>
+                        <p class="text-secondary">Lấy mẫu xét nghiệm tại nhà giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</p>
+                        <div class="nutxemthem fw-bold float-end">
+                            <a class="text-light" asp-area="" asp-controller="Home" asp-action="" target="_blank">Đặt Lịch</a>
+                        </div>
+                    </div>
+                </div>
+
+                @* Đặt lịch thăm khám *@
+                <div class="row block__dichvu mt-4">
+                    <div class="col-3">
+                        <img src="https://medlatec.vn/med/images/service02.png" title="Bệnh viện đa khoa MEDLATEC" class="img-fluid" />
+                    </div>
+                    <div class="col-9">
+                        <h4>Đặt lịch thăm khám tại MEDLATEC</h4>
+                        <p class="text-secondary">Đặt lịch khám tại cơ sở khám chữa bệnh thuộc Hệ thống Y tế MEDLATEC giúp chủ động thời gian, hạn chế tiếp xúc đông người.</p>
+                        <div class="nutxemthem fw-bold float-end">
+                            <a class="text-light" asp-area="" asp-controller="Home" asp-action="" target="_blank">Đặt Lịch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 px-0">
+                <img src="https://medlatec.vn/med/images/service-selection.png" title="Bệnh viện đa khoa MEDLATEC" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,910 @@
+﻿@{
+    ViewData["Title"] = "TIN TỨC";
+}
+<style>
+    /* Ảnh tiêu đề */
+    .anhtieude {
+        position: relative;
+        top: 0;
+        left: 0;
+        background: url(https://medlatec.vn/med/images/breadcrumb4.jpg) no-repeat;
+        height: 400px;
+        background-size: cover;
+    }
+
+        .anhtieude .nenxanh {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 400px;
+            width: 100%;
+            background-color: #029ff77a;
+        }
+
+        .anhtieude .col-8 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-top: 180px;
+            padding-left: 50px;
+            color: white;
+        }
+    /* === */
+    /* Danh mục video */
+    .danhmuc--video .col-3 {
+        width: 326px;
+    }
+
+    .danhmuc--video .soluong {
+        position: absolute;
+        bottom: -73px;
+        right: 21px;
+        padding: 4px 8px;
+        background: #00000091;
+        font-size: 13px;
+        color: white;
+        border-radius: 10px;
+        z-index: 1;
+    }
+
+    .danhmuc--video .tieude p {
+        font-size: 15px;
+        color: #644e4ec4;
+    }
+
+    .danhmuc--video .tieude span {
+        font-weight: 600;
+        font-size: 17px;
+        color: var(--maunen1);
+        margin-left: 0px;
+        display: inline;
+    }
+
+    .danhmuc--video i.fa-regular.fa-circle-play {
+        font-size: 19px;
+    }
+
+    .danhmuc--video .tieude {
+        width: 270px;
+        margin-top: 9px;
+        padding-left: 5px;
+    }
+
+    .danhmuc--video .block__image .btn {
+        top: 45%;
+        left: 25%;
+    }
+
+    .danhmuc--video .mauden {
+        position: absolute;
+        top: -87px;
+        left: 0px;
+        width: 300px;
+        height: 200px;
+        border-radius: 18px;
+        background: #000000b5;
+        transition: 0.3s;
+        opacity: 0;
+        z-index: 2;
+    }
+
+    .danhmuc--video .phattatca {
+        position: absolute;
+        top: 49%;
+        left: 28%;
+        color: white;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 600;
+        transition: 0.3s;
+        opacity: 0;
+        z-index: 3;
+    }
+
+    .danhmuc--video a:hover .phattatca {
+        opacity: 1;
+    }
+
+    .danhmuc--video a:hover .mauden {
+        opacity: 1;
+    }
+
+    .danhmuc--video .phattatca::after {
+    }
+
+    .danhmuc--video img {
+        border-radius: 20px;
+        width: 300px;
+        height: 200px;
+    }
+
+    .danhmuc--video a {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    /* === */
+    .cacvideo .block__title p {
+        color: var(--maunen1);
+        font-size: 17px;
+        font-weight: 600;
+        margin-left: 5px;
+    }
+
+    .cacvideo .block__title .fa-circle-play {
+        font-size: 20px;
+        padding-top: 3px;
+        margin-right: 5px;
+    }
+
+    .cacvideo .block__title {
+        margin-top: 10px;
+        display: flex;
+    }
+    /* video nổi bật */
+    .video--noibat h4, .danhmuc--video h4 {
+        margin-left: 30px;
+        margin-bottom: 30px;
+    }
+
+    .video--noibat .col-3 {
+        width: 326px;
+    }
+
+    .video--noibat .cacvideo {
+        justify-content: space-evenly;
+    }
+
+    .video--noibat .block__image {
+        width: 300px;
+        height: 200px;
+    }
+
+    .block__image img {
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .video--noibat .block__image .btn {
+        position: absolute;
+        background: var(--maunen1);
+        color: white;
+        padding: 5px 23px;
+        transition: 0.3s;
+    }
+
+    .video--noibat .block__image .btn {
+        top: 41%;
+        left: 39%;
+    }
+
+
+
+        .video--noibat .block__image .btn:focus, .danhmuc--video .block__image .btn:focus {
+            border: 1px solid var(--maunen1);
+        }
+
+        .video--noibat .block__image .btn:hover, .danhmuc--video .block__image .btn:hover {
+            background: #4ea8e4;
+        }
+
+    /* Carousel */
+    :root {
+        --maunen1: #1d93e3;
+    }
+
+    #carouselExample {
+        padding: 50px;
+    }
+
+    .carousel-inner {
+        border-radius: 20px;
+    }
+
+        .carousel-inner .block__title {
+            position: absolute;
+            top: 45%;
+            left: 21%;
+            text-align: center;
+            color: white;
+            z-index: 3;
+            opacity: 0;
+            transition: 0.3s ease;
+            width: 790px;
+        }
+
+            .carousel-inner .block__title h3 {
+                color: var(--maunen1);
+            }
+
+            .carousel-inner .block__title p {
+                font-size: 20px;
+            }
+
+            .carousel-inner .block__title .btn {
+                background: var(--maunen1);
+                color: white;
+                transition: 0.3s ease;
+            }
+
+                .carousel-inner .block__title .btn:hover {
+                    background: #5babe2;
+                }
+
+                .carousel-inner .block__title .btn:focus {
+                    box-shadow: none;
+                    outline: none;
+                    border: none;
+                }
+
+        .carousel-inner::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000b3;
+            z-index: 1;
+            opacity: 0;
+            transition: 0.3s ease;
+        }
+
+        .carousel-inner:hover .block__title, .carousel-inner:hover::after {
+            opacity: 1;
+        }
+
+    /* Lựa chọn dịch vụ */
+    .nutxemthem a {
+        text-decoration: none;
+        background: #1d93e3;
+        padding: 11px 30px;
+        border-radius: 10px;
+        line-height: 43px;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+    .luachon__dichvu .col-7 {
+        background-color: #1d93e3;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        padding: 25px 38px;
+    }
+
+    .luachon__dichvu .col-5 img {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .luachon__dichvu .block__dichvu {
+        background-color: white;
+        padding: 22px 15px;
+        height: 215px;
+        border-radius: 15px;
+    }
+
+        .luachon__dichvu .block__dichvu img {
+            border-radius: 10px;
+        }
+</style>
+
+@* Ảnh tiêu đề *@
+<div class="anhtieude">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="nenxanh"></div>
+            <div class="col-8">
+                <h2>@ViewData["Title"]</h2>
+                <ul class="d-flex ps-0">
+                    <li class="list-unstyled">
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
+                    </li>
+                    <li class="ps-3 mx-5 fw-bold">Video</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Carousel -->
+<div class="carousel">
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+
+            <!-- @* Xét nghiệm NIPT và những lưu ý khi chỉ định xét nghiệm NIPT *@ -->
+            <div class="carousel-item active">
+                <img src="https://i.ytimg.com/vi/H8_lvXHEQDs/maxresdefault.jpg" class="d-block w-100" alt="...">
+                <div class="block__title">
+                    <h3>Xét nghiệm NIPT và những lưu ý khi chỉ định xét nghiệm NIPT</h3>
+                    <p>Xét nghiệm NIPT và những lưu ý khi chỉ định xét nghiệm NIPT</p>
+                    <a href="https://www.youtube.com/watch?v=H8_lvXHEQDs&list=PL_R9CeWF6S0P5vBiZRfPv6wo3yQ6TocKw" class="btn" target="_blank">
+                        <span>Xem ngay</span>
+                        <i class="fa-regular fa-circle-play"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- @* Giá trị các marker trong sàng lọc viêm gan virus B *@ -->
+            <div class="carousel-item">
+                <img src="https://i.ytimg.com/vi/Lz_zcqrRnrs/maxresdefault.jpg" class="d-block w-100" alt="...">
+                <div class="block__title">
+                    <h3>Giá trị các marker trong sàng lọc viêm gan virus B</h3>
+                    <p>Giá trị các marker trong sàng lọc viêm gan virus B</p>
+                    <a href="https://www.youtube.com/watch?v=Lz_zcqrRnrs&list=PL_R9CeWF6S0P5vBiZRfPv6wo3yQ6TocKw&index=5" class="btn" target="_blank">
+                        <span>Xem ngay</span>
+                        <i class="fa-regular fa-circle-play"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- @* Công thức cho mẹ bầu khỏe mạnh *@ -->
+            <div class="carousel-item">
+                <img src="https://i.ytimg.com/vi/glMz7Wb1_AM/maxresdefault.jpg" class="d-block w-100" alt="...">
+                <div class="block__title">
+                    <h3>Công thức cho mẹ bầu khỏe mạnh</h3>
+                    <p>Công thức cho mẹ bầu khỏe mạnh</p>
+                    <a href="https://www.youtube.com/watch?v=glMz7Wb1_AM" class="btn" target="_blank">
+                        <span>Xem ngay</span>
+                        <i class="fa-regular fa-circle-play"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+@* Video nổi bật *@
+<div class="video--noibat">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h4>Video nổi bật</h4>
+            </div>
+        </div>
+
+
+        <div class="row cacvideo">
+
+            <!-- Xét nghiệm NIPT và những lưu ý khi chỉ định xét nghiệm NIPT -->
+            <div class="col-3">
+                <div class="block__image position-relative">
+                    <img src="https://medlatec.vn/media/689/content/20220429_nipt+bs+hi%e1%bb%81nweb_400.png?size=1024" class="" />
+                    <a href="https://www.youtube.com/watch?v=H8_lvXHEQDs" target="_blank" class="btn">
+                        <i class="fa-solid fa-play"></i>
+                    </a>
+                </div>
+                <div class="block__title">
+                    <i class="fa-regular fa-circle-play"></i>
+                    <p>Xét nghiệm NIPT và những lưu ý khi chỉ định xét nghiệm NIPT</p>
+                </div>
+            </div>
+
+            <!-- 5 Bước Khám Sức Khỏe Tổng Quát tại MEDLATEC -->
+            <div class="col-3">
+                <div class="block__image position-relative">
+                    <img src="https://medlatec.vn/media/673/content/20201009_44-00005-01.png?size=1024" />
+                    <a href="https://www.youtube.com/watch?v=Krqs03DVRCo" target="_blank" class="btn">
+                        <i class="fa-solid fa-play"></i>
+                    </a>
+                </div>
+                <div class="block__title">
+                    <i class="fa-regular fa-circle-play"></i>
+                    <p>5 Bước Khám Sức Khỏe Tổng Quát tại MEDLATEC</p>
+                </div>
+            </div>
+
+            <!-- Hiểu Đúng Về Dị Tật Thai Nhi -->
+            <div class="col-3">
+                <div class="block__image position-relative">
+                    <img src="https://medlatec.vn/media/671/content/20200908_44-00001-15_Thumbnail-01.jpg?size=1024" class="" />
+                    <a href="https://www.youtube.com/watch?v=H1TvtvCT5pQ" target="_blank" class="btn">
+                        <i class="fa-solid fa-play"></i>
+                    </a>
+                </div>
+                <div class="block__title">
+                    <i class="fa-regular fa-circle-play"></i>
+                    <p>Hiểu Đúng Về Dị Tật Thai Nhi</p>
+                </div>
+            </div>
+
+            <!-- Công thức phát hiện sớm và phòng ngừa sốt xuất huyết -->
+            <div class="col-3">
+                <div class="block__image position-relative">
+                    <img src="https://medlatec.vn/media/668/content/20200908_THUMBNAIL-sotxuathuyet.jpg?size=1024" class="" />
+                    <a href="https://www.youtube.com/watch?v=JdqALYmL_LU" target="_blank" class="btn">
+                        <i class="fa-solid fa-play"></i>
+                    </a>
+                </div>
+                <div class="block__title">
+                    <i class="fa-regular fa-circle-play"></i>
+                    <p>Công thức phát hiện sớm và phòng ngừa sốt xuất huyết</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Danh mục video -->
+<div class="danhmuc--video">
+    <div class="container-fluid">
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <h4>Danh mục video</h4>
+            </div>
+        </div>
+
+        <div class="row justify-content-evenly mb-4">
+
+            <!-- MEDLATEC - Hội Thảo online 2023 -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0NFZ1OkfLdxA8Xmr-BkR6uW" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/XS8O6SepxXc/hqdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>22 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>MEDLATEC - Hội Thảo online 2023</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+
+            <!-- GIẢI PHẪU BỆNH -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0NrQT2H5r8Sz4fhpHy0a7lQ" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/_QEEw_o3T8Y/hqdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>2 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>GIẢI PHẪU BỆNH</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+
+            <!-- Hướng dẫn lấy mẫu ADN -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0NhhaBdDFWAT3GHXqO1VpvZ" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/sUWidlEdB9M/maxresdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>5 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>Hướng dẫn lấy mẫu ADN</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+
+            <!-- MEDLATEC - KHÁM SỨC KHỎE DOANH NGHIỆP -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0OgeQRPm3CMWlBSBn4cwg0e" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/SE9ykqHcv3I/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGDMgUChyMA8=&rs=AOn4CLCkr8X1J4C1e6z9hWGBR3BV-iwGnw" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>18 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>MEDLATEC - KHÁM SỨC KHỎE DOANH NGHIỆP</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-evenly mb-4">
+
+            <!-- Talk show - Dr.Gia Đình -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0PX5jPodwEzfmUpAjz7gaOk" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/K_o6pVn2Tbw/maxresdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>15 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>Talk show - Dr.Gia Đình</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+
+            <!-- HƯỚNG DẪN CHUYÊN MÔN -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0P5vBiZRfPv6wo3yQ6TocKw" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/8wb7v6QFgEQ/maxresdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>22 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>HƯỚNG DẪN CHUYÊN MÔN</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+
+            <!-- MEDLATEC Tuyển Dụng -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0MqdR0JLw7YpXsVzaRZBJxc" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/lDhGNktgQ7U/mqdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>2 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>MEDLATEC Tuyển Dụng</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+
+            <!-- ƯU ĐÃI TỪ MEDLATEC -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0OgeQRPm3CMWlBSBn4cwg0e" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/NTgEfug2IQg/maxresdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>27 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>ƯU ĐÃI TỪ MEDLATEC</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-evenly mb-4">
+
+            <!-- MEDLATEC on TIKTOK -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0P3HdSguYvMscWad_AW1Wo5" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/Vlt1-HZtqrk/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHcBIACuAiKAgwIABABGGUgYShNMA8=&rs=AOn4CLAXk1GYLtJ493rRvaW19hXXZ9X8SA" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>20 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>MEDLATEC on TIKTOK</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+
+            <!-- TRẢI NGHIỆM KHÁCH HÀNG -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0MAnC4yNEgXI2sknZwvohBS" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/xC4YWlq59Xs/sddefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>31 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>TRẢI NGHIỆM KHÁCH HÀNG</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+
+            <!-- Tọa đàm trực tuyến -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0M__e_LP7tSujX5rz1TCNmn" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/0Pxyl0gTzS8/maxresdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>2 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>Tọa đàm trực tuyến</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+
+            <!-- Thông tin Covid - 19 (nCoV) -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0PpSsJh5QEwogGoieYZWiDV" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/v0oJZWE7nXM/maxresdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>76 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>Thông tin Covid - 19 (nCoV)</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-evenly mb-4">
+
+            <!-- 60s khám phá Medlatec -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0O2Z-GADCsOcAlx3wmGZJtC" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/Krqs03DVRCo/maxresdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>14 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>60s khám phá Medlatec</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+
+            <!-- Quy trình xét nghiệm -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0P_cWovLvBDAynYpCbRkjvt" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/ATcRpIUtYBc/maxresdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>5 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>Quy trình xét nghiệm</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+
+            <!-- Sự thật cơ thể -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0O6gQcfzx6i5KApX6TXh9bt" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/HLSJowTFV_Q/maxresdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>10 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>Sự thật cơ thể</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+
+            <!-- CÔNG THỨC SỐNG KHỎE -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0PX77JTFro7rlH8c-Wxz6BH" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/chrBLcQeFes/maxresdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>9 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>CÔNG THỨC SỐNG KHỎE</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-evenly mb-4">
+
+            <!-- Dich vụ lấy mẫu xét nghiệm tận nơi -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0PWeqQQgLQBPLdWhr6EdAhs" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/kIvVrNTOivQ/maxresdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>20 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>Dich vụ lấy mẫu xét nghiệm tận nơi</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+
+            <!-- Dịch vụ khám sức khoẻ doanh nghiệp -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0MgghoKtpvIP1EXHpJYrd0B" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/qopfQVrL2ro/hqdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>8 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>Dịch vụ khám sức khoẻ doanh nghiệp</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+
+            <!-- Hỏi đáp cùng chuyên gia -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0N5ocdhznvMQ7iY3t4lzFEE" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/7l6_l54N0jw/maxresdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>87 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>Hỏi đáp cùng chuyên gia</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+
+            <!-- Bản tin y học -->
+            <div class="col-3">
+                <a href="https://www.youtube.com/playlist?list=PL_R9CeWF6S0MEFJH8PftW8FyLRM2Anr6D" class="block__item" target="_blank">
+                    <div class="mauden"></div>
+                    <img src="https://i.ytimg.com/vi/QIaJp53FwBU/maxresdefault.jpg" class="img-fluid">
+                    <div class="soluong">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                        <span>65 video</span>
+                    </div>
+                    <div class="phattatca">
+                        <i class="fa-solid fa-play"></i>
+                        <span>phát tất cả</span>
+                    </div>
+                </a>
+                <div class="tieude">
+                    <span>Bản tin y học</span>
+                    <p>Xem toàn bộ danh sách</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@* Lựa chọn dịch vụ *@
+<div class="luachon__dichvu my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <h4 class="text-light">Lựa chọn dịch vụ</h4>
+                <p class="text-light">Quý khách hàng vui lòng lựa chọn dịch vụ y tế theo nhu cầu!</p>
+
+                @* Lấy mẫu xét nghiệm tại nhà *@
+                <div class="row block__dichvu mt-4">
+                    <div class="col-3">
+                        <img src="https://medlatec.vn/med/images/service-selection.png" title="Bệnh viện đa khoa MEDLATEC" class="img-fluid" />
+                    </div>
+                    <div class="col-9">
+                        <h4>Lấy mẫu xét nghiệm tại nhà</h4>
+                        <p class="text-secondary">Lấy mẫu xét nghiệm tại nhà giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</p>
+                        <div class="nutxemthem fw-bold float-end">
+                            <a class="text-light" asp-area="" asp-controller="Home" asp-action="" target="_blank">Đặt Lịch</a>
+                        </div>
+                    </div>
+                </div>
+
+                @* Đặt lịch thăm khám *@
+                <div class="row block__dichvu mt-4">
+                    <div class="col-3">
+                        <img src="https://medlatec.vn/med/images/service02.png" title="Bệnh viện đa khoa MEDLATEC" class="img-fluid" />
+                    </div>
+                    <div class="col-9">
+                        <h4>Đặt lịch thăm khám tại MEDLATEC</h4>
+                        <p class="text-secondary">Đặt lịch khám tại cơ sở khám chữa bệnh thuộc Hệ thống Y tế MEDLATEC giúp chủ động thời gian, hạn chế tiếp xúc đông người.</p>
+                        <div class="nutxemthem fw-bold float-end">
+                            <a class="text-light" asp-area="" asp-controller="Home" asp-action="" target="_blank">Đặt Lịch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 px-0">
+                <img src="https://medlatec.vn/med/images/service-selection.png" title="Bệnh viện đa khoa MEDLATEC" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+</div>
+
+

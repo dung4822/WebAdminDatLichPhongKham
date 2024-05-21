@@ -1,0 +1,603 @@
+﻿@{
+	ViewData["Title"] = "Privacy Policy";
+}
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	/* === COLOR MAIN === */
+	:root {
+		--mauchudao: #1d93e3;
+	}
+	/* === END COLOR MAIN === */
+
+	/* Ảnh tiêu đề */
+	.background {
+		position: relative;
+		top: 0;
+		left: 0;
+		background: url(https://medlatec.vn/med/images/breadcrumb4.jpg) no-repeat;
+		height: 400px;
+		background-size: cover;
+	}
+
+		.background .nenxanh {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 400px;
+			width: 100%;
+			background-color: #029ff77a;
+		}
+
+		.background .col-8 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding-top: 180px;
+			padding-left: 50px;
+			color: white;
+		}
+	/* === End ảnh tiêu đề === */
+
+
+	/* === CAC CHUYEN KHOA Y TE === */
+
+	/* --- Hover Button "Xem chi tiết" --- */
+	.danhmuc--chuyenkhoayte .block__text a.btn:hover {
+		transform: translateX(10px);
+		background-color: var(--mauchudao);
+		padding-left: 15px !important;
+		color: #fff;
+	}
+	/* --- End Hover Button "Xem chi tiết" ---  */
+
+
+	/* --- Hover Image --- */
+	.danhmuc--chuyenkhoayte .col-md-4 .holder::after {
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		background: #1d93e391;
+		opacity: 0;
+		transition: 0.3s;
+	}
+
+	.danhmuc--chuyenkhoayte .col-md-4 .holder:hover::after {
+		opacity: 1;
+	}
+
+	.block__item .hover__img {
+		top: 0;
+		z-index: 3;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		height: 100%;
+		align-items: center;
+		opacity: 0;
+		transition: 0.3s;
+	}
+
+		.block__item .hover__img:hover {
+			opacity: 1;
+		}
+
+		.block__item .hover__img img.hover {
+			width: 96px !important;
+			height: 96px !important;
+		}
+	/* --- End Hover Image --- */
+	.danhmuc--chuyenkhoayte .col-md-4 {
+		width: 477px;
+	}
+
+	.danhmuc--chuyenkhoayte .container-fluid {
+		padding: 100px 12px;
+	}
+
+	.danhmuc--chuyenkhoayte .col-md-4 .holder {
+		width: 452px;
+		height: 294px;
+		cursor: pointer;
+	}
+
+		.danhmuc--chuyenkhoayte .col-md-4 .holder img {
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+
+	.danhmuc--chuyenkhoayte .col-md-4 h2 {
+		font-size: 25px;
+		padding-top: 50px;
+		margin-bottom: 15px;
+	}
+
+	.danhmuc--chuyenkhoayte .col-md-4 .block__text {
+		width: 452px;
+		height: 240px;
+	}
+
+	.danhmuc--chuyenkhoayte .block__text p.text-truncate {
+		font-size: 17px;
+		color: #534E56;
+		font-weight: 600;
+		margin-bottom: 25px;
+	}
+
+	.danhmuc--chuyenkhoayte .block__item {
+		width: 452px;
+		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	}
+
+	.danhmuc--chuyenkhoayte .block__text a.btn {
+		font-size: 17px;
+		font-weight: 600;
+	}
+
+	.danhmuc--chuyenkhoayte .block__text a.btn {
+		font-size: 17px;
+		font-weight: 600;
+		transition: 0.3s ease;
+	}
+	/* === END CAC CHUYEN KHOA Y TE === */
+
+	/* === LUA CHON DICH VU === */
+
+	/* --- Hover Nút "Đặt lịch" --- */
+	.nutdatlich a:hover {
+		opacity: 0.7;
+	}
+	/* --- End Hover Nút "Đặt lịch" */
+	.luachon__dichvu .col-7 {
+		background-color: #1d93e3;
+		border-top-left-radius: 15px;
+		border-bottom-left-radius: 15px;
+		padding: 25px 38px;
+	}
+
+	.luachon__dichvu .col-5 img {
+		border-top-right-radius: 15px;
+		border-bottom-right-radius: 15px;
+	}
+
+	.luachon__dichvu .block__dichvu {
+		background-color: white;
+		padding: 22px 15px;
+		height: 215px;
+		border-radius: 15px;
+	}
+
+		.luachon__dichvu .block__dichvu img {
+			border-radius: 10px;
+		}
+
+	.nutdatlich a {
+		text-decoration: none;
+		background: #1d93e3;
+		padding: 11px 30px;
+		border-radius: 10px;
+		line-height: 43px;
+		font-size: 18px;
+		transition: 0.3s;
+	}
+
+	/* === END LUA CHON DICH VU === */
+</style>
+
+<!-- Ảnh tiêu đề -->
+<div class="background">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="nenxanh"></div>
+			<div class="col-8">
+				<h2>@ViewData["Title"]</h2>
+				<ul class="d-flex ps-0">
+					<li class="list-unstyled">
+						<a class="text-decoration-none text-light" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
+					</li>
+					<li class="ps-3 mx-5">Giới thiệu</li>
+					<li class="fw-bold ps-3">Chuyên khoa y tế</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- CAC CHUYEN KHOA Y TE -->
+<div class="danhmuc--chuyenkhoayte">
+	<div class="container-fluid">
+
+		<div class="row justify-content-evenly mb-5">
+
+			<!-- Chẩn đoán hình ảnh -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/473/catalog/anh-chinh-cdha-1.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/156/catalog/service6-2.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Chẩn đoán hình ảnh</h2>
+						<p class="text-truncate">Kết quả chẩn đoán chính xác, phục vụ chuyên<br> nghiệp, tận tâm của đội ngũ y bác sĩ, thủ tục nhan...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Chuyên khoa Nội -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/379/catalog/chuyenkhoanoi.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/464/catalog/speciality1-2-3.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Chuyên khoa Nội</h2>
+						<p class="text-truncate">Với ý nghĩa thông qua khám nội, khách hàng/bệnh<br> nhân xác định bước đầu các bất thường, để từ đó...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Xét nghiệm -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/27585/catalog/20230519__trung-tam-xet-ngiem.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/470/catalog/service2-2-1.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Xét nghiệm</h2>
+						<p class="text-truncate">Trung tâm Xét nghiệm MEDLATEC - thương hiệu <br>xét nghiệm hàng đầu tại Việt Nam, tự hào là nơi tụ...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-evenly mb-5">
+
+			<!-- Ung bướu -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/187/catalog/anh-chinh-ung-buou.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/134/catalog/speciality2-2.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Ung bướu</h2>
+						<p class="text-truncate">Tỷ lệ mắc và tỉ lệ tử vong cao nên ung thư đang là<br> bài toán khó của toàn cầu. Để giảm gánh nặng cho...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Sản khoa -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/189/catalog/chuyen-khoa-san.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/138/catalog/specialty4-2.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Sản khoa</h2>
+						<p class="text-truncate">Được xác định là một trong những chuyên khoa<br> mũi nhọn, chuyên khoa Sản - Phụ khoa của Bệnh...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Khoa ngoại -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/476/catalog/anh-chinh-ngoai-khoa-1.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/477/catalog/specialty6-2-1.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Khoa ngoại</h2>
+						<p class="text-truncate">Để đáp ứng nhu cầu của người dân về điều trị hiệu<br> quả và nhanh chóng các bệnh mặt thông qua phẫu...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-evenly mb-5">
+
+			<!-- Tiêu hóa -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/204/catalog/anh-chinh-chuyen-khoa-tieu-hoa.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/144/catalog/specialty7-2.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Tiêu hóa</h2>
+						<p class="text-truncate">Chuyên khoa Tiêu hóa được hình thành và phát<br> triển gắn liền với sự phát triển của bệnh viện...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Nội tiết -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/484/catalog/anh-chinh-noi-tiet-2.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/485/catalog/specialty8-2-2.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Nội tiết</h2>
+						<p class="text-truncate">Với uy tín chẩn đoán và điều trị bệnh chính xác,<br> cùng sự phục vụ tận tâm, tận tụy, chuyên khoa Nội...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Tim mạch -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/207/catalog/chuyen-khoa-tim-mach.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/150/catalog/specialty10-2.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Tim mạch</h2>
+						<p class="text-truncate">Chuyên khoa Tim mạch của Bệnh viện Đa khoa<br> MEDLATEC là địa chỉ khám, điều trị bệnh lý tim...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-evenly mb-5">
+
+			<!-- Nam khoa -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/488/catalog/anh-chinh-nam-khoa-1.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/489/catalog/specialty11-2-1.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Nam khoa</h2>
+						<p class="text-truncate">Nam khoa là chuyên khoa y tế chăm sóc sức khỏe<br> của nam giới, đặc biệt liên quan đến các vấn đề về...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Cơ xương khớp -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/211/catalog/anh-chinh-co-xuong-khop.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/158/catalog/specialty14-2.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Cơ xương khớp</h2>
+						<p class="text-truncate">Bệnh cơ xương khớp không gây hậu quả nghiêm<br> trọng, tức thời, nhưng lâu dài bệnh ảnh hưởng đến...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Truyền nhiễm -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/492/catalog/anh-chinh-truyen-nhiem-1.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/493/catalog/specialty17-2-1.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Chẩn đoán hình ảnh</h2>
+						<p class="text-truncate">Bệnh truyền nhiễm nếu không được phát hiện và<br> điều trị kịp thời sẽ để lại những hậu quả khôn...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-evenly mb-5">
+
+			<!-- Huyết học -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/23054/catalog/chuyen-khoa-huyet-hoc.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/23055/catalog/ck-huyethoc-1.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Huyết học</h2>
+						<p class="text-truncate">Chuyên khoa Huyết học - Truyền máu thực hiện<br> xét ngiệm chẩn đoán các nguyên nhân gây thiếu...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Thần kinh -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/500/catalog/anh-chinh-chuyen-khoa-noi-than-kinh-2.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/501/catalog/specialty16-2-2.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Thần kinh</h2>
+						<p class="text-truncate">Áp lực trong công việc, cuộc sống khiến nhiều<br> người rơi vào trạng thái mệt mỏi, rối loạn giấc ngủ....</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Nhi khoa -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/188/catalog/anh-chinh-khoa-nhi.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/136/catalog/speciality3-2.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Nhi khoa</h2>
+						<p class="text-truncate">Chuyên khoa Nhi - Bệnh viện Đa khoa MEDLATEC là<br> địa chỉ uy tín khám, điều trị các bệnh lý trẻ em với...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-evenly">
+
+			<!-- Mắt -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/505/catalog/anh-chinh-mat-1.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/506/catalog/specialty9-2-1.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Mắt</h2>
+						<p class="text-truncate">Chuyên khoa Mắt của Bệnh viện Đa khoa<br> MEDLATEC đã và đang trở thành địa chỉ tin cậy của...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Tai mũi họng -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/509/catalog/anh-chinh-tai-mui-hong-1.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/510/catalog/specialty12-2-1.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Tai mũi họng</h2>
+						<p class="text-truncate">Là một trong những chuyên khoa ra đời ngay sau<br> khi Bệnh viện Đa khoa MEDLATEC chính thức đi...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Da liễu -->
+			<div class="col-md-4">
+				<div class="block__item">
+					<div class="holder position-relative">
+						<img src="https://medlatec.vn/media/212/catalog/anh-chinh-da-lieu.jpg?size=600" class="img-fluid">
+						<div class="hover__img position-absolute">
+							<img src="https://medlatec.vn/media/160/catalog/specialty15-2.png?size=256" class="img-fluid hover">
+						</div>
+					</div>
+
+					<div class="block__text px-4">
+						<h2>Da liễu</h2>
+						<p class="text-truncate">Chuyên khoa Da liễu - Bệnh viện Đa khoa<br> MEDLATEC có đội ngũ y bác sỹ giàu kinh nghiệm...</p>
+						<a href="" class="btn ps-0">Xem chi tiết <i class="fa-solid fa-arrow-right ms-2"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- LUA CHON DICH VU -->
+<div class="luachon__dichvu my-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-7">
+				<h4 class="text-light">Lựa chọn dịch vụ</h4>
+				<p class="text-light">Quý khách hàng vui lòng lựa chọn dịch vụ y tế theo nhu cầu!</p>
+
+				<!-- Lấy mẫu xét nghiệm tại nhà -->
+				<div class="row block__dichvu mt-4">
+					<div class="col-3">
+						<img src="https://medlatec.vn/med/images/service-selection.png" title="Bệnh viện đa khoa MEDLATEC" class="img-fluid" />
+					</div>
+					<div class="col-9">
+						<h4>Lấy mẫu xét nghiệm tại nhà</h4>
+						<p class="text-secondary">Lấy mẫu xét nghiệm tại nhà giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</p>
+						<div class="nutdatlich fw-bold float-end">
+							<a class="text-light" asp-area="" asp-controller="Home" asp-action="" target="_blank">Đặt Lịch</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Đặt lịch thăm khám -->
+				<div class="row block__dichvu mt-4">
+					<div class="col-3">
+						<img src="https://medlatec.vn/med/images/service02.png" title="Bệnh viện đa khoa MEDLATEC" class="img-fluid" />
+					</div>
+					<div class="col-9">
+						<h4>Đặt lịch thăm khám tại MEDLATEC</h4>
+						<p class="text-secondary">Đặt lịch khám tại cơ sở khám chữa bệnh thuộc Hệ thống Y tế MEDLATEC giúp chủ động thời gian, hạn chế tiếp xúc đông người.</p>
+						<div class="nutdatlich fw-bold float-end">
+							<a class="text-light" asp-area="" asp-controller="Home" asp-action="" target="_blank">Đặt Lịch</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-5 px-0">
+				<img src="https://medlatec.vn/med/images/service-selection.png" title="Bệnh viện đa khoa MEDLATEC" class="img-fluid" />
+			</div>
+		</div>
+	</div>
+</div>

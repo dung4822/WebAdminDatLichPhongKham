@@ -1,0 +1,586 @@
+﻿@{
+    ViewData["Title"] = "HỆ THỐNG MEDLATEC";
+}
+<style>
+    /* Ảnh tiêu đề */
+    .anhtieude {
+        position: relative;
+        top: 0;
+        left: 0;
+        background: url(https://medlatec.vn/med/images/breadcrumb4.jpg) no-repeat;
+        height: 400px;
+        background-size: cover;
+    }
+
+    .anhtieude .nenxanh {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 400px;
+        width: 100%;
+        background-color: #029ff77a;
+    }
+
+    .anhtieude .col-8 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 180px;
+        padding-left: 50px;
+        color: white;
+    }
+
+    /* CSS cho nút xem thêm trong mục I */
+    .mucI .nutxemthem a {
+        text-decoration: none;
+        background: #1d93e3;
+        padding: 11px 30px;
+        border-radius: 10px;
+        line-height: 43px;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+    .mucI .nutxemthem a:hover {
+        opacity: 0.7;
+    }
+
+    /* Danh sách phòng khám */
+    .danhsach h4 {
+        color: #1D93E3;
+    }
+
+    .google__map .danhsach {
+        width: 523px;
+        height: 578px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 20px 20px;
+    }
+
+    .scrollbox {
+        overflow: auto;
+        height: 500px;
+        width: 500px;
+    }
+
+    .scrollbox::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #1D93E3;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .scrollbox-inner img {
+        border-radius: 10px;
+    }
+
+    #scrollspyHeading1 {
+        font-weight: 700;
+        font-size: 17px;
+    }
+
+    .scrollbox .col-7 span {
+        margin-left: 5px;
+    }
+
+    .diachi .fa-map-pin {
+        color: red;
+    }
+
+    .sodienthoai .fa-phone {
+        color: #24e524;
+    }
+
+    .google__map .scrollbox .scrollbox-inner {
+        padding-top: 20px;
+        padding-bottom: 15px;
+        padding-left: 20px;
+        width: 485px;
+        border-radius: 20px;
+        transition: 0.3s ease;
+    }
+
+    .google__map .scrollbox .scrollbox-inner:hover {
+        background-color: #029ff77a;
+    }
+
+    .scrollbox-inner img {
+        height: 137px;
+        width: 183px;
+    }
+</style>
+
+@* Ảnh tiêu đề *@
+<div class="anhtieude">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="nenxanh"></div>
+            <div class="col-8">
+                <h2>@ViewData["Title"]</h2>
+                <ul class="d-flex ps-0">
+                    <li class="list-unstyled"><a class="text-decoration-none text-light" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+                    <li class="fw-bold ps-3 ms-5">Hệ thống chi nhánh các tỉnh</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Danh sách phòng khám và google map *@
+<div class="google__map my-5">
+    <div class="container-fluid">
+        <div class="row">
+
+            @* Danh sách phòng khám *@
+            <div class="col-4 z-3">
+                <div class="danhsach ms-3">
+                    <h4>HỆ THỐNG CHI NHÁNH CÁC TỈNH</h4>
+                    <div class="scrollbox mt-3">
+
+                        @* Phòng Khám Đa Khoa Medlatec Hồ Chí Minh *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/KSkwcHGUcdoZAdcA7" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/1672/content/20200715_med+ho+chi+minh.png?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Phòng Khám Đa Khoa MEDLATEC Hồ Chí Minh</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 98 Thích Quảng Đức, Phường 05, Phú Nhuận, Thành phố Hồ Chí Minh, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Phòng Khám Đa Khoa MEDLATEC Phú Thọ *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/Y2bwtxx87HXmaTsh7" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/21624/file/vp%20med/Thumb-MED-Phu+tho.png" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Phòng Khám Đa Khoa MEDLATEC Phú Thọ</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 48 Hàn Thuyên, Ph.Tân Dân, Thành phố Việt Trì, Phú Thọ, Vietnam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Phòng khám chuyên khoa xét nghiệm MEDLATEC Thừa Thiên Huế *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/jpH6ZUNUEdJK5PeM7" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/38810/catalog/med-hue.jpg?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Phòng khám chuyên khoa xét nghiệm MEDLATEC Thừa Thiên Huế</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 33 Đường Thạch Hãn, Thuận Hoà, Thành phố Huế, Thừa Thiên Huế, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Phòng khám Chuyên khoa Xét nghiệm MEDLATEC Hải Phòng *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/E6LMnHYTKxWXKKMA9" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/1667/content/20200715_med+hai+phong.png?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Phòng khám Chuyên khoa Xét nghiệm MEDLATEC Hải Phòng</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 15 Việt Đức, Quán Trữ, Kiến An, Hải Phòng, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Trung tâm xét nghiệm MEDLATEC Bắc Ninh *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/SVN2K7HPW1sE3F2x5" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/1669/content/20200715_med+bac+ninh.png?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Trung tâm xét nghiệm MEDLATEC Bắc Ninh</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Khu Khả Lễ, Đ. Bình Than, Bắc Ninh, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Phòng Khám Chuyên Khoa Xét Nghiệm MEDLATEC Bắc Giang *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/mm9zCbHXjnNw2Ji68" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/1670/content/20200715_med+bac+giang.png?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Phòng Khám Chuyên Khoa Xét Nghiệm MEDLATEC Bắc Giang</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>142B Đào Sư Tích, Phường Hoàng Văn Thụ, Bắc Giang, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Phòng Khám Chuyên Khoa Xét Nghiệm MEDLATEC Thái Bình *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/KyGLWnb98kR8VS6n8" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/1671/content/20200715_med+thai+binh.png?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Phòng Khám Chuyên Khoa Xét Nghiệm MEDLATEC Thái Bình</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 77, đường Chu Văn An, tổ 44, Tp. Thái Bình, Thái Bình, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Phòng khám Chuyên khoa Xét nghiệm MEDLATEC Hòa Bình *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/RFFCaK7mS8DDWJMX9" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/1675/content/20200715_med+hoa+binh.png?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Phòng khám Chuyên khoa Xét nghiệm MEDLATEC Hòa Bình</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Tầng 1, Nhà H, Bệnh viện Đa khoa tỉnh Hòa Bình, Đồng Tiến, thành phố Hòa Bình</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Phòng khám Chuyên khoa Xét nghiệm MEDLATEC Nghệ An *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/RFXEWKtAJ9HgGUuU8" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/1676/content/20200715_med+nghe+an.png?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Phòng khám Chuyên khoa Xét nghiệm MEDLATEC Nghệ An</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 91A Hoàng Thị Loan, Khối 4, Phường Bến Thủy, TP Vinh, tỉnh Nghệ An</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Phòng khám Chuyên khoa Xét nghiệm MEDLATEC Quảng Ninh *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/exUcEPSdscLA8y2b8" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/1677/content/20200715_med+quang+ninh.png?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Phòng khám Chuyên khoa Xét nghiệm MEDLATEC Quảng Ninh</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Lô C11 - KĐT mới Cao Xanh, Hà Khánh A, Cao Xanh, TP.Hạ Long, Quảng Ninh.</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Phòng khám Chuyên khoa Xét nghiệm MEDLATEC Ninh Bình *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/nVr5YWp1EDpnM6wV7" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/1678/content/20200715_med+ninh+binh.png?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Phòng khám Chuyên khoa Xét nghiệm MEDLATEC Ninh Bình</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Ngõ 310 Lê Thái Tổ, phố Lê Lợi, phường Nam Thành, thành phố Ninh Bình.</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Phòng khám Chuyên khoa Xét nghiệm MEDLATEC Đà Nẵng *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/9ztJNe8ihwCnz2w56" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/1679/content/20210311_med-da-nang.jpg?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Phòng khám Chuyên khoa Xét nghiệm MEDLATEC Đà Nẵng</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 21 Thái Văn Lung, P. Hòa Xuân, Q. Cẩm Lệ, TP. Đà Nẵng</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Phòng khám Chuyên khoa Xét nghiệm MEDLATEC Sơn Tây *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/n8WLVHSKq8QSPr5M6" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/1694/content/20200715_med+son+tay.png?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Phòng khám Chuyên khoa Xét nghiệm MEDLATEC Sơn Tây</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 79 Trung Sơn Trầm, Phường Trung Sơn Trầm, Thị xã Sơn Tây, Hà Nội.</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Nhiều văn phòng quá cho nên em chỉ lấy tới đây thui ạ ^^! *@
+
+                    </div>
+                </div>
+            </div>
+
+            @* Google Map *@
+            <div class="col-8 text-center">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0672068707254!2d106.67883327465583!3d10.806164689344438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528d951e06b6b%3A0x9bbbb8f1a122139b!2zUGjDsm5nIEtow6FtIMSQYSBLaG9hIE1lZGxhdGVjIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2s!4v1713851486675!5m2!1svi!2s" class="ms-5" width="850" height="575" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </div>
+    </div>
+
+</div>

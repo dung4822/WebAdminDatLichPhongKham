@@ -1,0 +1,586 @@
+﻿@{
+    ViewData["Title"] = "HỆ THỐNG MEDLATEC";
+}
+<style>
+    /* Ảnh tiêu đề */
+    .anhtieude {
+        position: relative;
+        top: 0;
+        left: 0;
+        background: url(https://medlatec.vn/med/images/breadcrumb4.jpg) no-repeat;
+        height: 400px;
+        background-size: cover;
+    }
+
+    .anhtieude .nenxanh {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 400px;
+        width: 100%;
+        background-color: #029ff77a;
+    }
+
+    .anhtieude .col-8 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 180px;
+        padding-left: 50px;
+        color: white;
+    }
+
+    /* CSS cho nút xem thêm trong mục I */
+    .mucI .nutxemthem a {
+        text-decoration: none;
+        background: #1d93e3;
+        padding: 11px 30px;
+        border-radius: 10px;
+        line-height: 43px;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+        .mucI .nutxemthem a:hover {
+            opacity: 0.7;
+        }
+
+    /* Danh sách phòng khám */
+    .danhsach h4 {
+        color: #1D93E3;
+    }
+
+    .google__map .danhsach {
+        width: 523px;
+        height: 578px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 20px 20px;
+    }
+
+    .scrollbox {
+        overflow: auto;
+        height: 500px;
+        width: 500px;
+    }
+
+    .scrollbox::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #1D93E3;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .scrollbox-inner img {
+        border-radius: 10px;
+    }
+
+    #scrollspyHeading1 {
+        font-weight: 700;
+        font-size: 17px;
+    }
+
+    .scrollbox .col-7 span {
+        margin-left: 5px;
+    }
+
+    .diachi .fa-map-pin {
+        color: red;
+    }
+
+    .sodienthoai .fa-phone {
+        color: #24e524;
+    }
+
+    .google__map .scrollbox .scrollbox-inner {
+        padding-top: 20px;
+        padding-bottom: 15px;
+        padding-left: 20px;
+        width: 485px;
+        border-radius: 20px;
+        transition: 0.3s ease;
+    }
+
+    .google__map .scrollbox .scrollbox-inner:hover {
+        background-color: #029ff77a;
+    }
+
+    .scrollbox-inner img {
+        height: 137px;
+        width: 183px;
+    }
+</style>
+
+@* Ảnh tiêu đề *@
+<div class="anhtieude">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="nenxanh"></div>
+            <div class="col-8">
+                <h2>@ViewData["Title"]</h2>
+                <ul class="d-flex ps-0">
+                    <li class="list-unstyled"><a class="text-decoration-none text-light" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+                    <li class="fw-bold ps-3 ms-5">Hệ thống văn phòng</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Danh sách phòng khám và google map *@
+<div class="google__map my-5">
+    <div class="container-fluid">
+        <div class="row">
+
+            @* Danh sách phòng khám *@
+            <div class="col-4 z-3">
+                <div class="danhsach ms-3">
+                    <h4>HỆ THỐNG VĂN PHÒNG</h4>
+                    <div class="scrollbox mt-3">
+
+                        @* VP lấy mẫu Tứ Liên *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/xHmU18USCoqR6ym88" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/27350/catalog/tu-lien-tay-ho-2.jpg?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Văn phòng lấy mẫu MEDLATEC Tứ Liên - Tây Hồ</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 67B, phường Tứ Liên, Tứ Liên, Tây Hồ, Hà Nội, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* VP lấy mẫu Tân Lập *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/k2SKyaoUwgTa88Fs9" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/20733/catalog/VP+T%c3%a2n+L%e1%ba%adp.jpg?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Văn phòng lấy mẫu MEDLATEC Tân Lập - Đan Phượng</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>LK-B06, Tòa nhà CT2B Tân Tây Đô, QL32, Tân Lập, Đan Phượng, Hà Nội, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* VP lấy mẫu Định Công *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/yFFXsjwAXPSUyo2U9" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/20734/catalog/VP+%c4%90%e1%bb%8bnh+C%c3%b4ng.jpg?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Văn phòng lấy mẫu MEDLATEC Định Công - Hoàng Mai</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 38 phố Trịnh Đình Cửu, Định Công, Hoàng Mai, Hà Nội, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* VP lấy mẫu Uy Nỗ *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/CowMcetGLYGTK6zj8" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/20735/catalog/Vp+Uy+N%e1%bb%97.jpg?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Văn phòng lấy mẫu MEDLATEC Uy Nỗ - Đông Anh</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 216 Cao Lỗ, Uy Nỗ, Đông Anh, Hà Nội, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Văn phòng lấy mẫu MEDLATEC Thịnh Quang - Đống Đa *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/NXMhdohiE4irfmS86" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/20736/catalog/Vp+Th%e1%bb%8bnh+Quang.jpg?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Văn phòng lấy mẫu MEDLATEC Thịnh Quang - Đống Đa</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 87, P. Thái Thịnh, Thịnh Quang, Đống Đa, Hà Nội, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Văn phòng lấy mẫu MEDLATEC Trâu Quỳ - Gia Lâm *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/jMmJviFzm5x8hNcX6" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/20737/catalog/VP+Tr%c3%a2u+QU%e1%bb%b3.jpg?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Văn phòng lấy mẫu MEDLATEC Trâu Quỳ - Gia Lâm</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>T51, Ngõ 237 Ngô Xuân Quảng, Trâu Quỳ, Gia Lâm, Hà Nội 100000, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Văn phòng lấy mẫu MEDLATEC Đồng Tâm - Hai bà Trưng *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/Nvc49JVeSnzP4o6BA" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/20738/catalog/VP+%c4%90%e1%bb%93ng+T%c3%a2m.jpg?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Văn phòng lấy mẫu MEDLATEC Đồng Tâm - Hai bà Trưng</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 89 Giải Phóng, Đồng Tâm, Hai Bà Trưng, Hà Nội, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Văn phòng lấy mẫu MEDLATEC An Khánh - Hoài Đức *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/qyXPXmUJVhM59ZSa7" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/1687/content/20220808_VP-med-hoai-duc.jpg?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Văn phòng lấy mẫu MEDLATEC An Khánh - Hoài Đức</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Gemek Tower, Kiot T1-25 Tầng 1, Sảnh A, Số 1 Đ. Lê Trọng Tấn, An Khánh, Hoài Đức, Hà Nội, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Văn phòng lấy mẫu MEDLATEC Mỹ Đình - Nam Từ Liêm *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/XZYJeP9DZWiSvHCC7" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/20740/catalog/VP+M%e1%bb%b9+%c4%90%c3%acnh.jpg?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Văn phòng lấy mẫu MEDLATEC Mỹ Đình - Nam Từ Liêm</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 56, P. Nguyễn Hoàng, Mỹ Đình, Từ Liêm, Hà Nội, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Văn phòng MEDLATEC Vĩnh Tuy *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/8pHVvquNmxGK6kE16" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/20741/catalog/VP+V%c4%a9nh+Tuy.jpg?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Văn phòng lấy mẫu MEDLATEC Vĩnh Tuy</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 493, P. Kim Ngưu, Vĩnh Tuy, Hai Bà Trưng, Hà Nội 100000, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* VP lấy mẫu Trung Hia - Trung Kính *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/KaeN4hXqjdwk7Wjg6" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/27353/catalog/trung-hoa-cau-giay.jpg?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Văn phòng lấy mẫu MEDLATEC Trung Hoà - Trung Kính</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 9, P. Trung Kính, Trung Hoà, Cầu Giấy, Hà Nội, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Văn phòng lấy mẫu MEDLATEC Phố Ga - Thường Tín *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/ne8EEMdeCvisGA1i7" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/20742/catalog/VP+Ph%e1%bb%91+Ga.jpg?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Văn phòng lấy mẫu MEDLATEC Phố Ga - Thường Tín</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 104 Trần Lư, Phố Ga, Thường Tín, Hà Nội, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Văn phòng lấy mẫu MEDLATEC Vân Đình - Ứng Hòa *@
+                        <div class="scrollbox-inner mb-5">
+                            <div class="row w-100">
+
+                                <a href="https://maps.app.goo.gl/S4nCuePsUXe2opRy9" target="_blank" class="text-decoration-none text-dark d-flex">
+
+                                    @* Hình ảnh chi nhánh *@
+                                    <div class="col-5">
+                                        <img src="https://medlatec.vn/media/20743/catalog/VP+V%c3%a2n+%c4%90%c3%acnh.jpg?size=256" class="img-fluid" />
+                                    </div>
+
+                                    @* Địa chỉ chi nhánh *@
+                                    <div class="col-7 ps-3">
+
+                                        <p id="scrollspyHeading1">Văn phòng lấy mẫu MEDLATEC Vân Đình - Ứng Hòa</p>
+
+                                        <div class="diachi">
+                                            <i class="fa-solid fa-map-pin"></i>
+                                            <span>Số 59 Thanh Ấm, TT. Vân Đình, Ứng Hòa, Hà Nội, Việt Nam</span>
+                                        </div>
+
+                                        <div class="sodienthoai">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>1900565656</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @* Nhiều văn phòng quá cho nên em chỉ lấy tới đây thui ạ ^^! *@
+
+                    </div>
+                </div>
+            </div>
+
+            @* Google Map *@
+            <div class="col-8 text-center">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0672068707254!2d106.67883327465583!3d10.806164689344438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528d951e06b6b%3A0x9bbbb8f1a122139b!2zUGjDsm5nIEtow6FtIMSQYSBLaG9hIE1lZGxhdGVjIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2s!4v1713851486675!5m2!1svi!2s" class="ms-5" width="850" height="575" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -19,4 +19,252 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+/* === HEADER === */
+@media (min-width: 1200px) {
+    .header__input--search {
+        width: 233px !important;
+    }
+
+        .header__input--search input {
+            width: 183px !important;
+        }
+
+    .offcanvas-body .header__input--search .btn {
+        margin-left: 5px !important;
+    }
+
+    .nav-item .trangchu {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1199px) {
+    .block__list--category {
+        display: none;
+    }
+
+    .nav-item .trangchu {
+        font-size: 18px;
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+    }
+
+    .header__input--search, .header__input--search button, .header__input--search input, .offcanvas-body .header__input--search .btn {
+        display: none !important;
+    }
+
+    .offcanvas-body .navbar-nav {
+        flex-direction: column-reverse;
+    }
+
+    .block__dangkyvadangnhap {
+        flex-direction: row !important;
+    }
+
+        .block__dangkyvadangnhap .khoidndk:nth-child(1) {
+            order: 3 !important;
+        }
+
+    #gachxuong {
+        order: 2 !important;
+    }
+
+    .block__dangkyvadangnhap .khoidndk:nth-child(2) {
+        order: 1 !important;
+    }
+
+    .duonggachtren {
+        border-top: 1px solid #1d93e3;
+        margin-top: 30px;
+        padding-top: 30px;
+    }
+
+    .header__hotlineandmessage {
+        margin-left: 65px;
+        margin-bottom: 30px;
+    }
+
+    .header__duongdaynong--moveleft {
+        margin-left: -38px;
+    }
+}
+
+.header {
+    padding: 30px 50px !important;
+    border-bottom: 1px solid #1d93e3;
+}
+
+/* Tuỳ chỉnh kích thước cho logo */
+.header__logo--MEDLATIC .logo--desktop {
+    width: 195px;
+    height: 44px;
+}
+
+.header__logo--MEDLATIC .logo--mobile {
+    height: 44px;
+    display: none;
+}
+/* Tuỳ chỉnh kích thước của logo for Phone */
+@media (max-width: 576px) {
+    .header__logo--MEDLATIC .logo--mobile {
+        display: block;
+        height: 44px;
+    }
+
+    .header__logo--MEDLATIC .logo--desktop {
+        display: none;
+    }
+}
+/* CSS cho input search */
+.header__input--search {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+    .header__input--search input {
+        outline: none;
+        border: none;
+        background: #9e9e9e38;
+        width: 326px;
+    }
+/* CSS cho nút search */
+.fa-magnifying-glass {
+    background: #1d93e3;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    position: relative;
+    left: -4px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+/* Chỉnh placeholder "Tìm kiếm" */
+.chinhchutimkiem {
+    font-weight: 400;
+    padding-left: 12px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 219px;
+    height: 40px;
+}
+/* CSS cho đường dây nóng */
+.header__hotlineandmessage {
+    width: 200px;
+    height: 50px;
+}
+
+    .header__hotlineandmessage a {
+        text-decoration: none;
+    }
+
+    .header__hotlineandmessage .sdt {
+        color: black;
+        font-weight: 500;
+    }
+
+.logo--hotlineandmessage {
+    float: left;
+    color: white;
+    background: #1d93e3;
+    padding: 10px 11px 10px 15px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    margin-right: 11px;
+    margin-top: 3px;
+}
+
+.logo--hotlineandmessage, .header__hotlineandmessage p.duongdaynong, .header__hotlineandmessage .sdt {
+    transition: 0.4s ease;
+}
+
+    .logo--hotlineandmessage:hover, .header__hotlineandmessage p.duongdaynong:hover, .header__hotlineandmessage .sdt:hover {
+        opacity: 0.7;
+    }
+
+.header__hotlineandmessage p.duongdaynong {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: gray;
+}
+/* CSS cho đăng ký và đăng nhập */
+
+.khoidndk a {
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.4s ease;
+    color: #1d93e3 !important;
+}
+
+    .khoidndk a:hover {
+        opacity: 0.7;
+    }
+/* Di chuyển contact sang bên trái một chút */
+.header__hotlineandmessage--moveleft {
+    position: relative;
+    top: 0;
+    right: 60px;
+}
+
+
+/* === FOOTER ===*/
+/* CSS đường gạch cho các tiêu đề */
+.footer__border--contact, .footer__border--operatingRegulations, .footer__border--followNews, .footer__border--link, .footer__border--downApp {
+    position: relative;
+    display: block;
+}
+
+    .footer__border--contact::after, .footer__border--operatingRegulations::after, .footer__border--followNews::after, .footer__border--link::after, .footer__border--downApp::after {
+        content: "";
+        position: absolute;
+        bottom: -12px;
+        left: 0;
+        height: 3px;
+        background-color: white;
+    }
+
+    .footer__border--contact::after {
+        width: 13%;
+    }
+
+    .footer__border--operatingRegulations::after {
+        width: 27%;
+    }
+
+    .footer__border--followNews::after {
+        width: 37%;
+    }
+
+    .footer__border--link::after {
+        width: 30%;
+    }
+
+    .footer__border--downApp::after {
+        width: 30%;
+    }
+/* CSS cho logo facebook - youtube - zalo */
+.fa-youtube, .fa-facebook, .fa-z {
+    font-size: 25px;
+    border-radius: 50px;
+    background-color: white;
+    padding: 11px 11px;
+    transition: 0.3s ease;
+}
+
+.fa-youtube {
+    color: red;
+}
+
+.fa-youtube:hover, .fa-facebook:hover, .fa-z:hover {
+    color: rgb(66, 46, 46);
+}
+
+.fa-z {
+    padding: 11px 14px;
+}
+/* CSS cho ma QR */
+.maqr {
+    width: 100px;
 }
