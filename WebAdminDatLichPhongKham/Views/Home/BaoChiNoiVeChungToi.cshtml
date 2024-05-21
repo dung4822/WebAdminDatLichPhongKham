@@ -1,0 +1,650 @@
+﻿@{
+    ViewData["Title"] = "TIN TỨC";
+}
+<style>
+    /* Ảnh tiêu đề */
+    .anhtieude {
+        position: relative;
+        top: 0;
+        left: 0;
+        background: url(https://medlatec.vn/med/images/breadcrumb4.jpg) no-repeat;
+        height: 400px;
+        background-size: cover;
+    }
+
+        .anhtieude .nenxanh {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 400px;
+            width: 100%;
+            background-color: #029ff77a;
+        }
+
+        .anhtieude .col-8 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-top: 180px;
+            padding-left: 50px;
+            color: white;
+        }
+
+    /* CSS cho nút đặt lịch */
+    .nutdatlich a {
+        text-decoration: none;
+        background: #1d93e3;
+        border-radius: 10px;
+        line-height: 43px;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+    /* CSS cho nút xem thêm */
+    .nutxemthem a {
+        text-decoration: none;
+        background: #1d93e3;
+        padding: 11px 30px;
+        border-radius: 10px;
+        line-height: 43px;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+        .nutxemthem a:hover, .nutdatlich a:hover {
+            opacity: 0.7;
+        }
+
+    /* CSS cho lựa chọn dịch vụ */
+    .luachon__dichvu .col-7 {
+        background-color: #1d93e3;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        padding: 25px 38px;
+    }
+
+    .luachon__dichvu .col-5 img {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .luachon__dichvu .block__dichvu {
+        background-color: white;
+        padding: 22px 15px;
+        height: 215px;
+        border-radius: 15px;
+    }
+
+        .luachon__dichvu .block__dichvu img {
+            border-radius: 10px;
+        }
+
+    /* CSS cho banner */
+    .hinhanh__datlichkham {
+        background: url(https://medlatec.vn/med/images/contactsidebar.png) no-repeat;
+        width: 430px;
+        height: 356px;
+        background-size: cover;
+        margin-top: 120px;
+        border-radius: 20px;
+    }
+
+        .hinhanh__datlichkham i {
+            font-size: 65px;
+        }
+
+        .hinhanh__datlichkham .tieude {
+            font-size: 25px;
+            font-weight: 700;
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .hinhanh__datlichkham .des {
+            margin-top: 15px;
+            margin-bottom: 2rem;
+        }
+
+    /* CSS cho tiêu đề chính tin tức nổi bật - cột phải */
+    .tintuc__noibat {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        width: 430px;
+        margin-left: 26px;
+    }
+
+        .tintuc__noibat .col-12 {
+            padding: 20px 30px;
+        }
+
+            .tintuc__noibat .col-12 a {
+                font-size: 18px;
+            }
+
+            .tintuc__noibat .col-12 h5, .tintuc__noibat .col-12 a {
+                line-height: 30px;
+            }
+    /* CSS cho hình ảnh hover tin tức nổi bật - cột phải */
+    .block__item--tintucnoibat .holder {
+        height: auto;
+        width: 125px;
+        overflow: hidden;
+        margin-left: 15px;
+    }
+
+    .block__item--tintucnoibat .col-4 {
+    }
+
+        .block__item--tintucnoibat .col-4 img {
+            transition: 0.3s ease-in-out;
+            height: 107px;
+        }
+
+    q
+    .block__item--tintucnoibat .col-4 img:hover {
+        transform: scale(1.2);
+    }
+
+    /* CSS cho banner hình ảnh - cột phải */
+    .block__banner {
+        width: 430px;
+        margin-left: 26px;
+    }
+
+        .block__banner img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+    .noidung__chitiet img {
+        width: 943px;
+    }
+
+    .noidung__chitiet span {
+        display: block;
+        font-size: 15px;
+        text-align: center;
+        margin-top: 5px;
+        font-style: italic;
+    }
+
+    .noidung__chitiet p, .noidung__chitiet li {
+        font-size: 17px;
+        color: #3f3b3b;
+    }
+
+    .khainiem {
+        padding: 40px;
+        background: #cee8fa;
+        border-radius: 15px;
+    }
+
+        .khainiem h6 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+    /* Tin tức y khoa */
+
+    .noidung .tieudechinh {
+        padding-top: 100px;
+    }
+
+    /* Hiệu ứng khi hover vào hình ảnh */
+    .holder {
+        overflow: hidden;
+    }
+
+        .holder img {
+            transition: all 0.3s;
+        }
+
+            .holder img:hover {
+                transform: scale(1.2);
+                cursor: pointer;
+            }
+    /* === */
+
+
+    .tintuc .thongtin h6 {
+        text-transform: uppercase;
+        color: grey;
+    }
+
+    .tintuc .thongtin h5 {
+        font-weight: 700;
+        line-height: 30px;
+        cursor: pointer;
+    }
+
+    .tintuc .thongtin p {
+        color: #000000e6;
+        font-weight: 400;
+    }
+
+    .tintuc--hotnhat {
+        margin-bottom: 200px;
+    }
+
+    .tintuckhac .thongtin {
+        padding-top: 40px;
+    }
+
+    .tintuckhac .holder {
+        height: 221px;
+    }
+
+    .block__item--tintucnoibat .holder {
+        height: 107px;
+    }
+
+    .holder img {
+        height: 100%;
+    }
+
+    .block__item--tintucnoibat h6 {
+        font-size: 18px;
+    }
+</style>
+
+@* Ảnh tiêu đề *@
+<div class="anhtieude">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="nenxanh"></div>
+            <div class="col-8">
+                <h2>@ViewData["Title"]</h2>
+                <ul class="d-flex ps-0">
+                    <li class="list-unstyled">
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
+                    </li>
+                    <li class="ps-3 mx-5">Giới thiệu</li>
+                    <li class="fw-bold ps-3">Phòng Xét nghiệm Bệnh viện Đa khoa Medlatec nhận chứng chỉ ISO 15189:2012</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Nội dung *@
+<div class="noidung px-3">
+    <div class="container-fluid">
+        <div class="row">
+
+            @* Cột trái *@
+            <div class="col-8">
+
+                <h2 class="tieudechinh mb-5">TIN TỨC Y KHOA</h2>
+
+                <!-- Tin tức hot nhất -->
+                <div class="tintuc--hotnhat tintuc">
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="holder">
+                                <img src="https://medlatec.vn/media/38987/content/phap-luat-viet-nam.jpg?size=1024" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-5 thongtin">
+                            <h6>tin tức hot nhất</h6>
+                            <h5>Dịch vụ lấy mẫu xét nghiệm tận nơi - Đón đầu xu thế chăm...</h5>
+                            <p>Cách đây gần 3 thập kỷ, MEDLATEC trở thành đơn vị mở đường đưa “công nghệ” lấy mẫu xét nghiệm tận nơi từ Nhật Bản về Việt Nam. Sự đón đầu đó, MEDLATEC mang đ...</p>
+                            <div class="date">
+                                <i class="fa-regular fa-clock"></i>
+                                <span class="text-secondary ms-1">Thứ Năm, 14 tháng 3, 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Các tin tức khác -->
+                <div class="tintuckhac tintuc">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="holder">
+                                <img src="https://medlatec.vn/media/38444/content/logo-vietnamnet.jpg?size=512" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-9 thongtin">
+                            <div class="date">
+                                <i class="fa-regular fa-clock"></i>
+                                <span class="text-secondary ms-1">Thứ Năm, 7 tháng 3, 2024</span>
+                            </div>
+                            <h5>MEDLATEC - 29 năm bền bỉ phụng sự, chăm sóc sức khỏe ngườ...</h5>
+                            <p>Suốt hành trình gần 3 thập kỷ, Hệ thống Y tế MEDLATEC vững vàng vượt qua mọi khó khăn, mang đến các công nghệ chẩn đoán hiện đại, chung tay cùng hệ thống y tế cả nước nâng cao chất lượng chăm sóc và bảo vệ sức khỏe người dân Việt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tintuckhac tintuc">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="holder">
+                                <img src="https://medlatec.vn/media/38444/content/logo-vietnamnet.jpg?size=512" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-9 thongtin">
+                            <div class="date">
+                                <i class="fa-regular fa-clock"></i>
+                                <span class="text-secondary ms-1">Thứ Sáu, 23 tháng 2, 2024</span>
+                            </div>
+                            <h5>Kết quả xét nghiệm MEDLATEC được công nhận tại 53 quốc gia</h5>
+                            <p>Không chỉ được liên thông, thừa nhận tại các cơ sở y tế tuyến đầu cả nước, mà kết quả xét nghiệm thực hiện tại Hệ thống Y tế MEDLATEC còn được công nhận tại 53 quốc gia, đem đến sự thuận lợi và tiết kiệm chi phí cho người dân.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tintuckhac tintuc">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="holder">
+                                <img src="https://medlatec.vn/media/37511/content/logo-phu-nu-viet-nam.jpg?size=512" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-9 thongtin">
+                            <div class="date">
+                                <i class="fa-regular fa-clock"></i>
+                                <span class="text-secondary ms-1">Thứ Năm, 14 tháng 3, 2024</span>
+                            </div>
+                            <h5>Hệ thống Y tế MEDLATEC toàn quốc ứng dụng chuyển đổi số n...</h5>
+                            <p>Với mong muốn mang đến khách hàng sự thuận lợi, nhanh chóng và chất lượng khám chữa bệnh chính xác, hiệu quả… Hệ thống Y tế MEDLATEC toàn quốc đã, đang ứng dụng hiệu quả chuyển đổi số để nâng cao chất lượng chuyên môn và dịch vụ phục vụ khách hàng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tintuckhac tintuc">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="holder">
+                                <img src="https://medlatec.vn/media/37444/content/logo-bao-vietnamnet.jpg?size=512" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-9 thongtin">
+                            <div class="date">
+                                <i class="fa-regular fa-clock"></i>
+                                <span class="text-secondary ms-1">Thứ Sáu, 23 tháng 2, 2024</span>
+                            </div>
+                            <h5>Khám chữa bệnh ứng dụng công nghệ cao tạo nên thương hiệu...</h5>
+                            <p>Suốt gần 3 thập kỷ hoạt động, hệ thống y tế MEDLATEC liên tục cập nhật các kỹ thuật tiên tiến trên thế giới, coi đây là một trong những “kim chỉ nam” phục vụ sức khỏe cộng đồng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tintuckhac tintuc">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="holder">
+                                <img src="https://medlatec.vn/media/37510/content/logo-plvn-1.jpg?size=512" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-9 thongtin">
+                            <div class="date">
+                                <i class="fa-regular fa-clock"></i>
+                                <span class="text-secondary ms-1">Thứ Sáu, 23 tháng 2, 2024</span>
+                            </div>
+                            <h5>Hệ thống Y tế MEDLATEC cung cấp các giải pháp chẩn đoán v...</h5>
+                            <p>(PLVN) - Là đơn vị gắn liền với hai chữ “tiên phong”, Hệ thống Y tế MEDLATEC luôn đi đầu và quyết liệt đến cùng trong việc ứng dụng các giải pháp khám chữa bệnh ưu việt hàng đầu, nhằm đáp ứng nhu cầu chăm sóc sức khỏe chất lượng cao của người dân trên toàn quốc.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tintuckhac tintuc">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="holder">
+                                <img src="https://medlatec.vn/media/37476/content/logo-ha-noi-moi.jpg?size=512" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-9 thongtin">
+                            <div class="date">
+                                <i class="fa-regular fa-clock"></i>
+                                <span class="text-secondary ms-1">Thứ Sáu, 23 tháng 2, 2024</span>
+                            </div>
+                            <h5>Xét nghiệm NIPT ngay tại nhà nhanh chóng, chính xác - "đi...</h5>
+                            <p>NIPT là xét nghiệm “đầu tay” được các chuyên gia đầu ngành khuyến cáo mọi mẹ bầu nên thực hiện để sàng lọc dị tật thai nhi. Không còn lo lắng về khoảng cách, thời gian, nguy cơ lây nhiễm bệnh khi thăm khám trực tiếp tại cơ sở y tế, giờ đây mẹ bầu an tâm thực hiện xét nghiệm NIPT ngay tại nhà do M...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tintuckhac tintuc">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="holder">
+                                <img src="https://medlatec.vn/media/37446/content/logo-dan-tri.jpg?size=512" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-9 thongtin">
+                            <div class="date">
+                                <i class="fa-regular fa-clock"></i>
+                                <span class="text-secondary ms-1">Thứ Sáu, 23 tháng 2, 2024</span>
+                            </div>
+                            <h5>Hệ thống Y tế MEDLATEC Group: Hành trình gần 3 thập kỷ ch...</h5>
+                            <p>Dễ dàng tiếp cận công nghệ cao tại hệ thống y tế phủ khắp toàn quốc, chủ động thời gian thăm khám, quy trình khép kín, khoa học... là nỗ lực của Hệ thống Y tế MEDLATEC Group gần 3 thập kỷ thực hiện sứ mệnh chăm sóc sức khỏe cộng đồng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tintuckhac tintuc">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="holder">
+                                <img src="https://medlatec.vn/media/37444/content/logo-bao-vietnamnet.jpg?size=512" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-9 thongtin">
+                            <div class="date">
+                                <i class="fa-regular fa-clock"></i>
+                                <span class="text-secondary ms-1">Thứ Sáu, 23 tháng 2, 2024</span>
+                            </div>
+                            <h5>MEDLATEC - hệ thống y tế tư nhân mở rộng mạng lưới dịch v...</h5>
+                            <p>Thời gian qua MEDLATEC liên tục mở rộng mạng lưới với mong muốn người dân cả nước được thụ hưởng công nghệ chẩn đoán và dịch vụ y tế tiên tiến, hiện đại.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tintuckhac tintuc">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="holder">
+                                <img src="https://medlatec.vn/media/37444/content/logo-bao-vietnamnet.jpg?size=512" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-9 thongtin">
+                            <div class="date">
+                                <i class="fa-regular fa-clock"></i>
+                                <span class="text-secondary ms-1">Thứ Năm, 22 tháng 2, 2024</span>
+                            </div>
+                            <h5>Đội ngũ chuyên gia hàng đầu - ‘chìa khoá’ tạo uy tín của...</h5>
+                            <p>Hành trình gần 30 năm hình thành và phát triển, với đội ngũ chuyên gia y khoa đầu ngành tại Việt Nam, Hệ thống Y tế MEDLATEC nhận được sự tin tưởng chăm sóc sức khỏe của đông đảo người dân trên khắp mọi miền đất nước.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            @* Cột phải *@
+            <div class="col-4">
+
+                @* Banner đặt lịch khám *@
+                <div class="hinhanh__datlichkham p-5 text-light justify-content-center mx-auto me-0">
+
+                    @* Tiêu đề *@
+                    <div class="d-flex">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <p class="tieude">Đặt lịch nhanh chóng</p>
+                    </div>
+
+                    @* Mô tả *@
+                    <p class="des">Bạn muốn tìm kiếm dịch vụ y tế chất lượng cao với giá cả hợp lý? Hãy đến với MEDLATEC - nơi cung cấp dịch vụ khám chữa bệnh uy tín hàng đầu Việt Nam.</p>
+
+                    @* Nút đặt lịch *@
+                    <div class="nutdatlich fw-bold text-center">
+                        <a class="text-light d-block" asp-area="" asp-controller="Home" asp-action="" target="_blank">Đặt Lịch</a>
+                    </div>
+
+                </div>
+
+                @* Banner quảng cáo hình nhỏ *@
+                <div class="block__banner my-5">
+                    <img src="https://medlatec.vn/media/27714/catalog/ADN-435x292.jpg?size=2048" class="img-fluid" />
+                </div>
+
+                @* Tin tức mới nhất *@
+                <div class="tintuc__noibat">
+
+                    @* Tiêu đề và nút xem thêm *@
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-between">
+                            <h5 class="mb-0">Tin tức mới nhất</h5>
+                            <a class="text-decoration-none fw-bold" asp-area="" asp-controller="Home" asp-action="" target="_blank">Xem thêm</a>
+                        </div>
+                    </div>
+
+                    @* Các tin tức *@
+                    <div class="block__item--tintucnoibat">
+
+                        @* Tin tức 1 *@
+                        <div class="row">
+
+                            @* Hình ảnh *@
+                            <div class="col-4">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41772/content/_medlatec-2904-2.png?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-8">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Hai, 29 tháng 4, 2024</span>
+                                    <h6 class="my-2">Trường hợp hy hữu tại MEDLATEC: tưởng nốt ruồi...</h6>
+                                    <p class="text-secondary">Xuất hiện nốt sẩn đen dưới lòng bàn...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        @* Tin tức 2 *@
+                        <div class="row">
+
+                            @* Hình ảnh *@
+                            <div class="col-4">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41768/content/B%c3%a1o-c%c3%a1o-vi%c3%aan-s%e1%bb%91-10-PGS.TS-Nguy%e1%bb%85n-Th%c3%a1i-S%c6%a1n-WEb.jpg?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-8">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Bảy, 27 tháng 4, 2024</span>
+                                    <h6 class="my-2">Hội thảo trực tuyến số 10: Giải pháp...</h6>
+                                    <p class="text-secondary">Liên cầu khuẩn nhóm B là một trong...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        @* Tin tức 3 *@
+                        <div class="row">
+
+                            @* Hình ảnh *@
+                            <div class="col-4">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41756/content/hoi-nghi-chiem-hoa.jpg?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-8">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Sáu, 26 tháng 4, 2024</span>
+                                    <h6 class="my-2">Nhiều thông tin hữu ích được chia sẻ...</h6>
+                                    <p class="text-secondary">Say mê, sôi nổi và hào hứng - đó là...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        @* Tin tức 4 *@
+                        <div class="row">
+
+                            @* Hình ảnh *@
+                            <div class="col-4">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41751/content/ca-chua-co-tac-dung-gi-cho-da-mat.jpg?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-8 mb-4">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Sáu, 26 tháng 4, 2024</span>
+                                    <h6 class="my-2">Cà chua có tác dụng gì cho da mặt và...</h6>
+                                    <p class="text-secondary">Cà chua không chỉ là một loại rau củ...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Lựa chọn dịch vụ *@
+<div class="luachon__dichvu my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <h4 class="text-light">Lựa chọn dịch vụ</h4>
+                <p class="text-light">Quý khách hàng vui lòng lựa chọn dịch vụ y tế theo nhu cầu!</p>
+
+                @* Lấy mẫu xét nghiệm tại nhà *@
+                <div class="row block__dichvu mt-4">
+                    <div class="col-3">
+                        <img src="https://medlatec.vn/med/images/service-selection.png" title="Bệnh viện đa khoa MEDLATEC" class="img-fluid" />
+                    </div>
+                    <div class="col-9">
+                        <h4>Lấy mẫu xét nghiệm tại nhà</h4>
+                        <p class="text-secondary">Lấy mẫu xét nghiệm tại nhà giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</p>
+                        <div class="nutxemthem fw-bold float-end">
+                            <a class="text-light" asp-area="" asp-controller="Home" asp-action="" target="_blank">Đặt Lịch</a>
+                        </div>
+                    </div>
+                </div>
+
+                @* Đặt lịch thăm khám *@
+                <div class="row block__dichvu mt-4">
+                    <div class="col-3">
+                        <img src="https://medlatec.vn/med/images/service02.png" title="Bệnh viện đa khoa MEDLATEC" class="img-fluid" />
+                    </div>
+                    <div class="col-9">
+                        <h4>Đặt lịch thăm khám tại MEDLATEC</h4>
+                        <p class="text-secondary">Đặt lịch khám tại cơ sở khám chữa bệnh thuộc Hệ thống Y tế MEDLATEC giúp chủ động thời gian, hạn chế tiếp xúc đông người.</p>
+                        <div class="nutxemthem fw-bold float-end">
+                            <a class="text-light" asp-area="" asp-controller="Home" asp-action="" target="_blank">Đặt Lịch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 px-0">
+                <img src="https://medlatec.vn/med/images/service-selection.png" title="Bệnh viện đa khoa MEDLATEC" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+</div>
+
+

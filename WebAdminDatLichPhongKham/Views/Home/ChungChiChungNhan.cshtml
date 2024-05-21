@@ -1,0 +1,744 @@
+﻿@{
+    ViewData["Title"] = "CHỨNG CHỈ CHỨNG NHẬN";
+}
+<style>
+    /* Ảnh tiêu đề */
+    .anhtieude {
+        position: relative;
+        top: 0;
+        left: 0;
+        background: url(https://medlatec.vn/med/images/breadcrumb4.jpg) no-repeat;
+        height: 400px;
+        background-size: cover;
+    }
+
+        .anhtieude .nenxanh {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 400px;
+            width: 100%;
+            background-color: #029ff77a;
+        }
+
+        .anhtieude .col-8 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-top: 180px;
+            padding-left: 50px;
+            color: white;
+        }
+
+    /* === NỘI DUNG === */
+    .phanI p {
+        font-size: 17px;
+        color: #2e2b2be6;
+    }
+
+    .noidung .tieudechinh {
+        padding-top: 120px;
+    }
+
+        .noidung .tieudechinh h3 {
+            color: rgb(57, 132, 198);
+            font-weight: 600;
+            line-height: 40px;
+        }
+
+        /* .noidung .mucI h4 {
+            color: #1D93E3;
+        } */
+
+        .noidung .tieudechinh p {
+            color: #534E56;
+            font-weight: 700;
+            font-size: 17px;
+            margin-top: 1rem;
+        }
+
+    .mucI p {
+        font-size: 15px;
+    }
+
+    .mucI .hethong__benhvien p {
+        padding: 0px 50px;
+    }
+
+    .mucI .hethong__benhvien img {
+        border-radius: 20px;
+    }
+
+    .mucI .hethong__benhvien .col-4 {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+        .mucI .hethong__benhvien .col-4::after {
+            content: "";
+            position: absolute;
+            top: 14px;
+            left: 25px;
+            width: 230px;
+            height: 233px;
+            background-color: #029ffbb0;
+            border-radius: 13px;
+            z-index: 2;
+            opacity: 0;
+            transition: all 0.4s;
+        }
+
+        .mucI .hethong__benhvien .col-4:hover::after {
+            transform: scale(0.9);
+            opacity: 1;
+        }
+
+    /* Viết hiệu ứng riêng cho hình lớn */
+
+    .mucI .hethong__benhvien ._1hinhlon {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+        .mucI .hethong__benhvien ._1hinhlon .hieuung__diachi--map {
+            position: absolute;
+            top: 36px;
+            left: 54px;
+            width: 740px;
+            height: 220px;
+            z-index: 3;
+            opacity: 0;
+            transition: all 0.4s;
+        }
+
+            .mucI .hethong__benhvien ._1hinhlon .hieuung__diachi--map:hover {
+                opacity: 1;
+            }
+
+        .mucI .hethong__benhvien ._1hinhlon::after {
+            content: "";
+            position: absolute;
+            top: 27px;
+            left: 0px;
+            width: 840px;
+            height: 250px;
+            background-color: #029ffbb0;
+            border-radius: 13px;
+            z-index: 2;
+            opacity: 0;
+            transition: all 0.4s;
+        }
+
+        .mucI .hethong__benhvien ._1hinhlon:hover::after {
+            transform: scale(0.9);
+            opacity: 1;
+        }
+
+    ._1hinhlon img {
+        width: 814px;
+    }
+
+    /* ===== */
+
+    .hieuung__diachi--map:hover {
+        opacity: 1;
+    }
+
+    .hieuung__diachi--map {
+        position: absolute;
+        top: 22px;
+        left: 40px;
+        width: 200px;
+        height: 220px;
+        z-index: 3;
+        opacity: 0;
+        transition: all 0.4s;
+    }
+
+        .hieuung__diachi--map .fa-location-dot {
+            padding: 14px;
+            background: white;
+            font-size: 30px;
+            border-radius: 12px;
+            position: relative;
+            top: 3px;
+            right: -4px;
+        }
+
+        .hieuung__diachi--map .diachi {
+            padding-left: 9px;
+            position: absolute;
+            bottom: 11px;
+            left: 0;
+        }
+
+            .hieuung__diachi--map .diachi p {
+                font-size: 14px;
+                color: white;
+                margin-bottom: 7px;
+            }
+
+            .hieuung__diachi--map .diachi .des {
+                font-size: 12px;
+                color: white;
+            }
+    /* CSS cho nút đặt lịch */
+    .nutdatlich a {
+        text-decoration: none;
+        background: #1d93e3;
+        border-radius: 10px;
+        line-height: 43px;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+    /* CSS cho nút xem thêm */
+    .nutxemthem a {
+        text-decoration: none;
+        background: #1d93e3;
+        padding: 11px 30px;
+        border-radius: 10px;
+        line-height: 43px;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+        .nutxemthem a:hover, .nutdatlich a:hover {
+            opacity: 0.7;
+        }
+
+    /* CSS cho lựa chọn dịch vụ */
+    .luachon__dichvu .col-7 {
+        background-color: #1d93e3;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        padding: 25px 38px;
+    }
+
+    .luachon__dichvu .col-5 img {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .luachon__dichvu .block__dichvu {
+        background-color: white;
+        padding: 22px 15px;
+        height: 215px;
+        border-radius: 15px;
+    }
+
+        .luachon__dichvu .block__dichvu img {
+            border-radius: 10px;
+        }
+
+    /* CSS cho banner */
+    .hinhanh__datlichkham {
+        background: url(https://medlatec.vn/med/images/contactsidebar.png) no-repeat;
+        width: 430px;
+        height: 356px;
+        background-size: cover;
+        margin-top: 120px;
+        border-radius: 20px;
+    }
+
+        .hinhanh__datlichkham i {
+            font-size: 65px;
+        }
+
+        .hinhanh__datlichkham .tieude {
+            font-size: 25px;
+            font-weight: 700;
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .hinhanh__datlichkham .des {
+            margin-top: 15px;
+            margin-bottom: 2rem;
+        }
+
+    /* CSS cho tiêu đề chính tin tức nổi bật - cột phải */
+    .tintuc__noibat {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        width: 430px;
+        margin-left: 26px;
+    }
+
+        .tintuc__noibat .col-12 {
+            padding: 20px 30px;
+        }
+
+            .tintuc__noibat .col-12 a {
+                font-size: 18px;
+            }
+
+            .tintuc__noibat .col-12 h5, .tintuc__noibat .col-12 a {
+                line-height: 30px;
+            }
+    /* CSS cho hình ảnh hover tin tức nổi bật - cột phải */
+    .block__item--tintucnoibat .holder {
+        height: auto;
+        width: 125px;
+        overflow: hidden;
+        margin-left: 15px;
+    }
+
+    .block__item--tintucnoibat .col-4 {
+    }
+
+        .block__item--tintucnoibat .col-4 img {
+            transition: 0.3s ease-in-out;
+            height: 107px;
+        }
+
+            .block__item--tintucnoibat .col-4 img:hover {
+                transform: scale(1.2);
+            }
+
+    /* CSS cho banner hình ảnh - cột phải */
+    .block__banner {
+        width: 430px;
+        margin-left: 26px;
+    }
+
+        .block__banner img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+    .noidung__chitiet img {
+        width: 943px;
+    }
+
+    .noidung__chitiet span {
+        display: block;
+        font-size: 15px;
+        text-align: center;
+        margin-top: 5px;
+        font-style: italic;
+    }
+
+    .noidung__chitiet p, .noidung__chitiet li {
+        font-size: 17px;
+        color: #3f3b3b;
+    }
+
+    .khainiem {
+        padding: 40px;
+        background: #cee8fa;
+        border-radius: 15px;
+    }
+
+        .khainiem h6 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+</style>
+
+@* Ảnh tiêu đề *@
+<div class="anhtieude">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="nenxanh"></div>
+            <div class="col-8">
+                <h2>@ViewData["Title"]</h2>
+                <ul class="d-flex ps-0">
+                    <li class="list-unstyled">
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
+                    </li>
+                    <li class="ps-3 mx-5">Giới thiệu</li>
+                    <li class="fw-bold ps-3">Phòng Xét nghiệm Bệnh viện Đa khoa Medlatec nhận chứng chỉ ISO 15189:2012</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Nội dung *@
+<div class="noidung px-3">
+    <div class="container-fluid">
+        <div class="row">
+
+            @* Cột trái *@
+            <div class="col-8">
+
+                @* Tiêu đề chính *@
+                <div class="tieudechinh">
+                    <h3>HỆ THỐNG Y TẾ MEDLATEC - ĐƠN VỊ Y TẾ TIÊN PHONG ÁP DỤNG ĐỒNG BỘ QUẢN LÝ XÉT NGHIỆM THEO CÁC TIÊU CHUẨN QUỐC TẾ</h3>
+                    <p>Kết quả xét nghiệm chính xác, tin cậy góp phần quan trọng cho công tác chẩn đoán, theo dõi và điều trị các bệnh lý. Bởi vậy, Hệ thống Y tế MEDLATEC luôn tiên phong và ứng dụng thành công các tiêu chuẩn quản lý quốc tế cũng như của Bộ Y tế để kết quả như cam kết chính xác và tin cậy nhất.</p>
+                </div>
+
+                <div class="noidung__chitiet">
+
+                    @* ISO 15189:2012 - Tiêu chuẩn quốc tế cho các phòng xét nghiệm y tế *@
+                    <div>
+                        <h4 class="my-4">ISO 15189:2012 - Tiêu chuẩn quốc tế cho các phòng xét nghiệm y tế</h4>
+
+                        <p>Trong khám chữa bệnh, xét nghiệm là cánh tay đắc lực giúp bác sĩ chẩn đoán chính xác, kịp thời và hiệu quả. Với định hướng xuyên suốt xét nghiệm là nòng cốt, vì vậy, bên cạnh chú trọng quy tụ đội ngũ chuyên gia Xét nghiệm đầu ngành, Hệ thống Y tế MEDLATEC trên toàn quốc còn đầu tư đồng bộ dàn máy móc các chuyên khoa như Huyết học, Di truyền, Sinh hóa, Miễn dịch... từ nhiều hãng nổi tiếng thế giới là Thụy Sĩ, Hoa Kỳ, Đức và Nhật Bản.</p>
+                        <p>Hiện tại, MEDLATEC có năng lực thực hiện tổng lượng mẫu xét nghiệm mỗi năm lên tới 12 triệu mẫu, cùng cam kết kết quả xét nghiệm chính xác, tin cậy. Theo đó, MEDLATEC bảo đảm tuân thủ đầy đủ các quy định của Bộ Y tế và các chương trình nội, ngoại kiểm ở trong nước, quốc tế khác.</p>
+                        <p>Đầu tiên phải kể đến tiêu chuẩn ISO 15189:2012 là tiêu chuẩn quốc tế quy định dành riêng cho các phòng xét nghiệm y tế, bao gồm các yêu cầu cụ thể nhằm phát triển hệ thống quản lý chất lượng và hoạt động tự đánh giá, cải thiện năng lực để đảm bảo tính phù hợp, tuân thủ với tiêu chuẩn của ngành và quy định pháp luật. Tiêu chuẩn này được xây dựng dựa trên các yêu cầu của ISO 17025 và ISO 9001, đồng thời, bổ sung thêm các yêu cầu bảo đảm chất lượng khác liên quan đến lĩnh vực thử nghiệm y tế.</p>
+                        <p>Tiêu chuẩn ISO 15189:2012 gồm 15 yêu cầu về quản lý và 10 yêu cầu về kỹ thuật bao gồm năng lực, tay nghề nhân sự xét nghiệm, kiểm soát môi trường, kiểm soát thiết bị xét nghiệm, công tác chuẩn bị trước xét nghiệm, kiểm soát quá trình thực hiện xét nghiệm...</p>
+                        <p>Với mỗi Phòng Xét nghiệm việc áp dụng thành công thành công tiêu chuẩn ISO 15189:2012 sẽ là cơ sở bảo đảm cung cấp kết quả xét nghiệm chính xác, tin cậy, cũng như là điều kiện cần thiết để các cơ sở khám chữa bệnh liên thông và thừa nhận kết quả giữa các đơn vị y tế.</p>
+                        <p>Tuân thủ đầy đủ các quy định nghiêm ngặt của ISO 15189, ngày 13/4/2016, Khoa Xét nghiệm, Bệnh viện Đa khoa MEDLATEC đã được Văn phòng Công nhận chất lượng (BoA), Bộ Khoa học và Công nghệ trao chứng nhận ISO 15189:2012.</p>
+                        <img src="https://medlatec.vn//ckfinder/userfiles/images/gd-dam-trong-hieu-nhan-bang.jpg" alt="Ông Vũ Xuân Thủy (bìa phải) trao chứng chỉ ISO 15189:2012 cho đại diện Ban Giám đốc Bệnh viện Đa khoa Medlatec." title="Ông Vũ Xuân Thủy (bìa phải) trao chứng chỉ ISO 15189:2012 cho đại diện Ban Giám đốc Bệnh viện Đa khoa Medlatec." class="img-fluid" />
+                        <span>Ông Vũ Xuân Thủy (bìa phải) trao chứng chỉ ISO 15189:2012 cho đại diện Ban Giám đốc Bệnh viện Đa khoa Medlatec.</span>
+
+                        <p class="mt-4">Khi đó, cả nước có khoảng 40 bệnh viện, chủ yếu là bệnh viện lớn, tuyến Trung ương đạt chứng chỉ ISO 15189:2012. Riêng tại Hà Nội, sự kiện này ghi dấu, MEDLATEC trở thành 1 trong 16 phòng xét nghiệm đầu tiên tại Hà Nội đạt được chứng chỉ quan trọng này.</p>
+                        <p>Việc đạt chứng nhận ISO 15189:2012 là vinh dự lớn cho các phòng xét nghiệm, tuy nhiên, theo quy định, đơn vị sẽ đánh giá định kỳ 3 năm một lần. Hiện nay, Trung tâm Xét nghiệm của Bệnh viện Đa khoa MEDLATEC đã thực hiện công tác đánh giá này định kỳ lần 3 sau chu kỳ 3 năm kể từ năm 2016 tới nay.</p>
+                        <img src="https://medlatec.vn/media/21698/file/Danh-gia-iso-boa-medlatec.jpeg" alt="PGS.TS Lý Tuấn Khải - Chuyên gia đánh giá kỹ thuật lĩnh vực Huyết học, BVTW Quân đội 108 thực hiện đánh giá tại khu vực Huyết học - Trung tâm Xét nghiệm MEDLATEC" class="img-fluid" title="PGS.TS Lý Tuấn Khải - Chuyên gia đánh giá kỹ thuật lĩnh vực Huyết học, BVTW Quân đội 108 thực hiện đánh giá tại khu vực Huyết học - Trung tâm Xét nghiệm MEDLATEC" />
+                        <span>PGS.TS Lý Tuấn Khải - Chuyên gia đánh giá kỹ thuật lĩnh vực Huyết học, BVTW Quân đội 108 thực hiện đánh giá tại khu vực Huyết học - Trung tâm Xét nghiệm MEDLATEC</span>
+
+                        <p class="mt-4">Xuyên suốt hành trình gần 3 thập kỷ lớn mạnh và phát triển, “con đường MEDLATEC” được phủ xanh cả nước gồm 14 bệnh viện/phòng khám đa khoa, 29 Phòng khám chuyên khoa Xét nghiệm, gần 200 văn phòng lấy mẫu xét nghiệm trên toàn quốc và mở rộng sang thị trường Campuchia (số liệu thống kê đến tháng 6/2023).</p>
+                        <p>Theo đó, tiêu chuẩn ISO 15189:2012 cũng được đồng bộ áp dụng trên toàn quốc. Minh chứng cho công tác quản lý này là chỉ riêng năm 2022 lần lượt các đơn vị trong Hệ thống Y tế MEDLATEC đạt chứng nhận ISO 15189:2012 gồm: Phòng khám Đa khoa (PKĐK) MEDLATEC Thanh Hóa, MEDLATEC Bắc Giang, PKĐK MEDLATEC Bắc Ninh, MEDLATEC Phú Thọ và PKĐK MEDLATEC Vĩnh Phúc.</p>
+                        <img src="https://medlatec.vn/media/21699/file/iso-medlatec-phu-tho.jpeg" alt="Phòng khám Chuyên khoa xét nghiệm MEDLATEC Phú Thọ đón nhận chứng nhận ISO 15189:2012 từ đại diện BOA" class="img-fluid" title="Phòng khám Chuyên khoa xét nghiệm MEDLATEC Phú Thọ đón nhận chứng nhận ISO 15189:2012 từ đại diện BOA" />
+                        <span>Phòng khám Chuyên khoa xét nghiệm MEDLATEC Phú Thọ đón nhận chứng nhận ISO 15189:2012 từ đại diện BOA</span>
+                    </div>
+
+                    @* CAP - Tiêu chuẩn nghiêm ngặt của Hoa Kỳ, MEDLATEC là đơn vị Y tế đầu tiên tại Việt Nam đạt được *@
+                    <div>
+                        <h4 class="my-4">CAP - Tiêu chuẩn nghiêm ngặt của Hoa Kỳ, MEDLATEC là đơn vị Y tế đầu tiên tại Việt Nam đạt được</h4>
+
+                        <p>Để kết quả xét nghiệm chính xác và tin cậy cao nhất, MEDLATEC coi đây là hành trình không có điểm cuối, bởi vậy, đơn vị luôn tiên phong “thử sức” mình với những tiêu chuẩn quốc tế nghiêm ngặt hơn, đó là tiêu chuẩn CAP (tên viết tắt của Hiệp hội Bệnh học Hoa Kỳ - College of American Pathologists).</p>
+                        <p>Cơ quan này cung cấp các tiêu chuẩn nghiêm ngặt về chất lượng xét nghiệm, cung cấp cơ hội học hỏi, phát triển toàn diện để phòng xét nghiệm có thể hỗ trợ tốt nhất các bác sĩ trong khâu đưa ra chẩn đoán điều trị chính xác cho bệnh nhân thông qua kết quả xét nghiệm.</p>
+                        <p>Để được công nhận chất lượng phòng xét nghiệm theo tiêu chuẩn CAP thì một phòng xét nghiệm cần đáp ứng bộ các tiêu chí gồm:</p>
+                        <ul>
+                            <li>Tiêu chuẩn I: Liên quan đến trình độ, trách nhiệm và vai trò của người đứng đầu phòng xét nghiệm. Tiêu chuẩn này đưa ra các tiêu chí về những trách nhiệm nào có thể được giao, cũng như vai trò khi cần một cuộc tư vấn theo góc độ chuyên gia;</li>
+                            <li>Tiêu chuẩn II: Liên quan đến cơ sở vật chất của phòng thí nghiệm, bao gồm cả không gian và thiết bị đo đạc; đồ đạc, nội thất; hệ thống truyền thông và xử lý dữ liệu; thuốc thử; vật tư; thông gió; đường ống dẫn khí và nước; tiện ích công cộng; lưu trữ và xử lý chất thải; bảo vệ người bệnh, nhân viên phòng thí nghiệm và khách đến thăm khỏi các điều kiện nguy hiểm;</li>
+                            <li>Tiêu chuẩn III: Liên quan đến quản lý chất lượng. Quản lý các quá trình trước, trong và sau phân tích các mẫu bệnh phẩm sử dụng trong xét nghiệm y khoa.</li>
+                            <li>Tiêu chuẩn IV: Bao gồm các yêu cầu quản trị của chương trình. Phòng xét nghiệm sẽ có các đợt kiểm tra định kỳ như có đoàn thanh tra kiểm tra bởi các chuyên gia kỹ thuật của CAP hoặc tự kiểm tra bởi phòng xét nghiệm.</li>
+                        </ul>
+                        <p>Tiếp đó, đơn vị phải tham gia vào quá trình đánh giá chất lượng phòng xét nghiệm theo tiêu chuẩn CAP và phải vượt qua nhiều vòng kiểm tra khác nhau.</p>
+                        <p>Ngày 07/01/2022, Trung tâm Xét nghiệm, Bệnh viện Đa khoa MEDLATEC vinh dự được trao chứng chỉ CAP để trở thành 1 trong 8.000 phòng xét nghiệm trên thế giới của 53 quốc gia và là đơn vị y tế đầu tiên của Việt Nam nhận được chứng nhận CAP.</p>
+                        <img src="https://medlatec.vn/media/21701/file/Chung-nhan-CAP-2.jpeg" alt="Trung tâm Xét nghiệm MEDLATEC tự hào là đơn vị đầu tiên tại Việt Nam đạt được chứng nhận CAP (Hoa Kỳ) - Tiêu chuẩn chất lượng xét nghiệm hàng đầu thế giới" class="img-fluid" title="Trung tâm Xét nghiệm MEDLATEC tự hào là đơn vị đầu tiên tại Việt Nam đạt được chứng nhận CAP (Hoa Kỳ) - Tiêu chuẩn chất lượng xét nghiệm hàng đầu thế giới" />
+                        <span>Trung tâm Xét nghiệm MEDLATEC tự hào là đơn vị đầu tiên tại Việt Nam đạt được chứng nhận CAP (Hoa Kỳ) - Tiêu chuẩn chất lượng xét nghiệm hàng đầu thế giới</span>
+                        <img src="https://medlatec.vn/media/21700/file/Chung-nhan-CAP.jpeg" alt="Chứng nhận CAP (College of American Pathologists)" class="img-fluid" title="Chứng nhận CAP (College of American Pathologists)" />
+                        <span>Chứng nhận CAP (College of American Pathologists)</span>
+                        <p class="mt-4">Sự kiện này ghi dấu thành công của MEDLATEC sau hơn 2 năm bền bỉ, nỗ lực tìm hiểu, đăng ký, xây dựng hệ thống tài liệu, vận hành theo tiêu chuẩn, gửi hồ sơ tham gia và kiểm tra, đánh giá chất lượng theo bộ tiêu chuẩn CAP.</p>
+                    </div>
+
+                    @* Quản lý đồng bộ các tiêu chuẩn y tế trong nước và quốc tế khác *@
+                    <div>
+                        <h4 class="my-4">Quản lý đồng bộ các tiêu chuẩn y tế trong nước và quốc tế khác</h4>
+
+                        <p>Bên cạnh tiên phong áp dụng song hành tiêu chuẩn quản lý quốc tế là ISO 15189:2012 và CAP, toàn bộ hệ thống Trung tâm, Phòng Xét nghiệm của MEDLATEC luôn tuân thủ quản lý chất lượng theo quy định của Bộ Y tế theo quyết định 2429/QĐ-BYT ngày 12/6/2017.</p>
+                        <p>Quyết định này gồm có 12 chương, 169 tiêu chí và các tiểu mục kèm theo, gồm các tiêu chí về quản lý và kỹ thuật. Thực hiện đánh giá chất lượng phòng xét nghiệm theo quyết định này để đảm bảo kết quả xét nghiệm chính xác, kịp thời, chuẩn hóa, đồng thời làm cơ sở cho việc liên thông, công nhận kết quả xét nghiệm, giảm phiền hà, chi phí cho người bệnh, tiết kiệm nguồn lực của xã hội, đồng thời hội nhập mạng lưới kiểm chuẩn chất lượng xét nghiệm trong khu vực và thế giới. </p>
+                        <p>Ngoài ra, MEDLATEC còn áp dụng tiêu chuẩn CE-IVD, CE là ký hiệu/nhãn hiệu để hàng hóa có thể được lưu hành tự do trong khối châu Âu, còn IVD (viết tắt của cụm từ In vitro Diagnostics), nghĩa là “xét nghiệm trong ống nghiệm”, được sử dụng cho những bộ hóa chất và sinh phẩm dùng trong xét nghiệm y tế. Do vậy, CE-IVD là tiêu chuẩn áp dụng cho các sản phẩm thuộc trang thiết bị y tế, dùng cho chẩn đoán trong ống nghiệm, để có thể phù hợp pháp lý và các yêu cầu kỹ thuật liên hiệp các nước châu Âu và thành viên.</p>
+                        <p>Hiện tại Trung tâm Xét nghiệm MEDLATEC, hệ thống trang thiết bị y tế chẩn đoán được trang bị đều đạt tiêu chuẩn CE-IVD góp phần bảo đảm kết quả chính xác và tin cậy.</p>
+                        <p>FDA (Food and Drug Administration) là chứng nhận đủ tiêu chuẩn về thực phẩm, hoặc dược phẩm do Cục quản lý Thực phẩm và Dược phẩm của chính phủ Hoa kỳ cấp, do tính khoa học và nghiêm ngặt nên chứng nhận này đã trở thành tiêu chuẩn được thế giới công nhận. Đây cũng là tiêu chuẩn được áp dụng đồng thời tại Hệ thống Trung tâm/Phòng Xét nghiệm MEDLATEC.</p>
+                        <img src="https://medlatec.vn/media/21702/file/trung-tam-xet-nghiem-medlatec.jpg" alt="Trung tâm xét nghiệm MEDLATEC - đơn vị y tế đầu tiên và duy nhất ở nước ta thực hiện song hành hai chứng chỉ chất lượng phòng xét nghiệm theo tiêu chuẩn quốc tế là ISO 15189:2012 và CAP" class="img-fluid" title="Trung tâm xét nghiệm MEDLATEC - đơn vị y tế đầu tiên và duy nhất ở nước ta thực hiện song hành hai chứng chỉ chất lượng phòng xét nghiệm theo tiêu chuẩn quốc tế là ISO 15189:2012 và CAP" />
+                        <span>Trung tâm xét nghiệm MEDLATEC - đơn vị y tế đầu tiên và duy nhất ở nước ta thực hiện song hành hai chứng chỉ chất lượng phòng xét nghiệm theo tiêu chuẩn quốc tế là ISO 15189:2012 và CAP</span>
+                        <p class="mt-4">Với những năng lực vượt trội về đội ngũ chuyên gia, máy móc, hóa chất theo tiêu chuẩn quản lý châu Âu (CE-IVD), tiêu chuẩn quốc tế FDA... Là đơn vị y tế đầu tiên và duy nhất ở nước ta thực hiện song hành hai chứng chỉ chất lượng phòng xét nghiệm theo tiêu chuẩn quốc tế là ISO 15189:2012 và CAP, cùng thực hiện nghiêm ngặt các quy định của Bộ Y tế. Bởi vậy, MEDLATEC không chỉ đáp ứng được trên 2.000 danh mục xét nghiệm, mà kết quả xét nghiệm này còn được liên thông sử dụng tại các cơ sở khám chữa bệnh trong nước, cũng như được chấp nhận tại các cơ sở y tế nước ngoài giúp khách hàng tiết kiệm được thời gian, chi phí cũng như bảo đảm hiệu quả khám chữa bệnh chính xác và kịp thời nhất.</p>
+                    </div>
+
+                    @* Một số chứng chỉ/chứng nhận/giải thưởng đáng chú ý khác *@
+                    <div>
+                        <h4 class="my-4">Một số chứng chỉ/chứng nhận/giải thưởng đáng chú ý khác</h4>
+
+                        @* Giải thưởng Sao Khuê 2023 - Ứng dụng y tế số My MEDLATEC *@
+                        <div>
+                            <h5 class="mb-4">Giải thưởng Sao Khuê 2023 - Ứng dụng y tế số My MEDLATEC</h5>
+                            <img src="https://medlatec.vn//ImagePath/images/20230428/20230428__sao-khue.jpg" alt="Ứng dụng My Medlatec đạt giải Sao Khuê 2023" class="img-fluid" title="Ứng dụng My Medlatec đạt giải Sao Khuê 2023" />
+                            <span>Ứng dụng My Medlatec đạt giải Sao Khuê 2023</span>
+                            <p class="mt-4">Sao Khuê là giải thưởng danh giá, uy tín và chuyên nghiệp trao tặng cho cho các sản phẩm dịch vụ và phần mềm công nghệ thông tin Việt Nam. Năm 2023, Ứng dụng My Medlatec do Công ty Cổ phần và Dịch vụ Y tế số MED-ON (Thuộc tập đoàn MED-Group) nghiên cứu và phát triển đã được vinh danh là giải pháp xuất sắc duy nhất thuộc lĩnh vực Y tế, Chăm sóc sức khỏe.</p>
+                        </div>
+
+                        @* Giải thưởng ASOCIO 2021 về công nghệ thông tin trong lĩnh vực y tế, chăm sóc sức khỏe *@
+                        <div>
+                            <h5 class="mb-4">Giải thưởng ASOCIO 2021 về công nghệ thông tin trong lĩnh vực y tế, chăm sóc sức khỏe</h5>
+                            <img src="https://medlatec.vn/media/27586/file/Asocio_medlatec_2021.jpg" alt="MEDLATEC đạt giải thưởng ASOCIO 2021" class="img-fluid" title="MEDLATEC đạt giải thưởng ASOCIO 2021" />
+                            <span>MEDLATEC đạt giải thưởng ASOCIO 2021</span>
+                            <p class="mt-4">Giải thưởng ASOCIO là giải thưởng công nghệ thông tin uy tín hàng đầu khu vực dành cho các cá nhân, tổ chức và doanh nghiệp xuất sắc tại 24 nền kinh tế thành viên ASOCIO. Năm 2021, Việt Nam có hai đơn vị được nhận giải thưởng này. Trong đó, MEDLATEC nhận giải thưởng ASOCIO dành cho lĩnh vực Công nghệ chăm sóc sức khoẻ.</p>
+                        </div>
+
+                        @* Đạt giải "Sản phẩm dịch vụ chất lượng ASEAN 2023 do Trung tâm nghiên cứu Phát triển doanh nghiệp châu Á tổ chức *@
+                        <div>
+                            <h5 class="mb-4">Đạt giải "Sản phẩm dịch vụ chất lượng ASEAN 2023 do Trung tâm nghiên cứu Phát triển doanh nghiệp châu Á tổ chức</h5>
+                            <img src="https://medlatec.vn//ImagePath/images/20230424/20230424__dich-vu-tai-nha-nhan-giai-thuong-asean-2.jpg" alt="Dịch vụ lấy mẫu xét nghiệm tận nơi đạt giải Sản phẩm dịch vụ chất lượng ASEAN 2023" class="img-fluid" title="Dịch vụ lấy mẫu xét nghiệm tận nơi đạt giải Sản phẩm dịch vụ chất lượng ASEAN 2023" />
+                            <span>Dịch vụ lấy mẫu xét nghiệm tận nơi đạt giải Sản phẩm dịch vụ chất lượng ASEAN 2023</span>
+                            <p class="mt-4">Dịch vụ lấy mẫu xét nghiệm tận nơi của Hệ thống Y tế MEDLATEC vinh dự là 1 trong 15 sản phẩm dịch vụ được trao chứng nhận tại Diễn đàn Hợp tác kinh tế Việt Nam - ASEAN và Lễ công bố Sản phẩm dịch vụ chất lượng ASEAN 2023 do Trung tâm Nghiên cứu Phát triển doanh nghiệp châu Á phối hợp với các tổ chức quốc tế uy tín tổ chức. Chương trình được tổ chức thường niên hàng năm tại các nước Đông Nam Á và năm nay diễn ra tại Malaysia.</p>
+                        </div>
+
+                    </div>
+
+                    @* Khái niệm *@
+                    <div class="khainiem my-5">
+
+                        @* Tiêu chuẩn ISO 15189:2012 là gì? *@
+                        <div>
+                            <h6>Tiêu chuẩn ISO 15189:2012 là gì?</h6>
+                            <p>ISO 15189:2012 (tương đương Tiêu chuẩn quốc gia TCVN 15189:2014) là tiêu chuẩn quy định các yêu cầu về năng lực và chất lượng đối với các phòng xét nghiệm y tế. Tiêu chuẩn này được xây dựng dựa trên các yêu cầu của tiêu chuẩn ISO/IEC 17025 và ISO 9001, ngoài ra bổ sung thêm các yêu cầu riêng về đảm bảo chất lượng trong lĩnh vực thử nghiệm y tế.</p>
+                            <p>Tiêu chuẩn ISO 15189: 2012 “Phòng xét nghiệm y tế - Các yêu cầu về chất lượng và năng lực” đã được ban hành ngày 01/11/2012 thay thế cho tiêu chuẩn ISO 15189: 2007 áp dụng trước đó. Phiên bản mới có thêm nhiều tiêu chí chặt chẽ, từng bước nâng cao chất lượng chuyên môn và năng lực quản lý.</p>
+                            <p>ISO 15189 bao gồm 15 yêu cầu về quản lý tương tự các yêu cầu về quản lý trong tiêu chuẩn ISO/IEC 17025 hay các yêu cầu về hệ thống quản lý trong ISO 9001:2008 và 10 yêu cầu kỹ thuật liên quan đảm bảo chất lượng trong hoạt động xét nghiệm như: năng lực, tay nghề cán bộ xét nghiệm; kiểm soát điều kiện môi trường; kiểm soát thiết bị xét nghiệm; công tác chuẩn bị trước khi xét nghiệm; kiểm soát quá trình thực hiện xét nghiệm…</p>
+                        </div>
+
+                        @* CAP (College of American Pathologists) là gì? *@
+                        <div>
+                            <h6>CAP (College of American Pathologists) là gì?</h6>
+                            <p>CAP là tên viết tắt của Hiệp hội Bệnh học Hoa Kỳ (College of American Pathologists), đây là cơ quan công nhận chất lượng được ưu tiên lựa chọn bởi hơn 8.000 phòng thí nghiệm ở hơn 50 quốc gia trên thế giới. Cơ quan này cung cấp các tiêu chuẩn nghiêm ngặt về chất lượng xét nghiệm, cung cấp cơ hội học hỏi, phát triển toàn diện để phòng xét nghiệm có thể hỗ trợ tốt nhất các bác sĩ trong khâu đưa ra chẩn đoán điều trị chính xác cho bệnh nhân thông qua kết quả xét nghiệm.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            @* Cột phải *@
+            <div class="col-4">
+
+                @* Banner đặt lịch khám *@
+                <div class="hinhanh__datlichkham p-5 text-light justify-content-center mx-auto me-0">
+
+                    @* Tiêu đề *@
+                    <div class="d-flex">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <p class="tieude">Đặt lịch nhanh chóng</p>
+                    </div>
+
+                    @* Mô tả *@
+                    <p class="des">Bạn muốn tìm kiếm dịch vụ y tế chất lượng cao với giá cả hợp lý? Hãy đến với MEDLATEC - nơi cung cấp dịch vụ khám chữa bệnh uy tín hàng đầu Việt Nam.</p>
+
+                    @* Nút đặt lịch *@
+                    <div class="nutdatlich fw-bold text-center">
+                        <a class="text-light d-block" asp-area="" asp-controller="Home" asp-action="" target="_blank">Đặt Lịch</a>
+                    </div>
+
+                </div>
+
+                @* Banner quảng cáo hình nhỏ *@
+                <div class="block__banner my-5">
+                    <img src="https://medlatec.vn/media/27714/catalog/ADN-435x292.jpg?size=2048" class="img-fluid" />
+                </div>
+
+                @* Banner quảng cáo hình lớn *@
+                <div class="block__banner my-5">
+                    <img src="https://medlatec.vn/media/29997/catalog/435_480.png?size=2048" class="img-fluid" />
+                </div>
+
+                @* Tin tức nổi bật *@
+                <div class="tintuc__noibat">
+
+                    @* Tiêu đề và nút xem thêm *@
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-between">
+                            <h5 class="mb-0">Tin tức nổi bật</h5>
+                            <a class="text-decoration-none fw-bold" asp-area="" asp-controller="Home" asp-action="" target="_blank">Xem thêm</a>
+                        </div>
+                    </div>
+
+                    @* Các tin tức *@
+                    <div class="block__item--tintucnoibat">
+
+                        @* Tin tức 1 *@
+                        <div class="row mb-4">
+
+                            @* Hình ảnh *@
+                            <div class="col-4">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41633/content/benh-tri-mo-tai-medlatec.jpg?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-8">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Năm, 25 tháng 4, 2024</span>
+                                    <h5 class="my-2">Điều trị trĩ không lo chi phí...</h5>
+                                    <p class="text-secondary">Nhằm giúp người dân có cơ hội...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        @* Tin tức 2 *@
+                        <div class="row">
+
+                            @* Hình ảnh *@
+                            <div class="col-4">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41624/content/thong-bao-lich-lam-viec.jpg?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-8">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Năm, 25 tháng 4, 2024</span>
+                                    <h5 class="my-2">Hệ thống Y tế MEDLATEC...</h5>
+                                    <p class="text-secondary">Nhằm đảm bảo công tác phục vụ chăm...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        @* Tin tức 3 *@
+                        <div class="row">
+
+                            @* Hình ảnh *@
+                            <div class="col-4">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41614/content/1+photo_2024-04-24_15-14-31+(2).jpg?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-8">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Tư, 24 tháng 4, 2024</span>
+                                    <h5 class="my-2">Báo cáo viên MEDLATEC...</h5>
+                                    <p class="text-secondary">Nối dài hành trình chia sẻ kiến thức y khoa giá trị tại các hội nghị khoa học trên toàn...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                @* Tin tức y tế *@
+                <div class="tintuc__noibat mt-5">
+
+                    @* Tiêu đề và nút xem thêm *@
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-between">
+                            <h5 class="mb-0">Tin tức y tế</h5>
+                            <a class="text-decoration-none fw-bold" asp-area="" asp-controller="Home" asp-action="" target="_blank">Xem thêm</a>
+                        </div>
+                    </div>
+
+                    @* Các tin tức *@
+                    <div class="block__item--tintucnoibat">
+
+                        @* Tin tức 1 *@
+                        <div class="row mb-4">
+
+                            @* Hình ảnh *@
+                            <div class="col-4">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41710/content/ketoconazol-1.jpg?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-8">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Năm, 25 tháng 4, 2024</span>
+                                    <h5 class="my-2">Công dụng của Thuốc Ket...</h5>
+                                    <p class="text-secondary">Ketoconazol được sử dụng để điều...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        @* Tin tức 2 *@
+                        <div class="row mb-4">
+
+                            @* Hình ảnh *@
+                            <div class="col-4">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41703/content/oflovid-1.jpg?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-8">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Năm, 25 tháng 4, 2024</span>
+                                    <h5 class="my-2">Hướng dẫn cách dùng thu...</h5>
+                                    <p class="text-secondary">Oflovid là thuốc chuyên sử dụng...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        @* Tin tức 3 *@
+                        <div class="row pb-4">
+
+                            @* Hình ảnh *@
+                            <div class="col-4">
+                                <div class="holder">
+                                    <a href="#">
+                                        <img src="https://medlatec.vn/media/41698/content/cay-sam-bien-4.jpg?size=512" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            @* Thông tin *@
+                            <div class="col-8">
+                                <a href="#" class="date text-decoration-none text-dark">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="text-secondary">Thứ Năm, 25 tháng 4, 2024</span>
+                                    <h5 class="my-2">Cây sâm biển và những...</h5>
+                                    <p class="text-secondary">Cây sa sâm hay sâm biển được biết...</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Lựa chọn dịch vụ *@
+<div class="luachon__dichvu my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <h4 class="text-light">Lựa chọn dịch vụ</h4>
+                <p class="text-light">Quý khách hàng vui lòng lựa chọn dịch vụ y tế theo nhu cầu!</p>
+
+                @* Lấy mẫu xét nghiệm tại nhà *@
+                <div class="row block__dichvu mt-4">
+                    <div class="col-3">
+                        <img src="https://medlatec.vn/med/images/service-selection.png" title="Bệnh viện đa khoa MEDLATEC" class="img-fluid" />
+                    </div>
+                    <div class="col-9">
+                        <h4>Lấy mẫu xét nghiệm tại nhà</h4>
+                        <p class="text-secondary">Lấy mẫu xét nghiệm tại nhà giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</p>
+                        <div class="nutxemthem fw-bold float-end">
+                            <a class="text-light" asp-area="" asp-controller="Home" asp-action="" target="_blank">Đặt Lịch</a>
+                        </div>
+                    </div>
+                </div>
+
+                @* Đặt lịch thăm khám *@
+                <div class="row block__dichvu mt-4">
+                    <div class="col-3">
+                        <img src="https://medlatec.vn/med/images/service02.png" title="Bệnh viện đa khoa MEDLATEC" class="img-fluid" />
+                    </div>
+                    <div class="col-9">
+                        <h4>Đặt lịch thăm khám tại MEDLATEC</h4>
+                        <p class="text-secondary">Đặt lịch khám tại cơ sở khám chữa bệnh thuộc Hệ thống Y tế MEDLATEC giúp chủ động thời gian, hạn chế tiếp xúc đông người.</p>
+                        <div class="nutxemthem fw-bold float-end">
+                            <a class="text-light" asp-area="" asp-controller="Home" asp-action="" target="_blank">Đặt Lịch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 px-0">
+                <img src="https://medlatec.vn/med/images/service-selection.png" title="Bệnh viện đa khoa MEDLATEC" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+</div>
+

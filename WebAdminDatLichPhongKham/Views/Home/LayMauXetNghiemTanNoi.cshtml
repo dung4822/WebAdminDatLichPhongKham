@@ -1,0 +1,440 @@
+﻿<style>
+	:root {
+		--mauchudao: #1d93e3;
+	}
+	/* === PADDING CONTAINER FOR ELEMENTS === */
+	.laymauxetnghiemtannoi .container-fluid {
+		margin-top: 100px;
+	}
+
+	.goixetnghiemtainha .container-fluid {
+		background-color: #CEE8FA;
+		padding-bottom: 60px;
+	}
+
+	.tintucykhoa .container-fluid {
+		padding-top: 100px;
+	}
+	/* === END PADDING CONTAINER FOR ELEMENTS === */
+
+
+	/* === TITLES FOR ELEMENTS === */
+	.laymauxetnghiemtannoi .col-12 b, .goixetnghiemtainha .col-12 b {
+		color: var(--mauchudao);
+	}
+	/* === END TITLES FOR ELEMENTS === */
+
+
+
+	/* === BANNER === */
+	.banner img {
+		width: 100%;
+	}
+	/* === END BANNER === */
+
+
+
+
+	/* === LAY MAU XET NGHIEM TAN NOI === */
+
+	/* --- HOVER --- */
+	.laymauxetnghiemtannoi .col-md-3:hover img,
+	.laymauxetnghiemtannoi .col-md-3:hover .duonggach,
+	.laymauxetnghiemtannoi .col-md-3:hover h3.title {
+		opacity: 0;
+	}
+
+	.laymauxetnghiemtannoi .col-md-3 .holder__text {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+	}
+
+	.laymauxetnghiemtannoi .col-md-3:hover .holder__text {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 1;
+	}
+
+	.laymauxetnghiemtannoi .holder__text h3 {
+		text-align: center;
+		padding-top: 60px;
+		padding-bottom: 10px;
+	}
+
+	.laymauxetnghiemtannoi .holder__text p {
+		color: #fff;
+		padding-left: 44px;
+		padding-right: 25px;
+	}
+	/* --- END HOVER --- */
+
+	.laymauxetnghiemtannoi .row.nenxanh {
+		background-color: #CEE8FA;
+		padding: 90px 20px;
+		justify-content: center;
+	}
+
+	.laymauxetnghiemtannoi .nenxanh .col-md-3 {
+		background: var(--mauchudao);
+		padding: 25px;
+		width: 353px;
+		margin-right: 5px;
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+
+	.laymauxetnghiemtannoi .nenxanh .duonggach {
+		height: 7px;
+		background: #ffd800;
+		width: 35%;
+		margin-top: 25px;
+	}
+
+	.laymauxetnghiemtannoi .nenxanh h3 {
+		color: #fff;
+		margin-top: 15px;
+		font-size: 25px;
+	}
+	/* === END LAY MAU XET NGHIEM TAN NOI === */
+
+
+	/* === GOI XET NGHIEM TAI NHA === */
+	.goixetnghiemtainha .col-md-10 h4 {
+		font-size: 19px;
+	}
+	/* === END GOI XET NGHIEM TAI NHA === */
+
+	/* === TIN TUC Y KHOA === */
+	.tintucykhoa span {
+		text-decoration: none !important;
+	}
+
+	.tintucykhoa a.icon-link {
+		text-decoration: none;
+		color: #1d93e3;
+		font-size: 18px;
+	}
+
+	.tintucykhoa p {
+		padding-top: 5px;
+	}
+
+	.tintucykhoa h3 {
+		padding-top: 20px;
+		font-size: 25px;
+		cursor: pointer;
+	}
+
+	.tintucykhoa h2 {
+		text-transform: uppercase;
+	}
+
+	.tintucykhoa .col-12 h2 {
+		padding-left: 5px;
+	}
+
+	a.btn:focus {
+		box-shadow: none;
+		outline: none;
+		border: 1px solid var(--mauchudao);
+	}
+
+	a.icon-link span {
+		text-decoration: underline;
+	}
+
+	a.icon-link:hover i {
+		transform: translateX(7px);
+		transition: 0.3s;
+	}
+
+	a.icon-link i {
+		margin-left: 5px;
+	}
+
+	.tintucykhoa .nutxemthem, .doinguchuyengia .nutxemthem, .cosovatchat .nutdatlich {
+		border: 1px solid #1d93e3;
+		color: #1d93e3;
+		padding: 5px 40px;
+		font-size: 19px;
+		transition: 0.4s;
+		margin-top: 15px;
+		z-index: 3 !important;
+	}
+
+		.tintucykhoa .nutxemthem:hover {
+			background: #1d93e3;
+			color: white;
+		}
+
+	.tintucykhoa .col-3 {
+		padding: 0px 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.tintucykhoa img {
+		transition: 0.4s;
+		border-radius: 10px;
+		height: 100%;
+	}
+
+	.tintucykhoa .holder:hover img {
+		transform: scale(1.2);
+	}
+
+	.tintucykhoa .holder {
+		overflow: hidden;
+		cursor: pointer;
+		border-radius: 10px;
+		height: 303px;
+	}
+	/* === END TIN TUC Y KHOA === */
+</style>
+@* Banner *@
+<div class="banner">
+	<div class="container-fluid px-0">
+		<div class="row">
+			<div class="col-12">
+				<img src="~/images/Main/LayMauXetNghiemTanNoi/banner.png" alt="MEDLATEC - Lấy mẫu xét nghiệm tận nơi" title="MEDLATEC - Lấy mẫu xét nghiệm tận nơi" class="img-fluid" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Content -->
+<div class="laymauxetnghiemtannoi">
+	<div class="container-fluid">
+
+		<!-- Title -->
+		<div class="row">
+			<div class="col-12">
+				<h1 class="ps-4 mb-5">LẤY MÁU XÉT NGHIỆM TẠI NHÀ <b>MEDLATEC</b></h1>
+			</div>
+		</div>
+
+		<!-- 4 mục -->
+		<div class="row nenxanh">
+
+			<!-- Bảo vệ sức khoẻ -->
+			<div class="col-md-3">
+				<img src="~/images/Main/LayMauXetNghiemTanNoi/LayMauXetNghiemTaiNha/hinh1.jpg" class="img-fluid rounded">
+				<div class="duonggach rounded"></div>
+				<h3 class="title">Bảo vệ sức khoẻ</h3>
+				<div class="holder__text">
+					<h3>Bảo vệ sức khoẻ</h3>
+					<p>Lấy máu xét nghiệm tại nhà giúp khách hàng chủ động tầm soát bệnh lý định kỳ, sớm phát hiện các bệnh lý bất thường để từ đó có hướng điều trị phù hợp. Bên cạnh đó, dịch vụ còn giúp người bệnh theo dõi tiến triển của một số bệnh lý chuyển hóa như: đường máu, mỡ máu, men gan, gout,… từ đó bệnh nhân có hướng điều chỉnh chế độ ăn uống và sinh hoạt hợp lý, nâng cao chất lượng sức khỏe.</p>
+				</div>
+			</div>
+
+			<!-- Tính tiện lợi -->
+			<div class="col-md-3">
+				<img src="~/images/Main/LayMauXetNghiemTanNoi/LayMauXetNghiemTaiNha/hinh2.jpg" class="img-fluid rounded">
+				<div class="duonggach rounded"></div>
+				<h3 class="title">Tính tiện lợi</h3>
+				<div class="holder__text">
+					<h3>Tính tiện lợi</h3>
+					<p>Lấy mẫu xét nghiệm tại nhà giúp giảm thời gian đi lại, chờ đợi. Kết quả xét nghiệm sẽ được trả ngay tại nhà hoặc tra cứu kết quả trên website: medlatec.vn app My Medlatec của bệnh viện. Ngoài ra, lấy máu xét nghiệm tại nhà còn giúp giảm khả năng lây nhiễm chéo trong bệnh viện, người bệnh sau khi có kết quả xét nghiệm sẽ được bác sĩ gọi điện tư vấn bệnh lý và điều chỉnh chế độ ăn uống sinh hoạt (nếu có).</p>
+				</div>
+			</div>
+
+			<!-- Chi phí xét nghiệm hợp lý -->
+			<div class="col-md-3">
+				<img src="~/images/Main/LayMauXetNghiemTanNoi/LayMauXetNghiemTaiNha/hinh3.jpg" class="img-fluid rounded">
+				<div class="duonggach rounded"></div>
+				<h3 class="title">Chi phí xét nghiệm hợp lý</h3>
+				<div class="holder__text">
+					<h3>Chi phí xét nghiệm hợp lý</h3>
+					<p>Giá dịch vụ xét nghiệm tại nhà được niêm yết theo đúng bảng giá khách hàng sử dụng dịch vụ tại bệnh viện, phòng khám của MEDLATEC và chỉ chỉ mất thêm phụ phí đi lại là 10.000đ/ lần lấy mẫu.</p>
+				</div>
+			</div>
+
+			<!-- Nhanh chóng -->
+			<div class="col-md-3">
+				<img src="~/images/Main/LayMauXetNghiemTanNoi/LayMauXetNghiemTaiNha/hinh4.jpg" class="img-fluid rounded">
+				<div class="duonggach rounded"></div>
+				<h3 class="title">Nhanh chóng</h3>
+				<div class="holder__text">
+					<h3>Nhanh chóng</h3>
+					<p>Sau khi nhận được lịch đặt của khách hàng, nhân viên lấy mẫu sẽ gọi điện xác nhận thời gian và địa chỉ lấy mẫu xét nghiệm, đồng thời đến đúng theo lịch. Ngoài ra, tùy từng xét nghiệm sẽ có thời gian trả kết quả khác nhau, với hệ thông trang thiết bị, máy móc xét nghiệm được đầu tư hiện đại khách hàng sẽ nhận được kết quả chỉ từ 2 giờ.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="goixetnghiemtainha">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="ps-4 mb-5">Một số gói xét nghiệm tại nhà nổi bật của <b>MEDLATEC</b></h1>
+			</div>
+		</div>
+		<div class="row px-3 pb-5">
+
+			<!-- Xét nghiệm kiểm tra sức khoẻ tổng quát: -->
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-md-2">
+						<img src="~/images/Main/Index/ChuyenKhoaYTe/namkhoa_xanh.png" class="img-fluid">
+					</div>
+					<div class="col-md-10">
+						<h4 class="fw-bold">Xét nghiệm kiểm tra sức khoẻ tổng quát:</h4>
+						<p class="text-body-secondary fw-bold">Tổng phân tích tế bào máu, chức năng gan mật, chức năng thận, bệnh lý đường máu, mỡ máu, bệnh Goute, Acid uric,..</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Xét nghiệm sản/phụ khoa: -->
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-md-2">
+						<img src="~/images/Main/Index/ChuyenKhoaYTe/noitiet_xanh.png" class="img-fluid">
+					</div>
+					<div class="col-md-10">
+						<h4 class="fw-bold">Xét nghiệm sản/phụ khoa:</h4>
+						<p class="text-body-secondary fw-bold">HPV, CA-125, nội tiết tố (progesterone, estradiol,..)</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Xét nghiệm kiểm tra các bệnh mãn tính: -->
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-md-2">
+						<img src="~/images/Main/Index/ChuyenKhoaYTe/xetnghiem_xanh.png" class="img-fluid">
+					</div>
+					<div class="col-md-10">
+						<h4 class="fw-bold">Xét nghiệm kiểm tra các bệnh mãn tính:</h4>
+						<p class="text-body-secondary fw-bold">HbA1c, Glucose máu, Ure máu, Creatinin máu, Cholesterol, Acid uric,…</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row px-3">
+
+			<!-- Xét nghiệm truyền nhiễm: -->
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-md-2">
+						<img src="~/images/Main/Index/ChuyenKhoaYTe/truyennhiem_xanh.png" class="img-fluid">
+					</div>
+					<div class="col-md-10">
+						<h4 class="fw-bold">Xét nghiệm truyền nhiễm:</h4>
+						<p class="text-body-secondary fw-bold">Viêm gan B, C, HIV, Lậu, Giang mai, Chlamydia,….</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Xét nghiệm marker tầm soát ung thư: -->
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-md-2">
+						<img src="~/images/Main/Index/ChuyenKhoaYTe/ungbuou_xanh.png" class="img-fluid">
+					</div>
+					<div class="col-md-10">
+						<h4 class="fw-bold">Xét nghiệm marker tầm soát ung thư:</h4>
+						<p class="text-body-secondary fw-bold">AFP, CA 15-3; CA 19-9; CA 72-4; CA 125; Cyfra 21-1; tPSA; fPSA; Bence-Jones protein; SCC,…</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Xét nghiệm kiểm tra thai kỳ: -->
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-md-2">
+						<img src="~/images/Main/Index/ChuyenKhoaYTe/sankhoa_xanh.png" class="img-fluid">
+					</div>
+					<div class="col-md-10">
+						<h4 class="fw-bold">Xét nghiệm kiểm tra thai kỳ:</h4>
+						<p class="text-body-secondary fw-bold">Double test, Triple test, NIPT, Beta-hcg,....</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- NEWS -->
+<div class="tintucykhoa">
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-12">
+				<h1 class="ps-4 mb-5">TIN TỨC Y KHOA</h1>
+			</div>
+		</div>
+
+
+		<div class="row">
+
+			<!-- Từ nay đến hết 30/5/2024, Bệnh viện Đa khoa... -->
+			<div class="col-3">
+				<div class="holder">
+					<img src="https://medlatec.vn/media/41857/content/banner-uu-dai-rfa.jpg?size=512" class="img-fluid">
+				</div>
+				<h3>Từ nay đến hết 30/5/2024, Bệnh viện Đa khoa...</h3>
+				<p>Nhằm giúp người dân có cơ hội điều trị khối u tuyến giáp bằng phương pháp hiện đại, công nghệ cao với chi phí tối ưu nhất, từ n...</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Xem chi tiết</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+
+			<!-- Sau 8 tháng điều trị viêm xương khớp, người phụ nữ... -->
+			<div class="col-3">
+				<div class="holder">
+					<img src="https://medlatec.vn/media/41802/content/ung-thu-di-can-xuong-2-1.jpg?size=512" class="img-fluid">
+				</div>
+				<h3>Sau 8 tháng điều trị viêm xương khớp, người phụ nữ...</h3>
+				<p>Lo lắng với những cơn đau âm ỉ vùng xương đùi trái không có dấu hiệu thuyên giảm sau 8 tháng điều trị tại bệnh viện gần nhà, người...</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Xem chi tiết</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+
+			<!-- Trường hợp hy hữu tại MEDLATEC: tưởng nốt ruồi,... -->
+			<div class="col-3">
+				<div class="holder">
+					<img src="https://medlatec.vn/media/41772/content/_medlatec-2904-2.png?size=512" class="img-fluid">
+				</div>
+				<h3>Trường hợp hy hữu tại MEDLATEC: tưởng nốt ruồi,...</h3>
+				<p>Xuất hiện nốt sẩn đen dưới lòng bàn chân trái 10 năm nay nhưng chị C.T.H.N và gia đình không mấy bận tâm, chỉ nghĩ là nốt...</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Xem chi tiết</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+
+			<!-- Hội thảo trực tuyến số 10: Giải pháp phòng ngừa nhiễm... -->
+			<div class="col-3">
+				<div class="holder">
+					<img src="https://medlatec.vn/media/41768/content/B%c3%a1o-c%c3%a1o-vi%c3%aan-s%e1%bb%91-10-PGS.TS-Nguy%e1%bb%85n-Th%c3%a1i-S%c6%a1n-WEb.jpg?size=512" class="img-fluid">
+				</div>
+				<h3>Hội thảo trực tuyến số 10: Giải pháp phòng ngừa nhiễm...</h3>
+				<p>Liên cầu khuẩn nhóm B là một trong những nguyên nhân hàng đầu gây nhiễm khuẩn và tử vong ở trẻ sơ sinh. Tại Hội thảo trực...</p>
+				<a class="icon-link icon-link-hover fw-bold" href="#">
+					<span>Xem chi tiết</span>
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			</div>
+		</div>
+
+		<div class="row text-center my-5">
+			<div class="col-12">
+				<a href="" class="btn nutxemthem" target="_blank">Xem thêm</a>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
