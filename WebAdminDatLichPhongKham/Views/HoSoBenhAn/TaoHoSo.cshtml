@@ -1,0 +1,96 @@
+﻿@model WebAdminDatLichPhongKham.Models.ViewModels.TaoHoSoBenhAnViewModel
+
+@{
+    ViewData["Title"] = "Tạo Hồ Sơ Bệnh Án";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="TaoHoSo">
+    <input type="hidden" asp-for="PhieuDatLichId" />
+    <input type="hidden" asp-for="BenhNhanId" />
+
+    <div class="form-group">
+        <label asp-for="BenhNhanName" class="control-label"></label>
+        <input asp-for="BenhNhanName" class="form-control" readonly />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ChanDoan" class="control-label"></label>
+        <input asp-for="ChanDoan" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GhiChu" class="control-label"></label>
+        <textarea asp-for="GhiChu" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Thuốc</label>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Thuốc</th>
+                    <th>Số lượng</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="thuoc-list">
+                <tr>
+                    <td>
+                        <select class="form-control" name="ChiTietThuoc[0].ThuocId">
+                            @foreach (var thuoc in ViewBag.ThuocList as SelectList)
+                            {
+                                <option value="@thuoc.Value">@thuoc.Text</option>
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <input class="form-control" type="number" name="ChiTietThuoc[0].SoLuong" value="1" />
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger" onclick="removeRow(this)">Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-primary" onclick="addRow()">Thêm thuốc</button>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Tạo" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    <script>
+        let index = 1;
+
+        function addRow() {
+            const thuocOptions = `@foreach (var thuoc in ViewBag.ThuocList as SelectList)
+        {
+            <option value="@thuoc.Value">@thuoc.Text</option>
+        }`;
+            const row = `
+                        <tr>
+                            <td>
+                                <select class="form-control" name="ChiTietThuoc[${index}].ThuocId">
+                                    ${thuocOptions}
+                                </select>
+                            </td>
+                            <td>
+                                <input class="form-control" type="number" name="ChiTietThuoc[${index}].SoLuong" value="1"/>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger" onclick="removeRow(this)">Xóa</button>
+                            </td>
+                        </tr>`;
+            document.getElementById('thuoc-list').insertAdjacentHTML('beforeend', row);
+            index++;
+        }
+
+        function removeRow(button) {
+            button.closest('tr').remove();
+        }
+    </script>
+}

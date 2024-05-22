@@ -27,14 +27,26 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
         }
         builder.Entity<CaNghiPhep>()
               .HasKey(c => new { c.DonNghiPhepId, c.CaKhamId });
+
+        builder.Entity<PhieuDatLich>()
+             .HasOne(p => p.HoSoBenhAn)
+             .WithOne(h => h.PhieuDatLich)
+             .HasForeignKey<HoSoBenhAn>(h => h.PhieuDatLichId);
+
+        builder.Entity<ChiTietHoSoBenhAn>()
+                 .HasOne(ct => ct.HoSoBenhAn)
+                 .WithMany(h => h.ChiTietHoSoBenhAns)
+                 .HasForeignKey(ct => ct.HoSoBenhAnId);
     }
     public DbSet<Khoa> Khoas { get; set; }
-    public DbSet<ChucVu> ChucVus {  get; set; } 
+    public DbSet<ChucVu> ChucVus { get; set; }
     public DbSet<NhanVien> NhanViens { get; set; }
-    public DbSet<CaKham> CaKhams{ get; set; }
+    public DbSet<CaKham> CaKhams { get; set; }
     public DbSet<CaNghiPhep> CaNghiPheps { get; set; }
     public DbSet<DonNghiPhep> DonNghiPheps { get; set; }
     public DbSet<BenhNhan> BenhNhans { get; set; }
     public DbSet<PhieuDatLich> PhieuDatLichs { get; set; }
-
+    public DbSet<HoSoBenhAn> HoSoBenhAns { get; set; }
+    public DbSet<Thuoc> Thuocs { get; set; }
+    public DbSet<ChiTietHoSoBenhAn> ChiTietHoSoBenhAns { get; set; }
 }

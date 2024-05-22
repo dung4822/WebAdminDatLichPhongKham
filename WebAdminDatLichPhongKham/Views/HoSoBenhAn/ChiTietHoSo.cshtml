@@ -1,0 +1,87 @@
+﻿@model WebAdminDatLichPhongKham.Models.HoSoBenhAn
+
+@{
+    ViewData["Title"] = "Chi Tiết Hồ Sơ Bệnh Án";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Thông tin bệnh nhân</h4>
+    <dl class="row">
+        <dt class="col-sm-2">
+            Tên bệnh nhân
+        </dt>
+        <dd class="col-sm-10">
+            @Model.PhieuDatLich.BenhNhan.Name
+        </dd>
+        <dt class="col-sm-2">
+            CMND
+        </dt>
+        <dd class="col-sm-10">
+            @Model.PhieuDatLich.BenhNhan.CMND
+        </dd>
+        <dt class="col-sm-2">
+            Số điện thoại
+        </dt>
+        <dd class="col-sm-10">
+            @Model.PhieuDatLich.BenhNhan.PhoneNumber
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h4>Thông tin khám</h4>
+    <dl class="row">
+        <dt class="col-sm-2">
+            Ngày khám
+        </dt>
+        <dd class="col-sm-10">
+            @Model.PhieuDatLich.NgayKham
+        </dd>
+        <dt class="col-sm-2">
+            Chẩn đoán
+        </dt>
+        <dd class="col-sm-10">
+            @Model.ChanDoan
+        </dd>
+        <dt class="col-sm-2">
+            Ghi chú
+        </dt>
+        <dd class="col-sm-10">
+            @Model.GhiChu
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h4>Thuốc</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tên thuốc</th>
+                <th>Số lượng</th>
+                <th>Đơn giá</th>
+                <th>Thành tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ChiTietHoSoBenhAns)
+            {
+                <tr>
+                    <td>@item.Thuoc.TenThuoc</td>
+                    <td>@item.SoLuong</td>
+                    <td>@item.Thuoc.GiaTien</td>
+                    <td>@(item.SoLuong * item.Thuoc.GiaTien)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <h4>Tổng tiền: @Model.TongTien</h4>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Quay lại danh sách</a>
+</div>

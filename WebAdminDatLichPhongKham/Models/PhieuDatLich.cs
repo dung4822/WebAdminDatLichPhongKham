@@ -28,5 +28,6 @@ namespace WebAdminDatLichPhongKham.Models
         public int idNhanVien { get; set; }
 
         public NhanVien NhanVien { get; set; }
+        public HoSoBenhAn HoSoBenhAn { get; set; }
     }
 }

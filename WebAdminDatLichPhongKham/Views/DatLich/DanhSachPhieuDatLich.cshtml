@@ -11,6 +11,7 @@
             <th>Ngày khám</th>
             <th>Bác sĩ</th>
             <th>Ca khám</th>
+            <th>Hành động</th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +24,9 @@
                 <td>@phieuDatLich.NgayKham.ToString("dd/MM/yyyy")</td>
                 <td>@phieuDatLich.NhanVien.HoTen</td>
                 <td>@phieuDatLich.CaKham.TenCa</td>
+                <td>
+                    <a asp-controller="HoSoBenhAn" asp-action="TaoHoSo" asp-route-phieuDatLichId="@phieuDatLich.Id" class="btn btn-primary">Tạo Hồ Sơ</a>
+                </td> 
             </tr>
         }
     </tbody>
