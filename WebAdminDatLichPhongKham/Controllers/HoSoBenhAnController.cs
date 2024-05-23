@@ -17,7 +17,17 @@ namespace WebAdminDatLichPhongKham.Controllers
         {
             _context = context;
         }
+        public IActionResult Index()
+        {
+            var hoSoBenhAns = _context.HoSoBenhAns
+                .Include(h => h.ChiTietHoSoBenhAns)
+                .ThenInclude(ct => ct.Thuoc)
+                .Include(h => h.PhieuDatLich)
+                .ThenInclude(p => p.BenhNhan)
+                .ToList();
 
+            return View(hoSoBenhAns);
+        }
         public IActionResult TaoHoSo(int phieuDatLichId)
         {
             var phieuDatLich = _context.PhieuDatLichs.Include(p => p.BenhNhan).FirstOrDefault(p => p.Id == phieuDatLichId);
@@ -101,5 +111,6 @@ namespace WebAdminDatLichPhongKham.Controllers
 
             return View(hoSoBenhAn);
         }
+       
     }
 }

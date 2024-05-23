@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebAdminDatLichPhongKham.Models.HoSoBenhAn>
+
+@{
+    ViewData["Title"] = "Tất Cả Hồ Sơ Bệnh Án";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Hồ Sơ ID</th>
+            <th>Bệnh Nhân</th>
+            <th>Số điện thoại</th>
+            <th>Chẩn Đoán</th>
+            <th>Ghi Chú</th>
+            <th>Tổng Tiền</th>
+            <th>Chi Tiết</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hoSo in Model)
+        {
+            <tr>
+                <td>@hoSo.Id</td>
+                <td>@hoSo.PhieuDatLich.BenhNhan.Name</td>
+                <td>@hoSo.PhieuDatLich.BenhNhan.PhoneNumber</td>
+                <td>@hoSo.ChanDoan</td>
+                <td>@hoSo.GhiChu</td>
+                <td>@hoSo.TongTien</td>
+                <td>
+                    <ul>
+                        @foreach (var chiTiet in hoSo.ChiTietHoSoBenhAns)
+                        {
+                            <li>@chiTiet.Thuoc.TenThuoc - Số Lượng: @chiTiet.SoLuong</li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -73,7 +73,7 @@ namespace WebAdminDatLichPhongKham.Controllers
                 _context.PhieuDatLichs.Add(phieuDatLich);
                 _context.SaveChanges();
 
-
+/*
                 // Tạo nội dung email
                 string subject = "Xác nhận đặt lịch khám bệnh";
                 string body = $"Xin chào {viewModel.BenhNhan.Name},\n\n";
@@ -84,7 +84,7 @@ namespace WebAdminDatLichPhongKham.Controllers
                 // Thêm thông tin khác nếu cần
 
                 // Gửi email
-                SendEmail(viewModel.BenhNhan.Email, subject, body);
+                SendEmail(viewModel.BenhNhan.Email, subject, body);*/
 
 
                 return RedirectToAction("DanhSachPhieuDatLich", "DatLich");

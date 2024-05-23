@@ -58,6 +58,7 @@ namespace WebAdminDatLichPhongKham.Views
             {
                 return NotFound();
             }
+
             return View(benhNhan);
         }
 
